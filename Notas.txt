@@ -1,0 +1,11 @@
+Para generar el contenido estático se utiliza:
+pelican content
+
+Para exportar para gh-pages se utiliza:
+ghp-import output
+
+Para iniciar el servidor:
+python -m pelican.server
+
+Hay que clonar el repositorio que contiene los temas de pelican antes.
+git clone --recursive https://github.com/getpelican/pelican-themes ~/pelican-themes
