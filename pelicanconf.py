@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Bruno Masoller'
 SITENAME = 'Portafolio de Machine Learning'
 SITETITLE = AUTHOR
-SITEURL = ''
+SITEURL = '.'
 SITESUBTITLE = 'Portafolio de Machine Learning'
 SITEDESCRIPTION = 'Portafolio que muestra articulos de ML, desarrollados tanto en Python como RapidMiner'
 SITELOGO = 'https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120'
@@ -48,9 +48,9 @@ INDEX_SAVE_AS = 'blog_index.html'
 #          ('twitter', 'https://twitter.com/alxvicenzi'),
 #          ('rss', '//blog.alexandrevicenzi.com/feeds/all.atom.xml'))
 
-MENUITEMS = (('Index', '/blog_index.html'),
-             ('Categories', '/categories.html'),
-             ('Tags', '/tags.html'),)
+MENUITEMS = (('Index', 'blog_index.html'),
+             ('Categories', 'categories.html'),
+             ('Tags', 'tags.html'),)
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
