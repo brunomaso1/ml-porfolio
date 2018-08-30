@@ -5,13 +5,13 @@ from __future__ import unicode_literals
 AUTHOR = 'Bruno Masoller'
 SITENAME = 'Portafolio de Machine Learning'
 SITETITLE = AUTHOR
-SITEURL = 'https://brunomaso1.github.io/ml-porfolio'
+#SITEURL = 'https://brunomaso1.github.io/ml-porfolio'
+SITEURL = ''
 SITESUBTITLE = 'Portafolio de Machine Learning'
 SITEDESCRIPTION = 'Portafolio que muestra articulos de ML, desarrollados tanto en Python como RapidMiner'
 SITELOGO = 'https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120'
-# FAVICON = '/images/favicon.ico'
+FAVICON = 'images/favicon.ico'
 BROWSER_COLOR = '#333333'
-PYGMENTS_STYLE = 'monokai'
 
 ROBOTS = 'index, follow'
 
