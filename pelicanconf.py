@@ -5,12 +5,12 @@ from __future__ import unicode_literals
 AUTHOR = 'Bruno Masoller'
 SITENAME = 'Portafolio de Machine Learning'
 SITETITLE = AUTHOR
-SITEURL = 'https://brunomaso1.github.io/ml-porfolio'
-#SITEURL = ''
+#SITEURL = 'https://brunomaso1.github.io/ml-porfolio'
+SITEURL = ''
 SITESUBTITLE = 'Portafolio de Machine Learning'
 SITEDESCRIPTION = 'Portafolio que muestra articulos de ML, desarrollados tanto en Python como RapidMiner'
 SITELOGO = 'https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120'
-FAVICON = 'images/favicon.ico'
+FAVICON = '/images/favicon.ico'
 BROWSER_COLOR = '#333333'
 
 ROBOTS = 'index, follow'
@@ -42,11 +42,8 @@ INDEX_SAVE_AS = 'blog_index.html'
 #         ('Jinja2', 'http://jinja.pocoo.org/'),
 #         ('You can modify those links in your config file', '#'),)
 
-#SOCIAL = (('linkedin', 'https://br.linkedin.com/in/alexandrevicenzi/en'),
-#          ('github', 'https://github.com/alexandrevicenzi'),
-#          ('google', 'https://google.com/+AlexandreVicenzi'),
-#          ('twitter', 'https://twitter.com/alxvicenzi'),
-#          ('rss', '//blog.alexandrevicenzi.com/feeds/all.atom.xml'))
+SOCIAL = (('linkedin', 'www.linkedin.com/in/brunomaso1'),
+          ('github', 'https://github.com/brunomaso1'))
 
 MENUITEMS = (('Index', 'blog_index.html'),
              ('Categories', 'categories.html'),
@@ -77,6 +74,3 @@ STATIC_PATHS = ['images', 'extra']
 #}
 
 #CUSTOM_CSS = 'static/custom.css'
-
-#We might want to refer to some images too
-#STATIC_PATHS = ['images']
