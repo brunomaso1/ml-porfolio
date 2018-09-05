@@ -19,8 +19,8 @@
     <link href="https://brunomaso1.github.io/ml-porfolio/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Portafolio de Machine Learning Atom">
 
 
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 
 
     <!-- Chrome, Firefox OS and Opera -->
@@ -33,24 +33,29 @@
     <!-- Microsoft EDGE -->
     <meta name="msapplication-TileColor" content="#333333">
 
-<meta name="author" content="Bruno Masoller" />
-<meta name="description" content="ML Cheatsheet and References links." />
-<meta name="keywords" content="cheatsheet reference">
+<meta name="author" content="me" />
+<meta name="description" content="Marco teórico explicando las correlaciones entre los atributos." />
+<meta name="keywords" content="python, ml, ipython, atributos, correlación, pearson">
 
 <meta property="og:site_name" content="Portafolio de Machine Learning"/>
-<meta property="og:title" content="ML Cheatsheet and References"/>
-<meta property="og:description" content="ML Cheatsheet and References links."/>
+<meta property="og:title" content="CORRELACIÓN DE ATRIBUTOS - PYTHON"/>
+<meta property="og:description" content="Marco teórico explicando las correlaciones entre los atributos."/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://brunomaso1.github.io/ml-porfolio/posts/others/ML-Cheatsheet-and-References.html"/>
+<meta property="og:url" content="https://brunomaso1.github.io/ml-porfolio/posts/ipython/2018/Correlación_de_atributos_ipython.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2018-08-23 20:00:00-03:00"/>
+<meta property="article:published_time" content="2018-09-04 12:00:00-03:00"/>
 <meta property="article:modified_time" content=""/>
-<meta property="article:author" content="https://brunomaso1.github.io/ml-porfolio/author/bruno-masoller.html">
-<meta property="article:section" content="others"/>
-<meta property="article:tag" content="cheatsheet reference"/>
+<meta property="article:author" content="https://brunomaso1.github.io/ml-porfolio/author/me.html">
+<meta property="article:section" content="posts"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="ml"/>
+<meta property="article:tag" content="ipython"/>
+<meta property="article:tag" content="atributos"/>
+<meta property="article:tag" content="correlación"/>
+<meta property="article:tag" content="pearson"/>
 <meta property="og:image" content="https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120">
 
-  <title>Portafolio de Machine Learning &ndash; ML Cheatsheet and References</title>
+  <title>Portafolio de Machine Learning &ndash; CORRELACIÓN DE ATRIBUTOS - PYTHON</title>
 
 </head>
 <body>
@@ -64,14 +69,16 @@
 <p>Portafolio de Machine Learning</p>
       <nav>
         <ul class="list">
-          <li><a href="https://brunomaso1.github.io/ml-porfolio/#home">Home</a></li>
-          <li><a href="https://brunomaso1.github.io/ml-porfolio/pages/matriz-ml.html#matriz-ml">Machine Learning Matrix</a></li>
-          <li><a href="https://brunomaso1.github.io/ml-porfolio/pages/crisp-dm.html#crisp-dm">Proceso CRISP-DM</a></li>
+          <li><a href="https://brunomaso1.github.io/ml-porfolio/#bienvenido-a-mi-portafolio">BIENVENIDO A MI PORTAFOLIO</a></li>
+          <li><a href="https://brunomaso1.github.io/ml-porfolio/pages/matriz-ml.html#matriz-ml">MATRIZ DE TEMAS DEL PORTAFOLIO</a></li>
+          <li><a href="https://brunomaso1.github.io/ml-porfolio/pages/crisp-dm.html#crisp-dm">PROCESO CRISP-DM</a></li>
 
         </ul>
       </nav>
 
       <ul class="social">
+        <li><a class="sc-linkedin" href="www.linkedin.com/in/brunomaso1" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/brunomaso1" target="_blank"><i class="fa fa-github"></i></a></li>
       </ul>
     </div>
 
@@ -95,9 +102,9 @@
 <article class="single">
   <header>
       
-    <h1 id="posts/others/ML-Cheatsheet-and-References">ML Cheatsheet and References</h1>
+    <h1 id="posts/ipython/2018/Correlación_de_atributos_ipython">CORRELACIÓN DE ATRIBUTOS - PYTHON</h1>
     <p>
-          Posted on jue 23 agosto 2018 in <a href="https://brunomaso1.github.io/ml-porfolio/category/others.html">others</a>
+          Posted on mar 04 septiembre 2018 in <a href="https://brunomaso1.github.io/ml-porfolio/category/posts.html">posts</a>
 
 
     </p>
@@ -1081,7 +1088,18 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Cheatsheets-and-References">Cheatsheets and References<a class="anchor-link" href="#Cheatsheets-and-References">&#182;</a></h1>
+<h2 id="Tabla-de-contenido:">Tabla de contenido:<a class="anchor-link" href="#Tabla-de-contenido:">&#182;</a></h2><ol>
+<li><a href="#1-bullet">Introducción</a><ol>
+<li><a href="#1.1-bullet">Que es la correlación de atributos</a></li>
+<li><a href="#1.2-bullet">Covarianza</a></li>
+<li><a href="#1.3-bullet">Tipos de correlación</a><ol>
+<li><a href="#1.3.1-bullet">Coeficiente de correlación de Pearson</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
 </div>
 </div>
 </div>
@@ -1089,10 +1107,76 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Markdown-Cheatsheet">Markdown Cheatsheet<a class="anchor-link" href="#Markdown-Cheatsheet">&#182;</a></h2><p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet</a></p>
-<h2 id="LaTeX-Reference">LaTeX Reference<a class="anchor-link" href="#LaTeX-Reference">&#182;</a></h2><p><a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">https://en.wikibooks.org/wiki/LaTeX/Mathematics</a></p>
-<h2 id="LaTeX-Editor">LaTeX Editor<a class="anchor-link" href="#LaTeX-Editor">&#182;</a></h2><p><a href="https://www.codecogs.com/latex/eqneditor.php">https://www.codecogs.com/latex/eqneditor.php</a></p>
-<h2 id="Pandas-Cheatsheet">Pandas Cheatsheet<a class="anchor-link" href="#Pandas-Cheatsheet">&#182;</a></h2><p><a href="https://www.dataquest.io/blog/pandas-cheat-sheet/">https://www.dataquest.io/blog/pandas-cheat-sheet/</a></p>
+<h2 id="Introducci&#243;n-">Introducci&#243;n <a class="anchor" id="1-bullet" /><a class="anchor-link" href="#Introducci&#243;n-">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Que-es-la-correlaci&#243;n-de-atributos-">Que es la correlaci&#243;n de atributos <a class="anchor" id="1.1-bullet" /><a class="anchor-link" href="#Que-es-la-correlaci&#243;n-de-atributos-">&#182;</a></h3><blockquote><p>En probabilidad y estadística, la correlación indica la fuerza y la dirección de una relación lineal y proporcionalidad entre dos variables estadísticas. Se considera que dos variables cuantitativas están correlacionadas cuando los valores de una de ellas varían sistemáticamente con respecto a los valores homónimos de la otra: si tenemos dos variables (A y B) existe correlación entre ellas si al disminuir los valores de A lo hacen también los de B y viceversa. La correlación entre dos variables no implica, por sí misma, ninguna relación de causalidad. (Wikipedia español)</p>
+</blockquote>
+<p>La correlación es uno de los conceptos estadísticos más utilizados.</p>
+<p>El término <em>correlación</em>, refiere a la relación que existen entre cantidades. Más específicamente refiere a la distribución de dichas cantidades. Por ejemplo, en el ejemplo del Titanic ({filename}/posts/ipython/Titanic_dataset_analisis), el atributo "Life Boat" está correlacionado con la variable de salida, por el motivo de que si algún pasajero tiene el atributo "Life Boat" no vacío, es muy posible que se haya salvado, lo que implica que el atributo "Survived" (variable dependiente) se encuentra en "Si". Ambos atributos siguen la misma distribución, y según los datos que tenemos del negocio, sabemos que están muy correlacionados.</p>
+<p>¿Por qué la correlación es importante?
+Por varios motivos:</p>
+<ul>
+<li>La correlación entre atributos permite predecir el valor de uno a partir del otro.</li>
+<li>La correlación puede (aunque usualmente no pasa) indicar la presencia de relaciones causales (como en el caso del Titanic).</li>
+<li>La correlación se utiliza como base para algunos modelos.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Covarianza-">Covarianza <a class="anchor" id="1.2-bullet" /><a class="anchor-link" href="#Covarianza-">&#182;</a></h3><p>La covarianza es una medida estadística de asociación entre dos variables $X$ e $Y$. Se calcula como:</p>
+<p>$\sigma_{xy}=\dfrac{ \sum f_i (x_i - \bar x)(y_i - \bar y)}{N}$</p>
+<p>O, arreglando los factores:</p>
+<p>$\sigma_{xy}=\dfrac{ \sum f_i x_i y_i}{N} - \bar x \bar y$</p>
+<p>Donde la covarianza indica el sentido de la correlación entre las variables:</p>
+<ul>
+<li>Si $\sigma_{xy} &gt; 0$ la correlación es directa.</li>
+<li>Si $\sigma_{xy} &lt; 0$ la correlación es inversa.</li>
+</ul>
+<p>La covarianza presenta como inconveniente el hecho de que su valor depende de la escala elegida. Por ejemplo, la $\sigma_{xy}=1.2$ y la $\sigma_{tz}=3.4$ nos dicen que los pares están positivamente asociados, pero no nos dice si la relación de $X$ con $Y$ es mayor a la de $T$ con $Z$.</p>
+<p>Por este motivo la covarianza es útil cuando todos los atributos siguen en la misma escala, ya que en ese punto podemos comparar cual "covarianza" es más fuerte que otra.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tipos-de-correlaci&#243;n-">Tipos de correlaci&#243;n <a class="anchor" id="1.3-bullet" /><a class="anchor-link" href="#Tipos-de-correlaci&#243;n-">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Coeficiente-de-correlaci&#243;n-de-Pearson-">Coeficiente de correlaci&#243;n de Pearson <a class="anchor" id="1.3.1-bullet" /><a class="anchor-link" href="#Coeficiente-de-correlaci&#243;n-de-Pearson-">&#182;</a></h4><p>El coeficiente de correlación de Pearson es el más utilizado. Esta correlación mide la asociación linear entre variables continuas. En otras palabras, este coeficiente cuantifica el grado en el cual una relación entre dos variables puede ser expresada como una línea.</p>
+<p>El coeficiente de Pearson se refiere como $\rho$.</p>
+<p>La fórmula original para la correlación utiliza los datos planos ("raw") y las medias de las dos variables, $X$ e $Y$:</p>
+<p>$\rho_{X,Y}=\dfrac{\sum (X_i - \bar X)(Y_i - \bar Y)}{\sqrt{\sum (X_i - \bar X)^2 \sum (Y_i - \bar Y)^2}}$</p>
+<p>En esta fórmula, las instancias son centradas restando la media y re-escaladas utilizando las desviaciones estándar.</p>
+<p>Al dividir la covarianza de dos variables entre el producto de sus derivaciones estándar, asegura que la correlación siempre esté en el intervalo $[-1, 1]$</p>
+<p>Cuanto más cerca de 1 esté $\rho$, más relacionadas positivamente se encuentran las variables (cuanto más se incrementa una más se incrementa la otra). Por otro lado, cuanto más cerca de -1 esté, indica una relación inversamente proporcional (cuanto más se incremente una, más se decrementa la otra). Si $X$ e $Y$ son independientes, $\rho$ tiende a 0.</p>
+<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/images/Correlacion_de_atributos_1.PNG" alt="drawing" width="40%" height="40%"/></div><p>Podemos notar también que la tangente de la recta de regresión lineal tiene una relación con el coeficiente de Pearson, dicha relación sigue que:</p>
+<p>$\rho=m \dfrac{S_x}{S_y}$</p>
+<p>Donde $m$ es la tangente de la recta de regresión.</p>
+<p>En otras palabras, la correlación refleja la asociación y la cantidad de variabilidad entre las dos variables.</p>
+<p>Cabe destacar que la correlación no es igual a la tangente (es una medida estandarizada de la variabilidad de los datos). Por ejemplo, es posible tener un valor muy bajo para la tangente y sin embargo tener una correlación muy alta.</p>
+<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/images/Correlacion_de_atributos_2.PNG" alt="drawing" width="40%" height="40%"/></div><p>No hace falta agregar, que la correlación es altamente susceptiva a los valores anómalos.</p>
+<p>Otra forma de interpretar la correlación de Pearson, es utilizar el coeficiente de determinación $R^2$. Mientras $\rho$ no tienen unidad, el cuadrado de $\rho$ es interpretado como la proporción que varía la variable $Y$ explicada por la $X$. Ej:</p>
+<p>$\rho = -0.5 \rightarrow (-0.5)^2 * 100 = 42\%$</p>
+<p>O sea, 42% de variación de $Y$ puede ser explicada por $X$.</p>
 
 </div>
 </div>
@@ -1132,7 +1216,12 @@ h6:hover .anchor-link {
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/cheatsheet-reference.html">cheatsheet reference</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/python.html">python</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/ml.html">ml</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/ipython.html">ipython</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/atributos.html">atributos</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/correlacion.html">correlación</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/pearson.html">pearson</a>
     </p>
   </div>
 

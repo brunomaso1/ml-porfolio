@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="spanish">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="https://brunomaso1.github.io/ml-porfolio/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Portafolio de Machine Learning Atom">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Bruno Masoller" />
+<meta name="description" content="Analisis de los datos del titanic para luego ser procesados por un modelo de ML." />
+<meta name="keywords" content="crisp-dm, process, models, algorithms">
+
+<meta property="og:site_name" content="Portafolio de Machine Learning"/>
+<meta property="og:title" content="ANÁLISIS DEL DATASET &#34;TITANIC&#34; - RAPIDMINER"/>
+<meta property="og:description" content="Analisis de los datos del titanic para luego ser procesados por un modelo de ML."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://brunomaso1.github.io/ml-porfolio/posts/rapidminer/2018/Titanic_dataset_analisis_rapidminer.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-08-30 12:00:00-03:00"/>
+<meta property="article:modified_time" content="2018-08-30 12:00:00-03:00"/>
+<meta property="article:author" content="https://brunomaso1.github.io/ml-porfolio/author/bruno-masoller.html">
+<meta property="article:section" content="Rapidminer"/>
+<meta property="article:tag" content="crisp-dm"/>
+<meta property="article:tag" content="process"/>
+<meta property="article:tag" content="models"/>
+<meta property="article:tag" content="algorithms"/>
+<meta property="og:image" content="https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120">
+
+  <title>Portafolio de Machine Learning &ndash; ANÁLISIS DEL DATASET &#34;TITANIC&#34; - RAPIDMINER</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="https://brunomaso1.github.io/ml-porfolio">
+        <img src="https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120" alt="Bruno Masoller" title="Bruno Masoller">
+      </a>
+      <h1><a href="https://brunomaso1.github.io/ml-porfolio">Bruno Masoller</a></h1>
+
+<p>Portafolio de Machine Learning</p>
+      <nav>
+        <ul class="list">
+          <li><a href="https://brunomaso1.github.io/ml-porfolio/#bienvenido-a-mi-portafolio">BIENVENIDO A MI PORTAFOLIO</a></li>
+          <li><a href="https://brunomaso1.github.io/ml-porfolio/pages/matriz-ml.html#matriz-ml">MATRIZ DE TEMAS DEL PORTAFOLIO</a></li>
+          <li><a href="https://brunomaso1.github.io/ml-porfolio/pages/crisp-dm.html#crisp-dm">PROCESO CRISP-DM</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-linkedin" href="www.linkedin.com/in/brunomaso1" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/brunomaso1" target="_blank"><i class="fa fa-github"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="https://brunomaso1.github.io/ml-porfolio">    Home
+</a>
+
+      <a href="blog_index.html">Index</a>
+      <a href="categories.html">Categories</a>
+      <a href="tags.html">Tags</a>
+
+      <a href="https://brunomaso1.github.io/ml-porfolio/feeds/all.atom.xml">    Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="posts/rapidminer/2018/Titanic_dataset_analisis_rapidminer">ANÁLISIS DEL DATASET "TITANIC" - RAPIDMINER</h1>
+    <p>
+          Posted on jue 30 agosto 2018 in <a href="https://brunomaso1.github.io/ml-porfolio/category/rapidminer.html">Rapidminer</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2>Tabla de contenido:</h2>
+<ol>
+<li><a href="#1-bullet">Entendimiento del negocio</a></li>
+<li><a href="#2-bullet">Preparación de los datos</a><ol>
+<li><a href="#2.1-bullet">Importaciones</a></li>
+<li><a href="#2.2-bullet">Cargar los datos</a></li>
+<li><a href="#2.3-bullet">Tratamiento de los datos</a><ol>
+<li><a href="#2.3.1-bullet">Chequear valores faltantes</a></li>
+<li><a href="#2.3.2-bullet">Eliminar faltantes</a></li>
+<li><a href="#2.3.3-bullet">Imputar faltantes</a></li>
+</ol>
+</li>
+<li><a href="#2.4-bullet">Visualizacion de los datos</a></li>
+<li><a href="#2.5-bullet">Feature Engineering (Ingeniería de Características)</a></li>
+</ol>
+</li>
+<li><a href="#3-bullet">Modelado</a><ol>
+<li><a href="#3.1-bullet">Preparación del modelado</a></li>
+<li><a href="#3.2-bullet">Entrenamiento de los modelos</a><ol>
+<li><a href="#3.2.1-bullet">SVC</a></li>
+<li><a href="#3.2.2-bullet">Linear SVC</a></li>
+<li><a href="#3.2.3-bullet">Random Forest</a></li>
+<li><a href="#3.2.4-bullet">Logistic Regression</a></li>
+<li><a href="#3.2.5-bullet">KNeighbors</a></li>
+<li><a href="#3.2.6-bullet">GaussianNB</a></li>
+<li><a href="#3.2.7-bullet">DecisionTree</a></li>
+</ol>
+</li>
+<li><a href="(#3.3-bullet)">Comparación de modelos</a></li>
+</ol>
+</li>
+<li><a href="#4-bullet">Evaluación</a></li>
+</ol>
+<h2>Entendimiento del negocio <a class="anchor" id="1-bullet"></a></h2>
+<hr>
+<h2>Preparación de los datos <a class="anchor" id="2-bullet"></a></h2>
+<hr>
+<h3>Importaciones <a class="anchor" id="2.1-bullet"></a></h3>
+<h3>Cargar los datos <a class="anchor" id="2.2-bullet"></a></h3>
+<h3>Tratamiento de los datos <a class="anchor" id="2.3-bullet"></a></h3>
+<h4>Chequear valores faltantes <a class="anchor" id="2.3.1-bullet"></a></h4>
+<h4>Eliminar faltantes <a class="anchor" id="2.3.2-bullet"></a></h4>
+<h4>Imputar faltantes <a class="anchor" id="2.3.3-bullet"></a></h4>
+<h3>Visualizacion de los datos <a class="anchor" id="2.4-bullet"></a></h3>
+<h3>Feature Engineering (Ingeniería de Características)  <a class="anchor" id="2.5-bullet"></a></h3>
+<h2>Modelado <a class="anchor" id="3-bullet"></a></h2>
+<hr>
+<h3>Preparación del modelado <a class="anchor" id="3.1-bullet"></a></h3>
+<h3>Entrenamiento de los modelos <a class="anchor" id="3.2-bullet"></a></h3>
+<h4>SVC <a class="anchor" id="3.2.1-bullet"></a></h4>
+<h4>Linear SVC <a class="anchor" id="3.2.2-bullet"></a></h4>
+<h4>Random Forest <a class="anchor" id="3.2.3-bullet"></a></h4>
+<h4>Logistic Regression <a class="anchor" id="3.2.4-bullet"></a></h4>
+<h4>KNeighbors <a class="anchor" id="3.2.5-bullet"></a></h4>
+<h4>GaussianNB <a class="anchor" id="3.2.6-bullet"></a></h4>
+<h4>DecisionTree <a class="anchor" id="3.2.7-bullet"></a></h4>
+<h3>Comparación de modelos <a class="anchor" id="3.3-bullet"></a></h3>
+<h3>Mejorar los parametros del mejor modelo <a class="anchor" id="3.4-bullet"></a></h3>
+<h2>Evaluación <a class="anchor" id="4-bullet"></a></h2>
+<hr>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/crisp-dm.html">crisp-dm</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/process.html">process</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/models.html">models</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/algorithms.html">algorithms</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy;  2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Portafolio de Machine Learning ",
+  "url" : "https://brunomaso1.github.io/ml-porfolio",
+  "image": "https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120",
+  "description": "Portafolio que muestra articulos de ML, desarrollados tanto en Python como RapidMiner"
+}
+</script>
+
+</body>
+</html>
