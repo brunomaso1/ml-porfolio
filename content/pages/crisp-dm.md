@@ -25,7 +25,7 @@ Summary: El proceso CRISP-DM.
 ## CRISP-DM <a class="anchor" id="1-bullet"></a>
 ---
 <small><a href="https://inseaddataanalytics.github.io/INSEADAnalytics/CRISP_DM.pdf">CRISP-DM 2.0</a></small>
-<div style="text-align:center"><img src="{filename}/images/CRISP-DM_Process_Diagram.png" alt="drawing" width="35%" height="35%"/></div>
+<div style="text-align:center"><img src="{filename}/img/CRISP-DM_Process_Diagram.png" alt="drawing" width="35%" height="35%"/></div>
 
 El proceso CRISP-DM, es un modelo estándar abierto que describe un enfoque para problemas en el contexto de "data mining". Es uno de los más usados. 
 
@@ -36,7 +36,7 @@ El entendimiento del negocio es muy importante en el ámbito de "data mining". U
 
 ### Ejemplos <a class="anchor" id="2.1-bullet"></a>
 
-- [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/ipython/2018/Titanic_dataset_analisis_ipython.ipynb#1-bullet)
+- [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python.ipynb#1-bullet)
 
 ## Entendimiento de los datos <a class="anchor" id="3-bullet"></a>
 ---
@@ -48,21 +48,21 @@ El entendimiento del negocio es muy importante en el ámbito de "data mining". U
 
 ### Ejemplos <a class="anchor" id="4.1-bullet"></a>
 
-- [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/ipython/2018/Titanic_dataset_analisis_ipython.ipynb#2-bullet)
+- [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python.ipynb#2-bullet)
 
 ## Modelado <a class="anchor" id="5-bullet"></a>
 ---
 
 ### Ejemplos <a class="anchor" id="5.1-bullet"></a>
 
-- [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/ipython/2018/Titanic_dataset_analisis_ipython.ipynb#3-bullet)
+- [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python.ipynb#3-bullet)
 
 ## Evaluación <a class="anchor" id="6-bullet"></a>
 ---
 
 ### Ejemplos <a class="anchor" id="6.1-bullet"></a>
 
-- [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/ipython/2018/Titanic_dataset_analisis_ipython.ipynb#4-bullet)
+- [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python.ipynb#4-bullet)
 
 ## Puesta en producción <a class="anchor" id="7-bullet"></a>
 ---

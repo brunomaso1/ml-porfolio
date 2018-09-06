@@ -3,7 +3,7 @@ Date: 2018-08-30 12:00
 Modified: 2018-08-30 12:00
 Category: Others
 Tags: references
-Slug: posts/others/2018/ML_cheatsheet_and_references
+Slug: posts/other/2018/ML_cheatsheet_and_references
 Authors: Bruno Masoller
 Summary: Trucos y references.
 
