@@ -37,6 +37,7 @@ El entendimiento del negocio es muy importante en el ámbito de "data mining". U
 ### Ejemplos <a class="anchor" id="2.1-bullet"></a>
 
 - [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python.ipynb#1-bullet)
+- [ANÁLISIS DEL DATASET TITANIC - RAPIDMINER]({filename}/posts/rapidminer/2018/Titanic_dataset_analisis_rapidminer.md#1-bullet)
 
 ## Entendimiento de los datos <a class="anchor" id="3-bullet"></a>
 ---
@@ -49,6 +50,7 @@ El entendimiento del negocio es muy importante en el ámbito de "data mining". U
 ### Ejemplos <a class="anchor" id="4.1-bullet"></a>
 
 - [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python.ipynb#2-bullet)
+- [ANÁLISIS DEL DATASET TITANIC - RAPIDMINER]({filename}/posts/rapidminer/2018/Titanic_dataset_analisis_rapidminer.md#2-bullet)
 
 ## Modelado <a class="anchor" id="5-bullet"></a>
 ---
@@ -56,6 +58,7 @@ El entendimiento del negocio es muy importante en el ámbito de "data mining". U
 ### Ejemplos <a class="anchor" id="5.1-bullet"></a>
 
 - [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python.ipynb#3-bullet)
+- [ANÁLISIS DEL DATASET TITANIC - RAPIDMINER]({filename}/posts/rapidminer/2018/Titanic_dataset_analisis_rapidminer.md#3-bullet)
 
 ## Evaluación <a class="anchor" id="6-bullet"></a>
 ---
@@ -63,6 +66,7 @@ El entendimiento del negocio es muy importante en el ámbito de "data mining". U
 ### Ejemplos <a class="anchor" id="6.1-bullet"></a>
 
 - [ANÁLISIS DEL DATASET "TITANIC" PYTHON]({filename}/posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python.ipynb#4-bullet)
+- [ANÁLISIS DEL DATASET TITANIC - RAPIDMINER]({filename}/posts/rapidminer/2018/Titanic_dataset_analisis_rapidminer.md#4-bullet)
 
 ## Puesta en producción <a class="anchor" id="7-bullet"></a>
 ---
