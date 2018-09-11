@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Portafolio de Machine Learning - posts</title><link href="https://brunomaso1.github.io/ml-porfolio/" rel="alternate"></link><link href="https://brunomaso1.github.io/ml-porfolio/feeds/posts.atom.xml" rel="self"></link><id>https://brunomaso1.github.io/ml-porfolio/</id><updated>2018-09-04T12:00:00-03:00</updated><entry><title>CORRELACIÓN DE ATRIBUTOS - PYTHON</title><link href="https://brunomaso1.github.io/ml-porfolio/posts/ipython/2018/Correlaci%C3%B3n_de_atributos_ipython.html" rel="alternate"></link><published>2018-09-04T12:00:00-03:00</published><updated>2018-09-04T12:00:00-03:00</updated><author><name>me</name></author><id>tag:brunomaso1.github.io,2018-09-04:/ml-porfolio/posts/ipython/2018/Correlación_de_atributos_ipython.html</id><summary type="html">&lt;p&gt;Marco teórico explicando las correlaciones entre los atributos.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Portafolio de Machine Learning - posts</title><link href="https://brunomaso1.github.io/ml-porfolio/" rel="alternate"></link><link href="https://brunomaso1.github.io/ml-porfolio/feeds/posts.atom.xml" rel="self"></link><id>https://brunomaso1.github.io/ml-porfolio/</id><updated>2018-09-04T12:00:00-03:00</updated><entry><title>CORRELACIÓN DE ATRIBUTOS - PYTHON</title><link href="https://brunomaso1.github.io/ml-porfolio/posts/jupyter-notebooks/2018/Correlaci%C3%B3n_de_atributos_python.html" rel="alternate"></link><published>2018-09-04T12:00:00-03:00</published><updated>2018-09-04T12:00:00-03:00</updated><author><name>me</name></author><id>tag:brunomaso1.github.io,2018-09-04:/ml-porfolio/posts/jupyter-notebooks/2018/Correlación_de_atributos_python.html</id><summary type="html">&lt;p&gt;Marco teórico explicando las correlaciones entre los atributos.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -1055,12 +1055,12 @@ Por varios motivos:&lt;/p&gt;
 &lt;p&gt;En esta fórmula, las instancias son centradas restando la media y re-escaladas utilizando las desviaciones estándar.&lt;/p&gt;
 &lt;p&gt;Al dividir la covarianza de dos variables entre el producto de sus derivaciones estándar, asegura que la correlación siempre esté en el intervalo $[-1, 1]$&lt;/p&gt;
 &lt;p&gt;Cuanto más cerca de 1 esté $\rho$, más relacionadas positivamente se encuentran las variables (cuanto más se incrementa una más se incrementa la otra). Por otro lado, cuanto más cerca de -1 esté, indica una relación inversamente proporcional (cuanto más se incremente una, más se decrementa la otra). Si $X$ e $Y$ son independientes, $\rho$ tiende a 0.&lt;/p&gt;
-&lt;div style="text-align:center"&gt;&lt;img src="https://brunomaso1.github.io/ml-porfolio/images/Correlacion_de_atributos_1.PNG" alt="drawing" width="40%" height="40%"/&gt;&lt;/div&gt;&lt;p&gt;Podemos notar también que la tangente de la recta de regresión lineal tiene una relación con el coeficiente de Pearson, dicha relación sigue que:&lt;/p&gt;
+&lt;div style="text-align:center"&gt;&lt;img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Correlacion_de_atributos_1.PNG" alt="drawing" width="40%" height="40%"/&gt;&lt;/div&gt;&lt;p&gt;Podemos notar también que la tangente de la recta de regresión lineal tiene una relación con el coeficiente de Pearson, dicha relación sigue que:&lt;/p&gt;
 &lt;p&gt;$\rho=m \dfrac{S_x}{S_y}$&lt;/p&gt;
 &lt;p&gt;Donde $m$ es la tangente de la recta de regresión.&lt;/p&gt;
 &lt;p&gt;En otras palabras, la correlación refleja la asociación y la cantidad de variabilidad entre las dos variables.&lt;/p&gt;
 &lt;p&gt;Cabe destacar que la correlación no es igual a la tangente (es una medida estandarizada de la variabilidad de los datos). Por ejemplo, es posible tener un valor muy bajo para la tangente y sin embargo tener una correlación muy alta.&lt;/p&gt;
-&lt;div style="text-align:center"&gt;&lt;img src="https://brunomaso1.github.io/ml-porfolio/images/Correlacion_de_atributos_2.PNG" alt="drawing" width="40%" height="40%"/&gt;&lt;/div&gt;&lt;p&gt;No hace falta agregar, que la correlación es altamente susceptiva a los valores anómalos.&lt;/p&gt;
+&lt;div style="text-align:center"&gt;&lt;img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Correlacion_de_atributos_2.PNG" alt="drawing" width="40%" height="40%"/&gt;&lt;/div&gt;&lt;p&gt;No hace falta agregar, que la correlación es altamente susceptiva a los valores anómalos.&lt;/p&gt;
 &lt;p&gt;Otra forma de interpretar la correlación de Pearson, es utilizar el coeficiente de determinación $R^2$. Mientras $\rho$ no tienen unidad, el cuadrado de $\rho$ es interpretado como la proporción que varía la variable $Y$ explicada por la $X$. Ej:&lt;/p&gt;
 &lt;p&gt;$\rho = -0.5 \rightarrow (-0.5)^2 * 100 = 42\%$&lt;/p&gt;
 &lt;p&gt;O sea, 42% de variación de $Y$ puede ser explicada por $X$.&lt;/p&gt;
@@ -1099,7 +1099,7 @@ Por varios motivos:&lt;/p&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="python"></category><category term="ml"></category><category term="ipython"></category><category term="atributos"></category><category term="correlación"></category><category term="pearson"></category></entry><entry><title>ANÁLISIS DEL DATASET "TITANIC" - PYTHON</title><link href="https://brunomaso1.github.io/ml-porfolio/posts/ipython/2018/Titanic_dataset_analisis_ipython.html" rel="alternate"></link><published>2018-08-30T12:00:00-03:00</published><updated>2018-08-30T12:00:00-03:00</updated><author><name>me</name></author><id>tag:brunomaso1.github.io,2018-08-30:/ml-porfolio/posts/ipython/2018/Titanic_dataset_analisis_ipython.html</id><summary type="html">&lt;p&gt;Analisis de los datos del titanic para luego ser procesados por un modelo de ML.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+</content><category term="python"></category><category term="ml"></category><category term="ipython"></category><category term="atributos"></category><category term="correlación"></category><category term="pearson"></category></entry><entry><title>ANÁLISIS DEL DATASET "TITANIC" - PYTHON</title><link href="https://brunomaso1.github.io/ml-porfolio/posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python.html" rel="alternate"></link><published>2018-08-30T12:00:00-03:00</published><updated>2018-08-30T12:00:00-03:00</updated><author><name>me</name></author><id>tag:brunomaso1.github.io,2018-08-30:/ml-porfolio/posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python.html</id><summary type="html">&lt;p&gt;Analisis de los datos del titanic para luego ser procesados por un modelo de ML.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -2142,7 +2142,7 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[11]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt; 
@@ -2173,14 +2173,14 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[12]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Datos de entrenamiento.&lt;/span&gt;
-&lt;span class="n"&gt;training&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;../../datasets/train.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;training&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;../../post-datasets/titanic_raw_train.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="c1"&gt;# Datos para testing.&lt;/span&gt;
-&lt;span class="n"&gt;testing&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;../../datasets/test.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;testing&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;../../post-datasets/titanic_raw_test.csv&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;/div&gt;

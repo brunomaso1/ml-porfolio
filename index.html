@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="spanish">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -65,7 +65,7 @@
       </nav>
 
       <ul class="social">
-        <li><a class="sc-linkedin" href="www.linkedin.com/in/brunomaso1" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/brunomaso1" target="_blank"><i class="fa fa-linkedin"></i></a></li>
         <li><a class="sc-github" href="https://github.com/brunomaso1" target="_blank"><i class="fa fa-github"></i></a></li>
       </ul>
     </div>
@@ -75,15 +75,13 @@
   <main>
 
     <nav>
-      <a href="https://brunomaso1.github.io/ml-porfolio">    Home
-</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio">Home</a>
 
-      <a href="blog_index.html">Index</a>
-      <a href="categories.html">Categories</a>
-      <a href="tags.html">Tags</a>
+      <a href="/blog_index.html">Index</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
 
-      <a href="https://brunomaso1.github.io/ml-porfolio/feeds/all.atom.xml">    Atom
-</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -95,14 +93,14 @@
   <div>
 <p>Este blog está destinado a mostrar algunos de los trabajos que he realizado sobre Machine Learning.</p>
 <p>El objetivo es basarse en el proceso CRISP-DM (Cross Industry Standard Process for Data Mining) e ir mostrando, para cada punto, ejemplos y situaciones particulares que he aplicado para resolver los problemas que se presentan.</p>
-<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/images/CRISP-DM_Process_Diagram.png" alt="drawing" width="35%" height="35%"/></div>
+<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/img/CRISP-DM_Process_Diagram.png" alt="drawing" width="35%" height="35%"/></div>
 
 <p>Los problemas tienen varias formas de resolverse (entre técnicas y herramientas) pero he elegido RapidMiner para resolverlos ya que es una herramienta de la industria eficaz y fácil de entender a la hora de trabajar con los datos.</p>
-<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/images/rapidminer-logo-retina.png" alt="drawing" width="35%" height="35%"/></div>
+<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/img/rapidminer-logo-retina.png" alt="drawing" width="35%" height="35%"/></div>
 
 <p>Si bien el objetivo principal es mostrar ejemplos y situaciones particulares, también propondré un marco teórico, en algunos casos, en donde nos podemos basar para ampliar los conocimientos.</p>
 <p>Como soy de la rama de la Informática, estoy muy tentando a programar los modelos, por lo que también hay ejemplos de problemas resueltos en Python utilizando librerías de Machine Learning como Scikit Learn.</p>
-<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/images/scikit-learn-logo.png" alt="drawing" width="35%" height="35%"/></div>
+<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/img/scikit-learn-logo.png" alt="drawing" width="35%" height="35%"/></div>
 
 <h2>Como leer el blog</h2>
 <p>Hay tres formas de leer este blog:</p>
@@ -117,10 +115,26 @@
 <p>Se puede acceder a todo el código en el repositorio: <a href="https://github.com/brunomaso1/ml-porfolio">https://github.com/brunomaso1/ml-porfolio</a></p>
 <h2>Herramientas utilizadas</h2>
 <ul>
-<li>RapidMiner</li>
-<li>Python:<ul>
-<li>Scikit Learn</li>
-<li>Pandas</li>
+<li><strong>Pelican</strong> (https://blog.getpelican.com/)<ul>
+<li><strong>Plugins:</strong><ul>
+<li><em>Pelican-themes</em> (https://github.com/getpelican/pelican-themes)</li>
+<li><em>ipynb</em> (https://github.com/danielfrg/pelican-ipynb)</li>
+<li><em>Flex</em> (https://github.com/alexandrevicenzi/Flex)</li>
+<li><em>LaTeX for Markdown</em> (http://www.codecogs.com/latex/integration/htmlequations.php)</li>
+<li><em>webassets</em> (https://github.com/getpelican/pelican-plugins/tree/master/assets)</li>
+<li><em>render_math</em> (https://github.com/getpelican/pelican-plugins/tree/master/render_math)</li>
+<li><em>i18n_subsites</em> (https://github.com/getpelican/pelican-plugins/tree/master/i18n_subsites)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>RapidMiner</strong> (https://rapidminer.com/)</li>
+<li><strong>Python</strong> (https://www.python.org/)<ul>
+<li><strong>Librerías:</strong><ul>
+<li><em>Scikit Learn</em> (http://scikit-learn.org/)</li>
+<li><em>Pandas</em> (https://pandas.pydata.org/)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>  </div>
@@ -130,8 +144,7 @@
 <p>
   &copy;  2016 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
 </p>
-<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p><p>
+<p>Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p><p>
   <a rel="license"
      href="http://creativecommons.org/licenses/by-sa/4.0/"
      target="_blank">
@@ -159,5 +172,6 @@
 }
 </script>
 
+  
 </body>
 </html>
