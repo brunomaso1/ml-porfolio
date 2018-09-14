@@ -13,14 +13,16 @@
     <link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/stylesheet/style.min.css">
 
   <link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/pygments/github.min.css">
-  <link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/font-awesome/css/font-awesome.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  
 
 
     <link href="https://brunomaso1.github.io/ml-porfolio/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Portafolio de Machine Learning Atom">
 
 
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
 
     <!-- Chrome, Firefox OS and Opera -->
@@ -1093,7 +1095,7 @@ h6:hover .anchor-link {
 <li><a href="#2.3.3-bullet">Imputar faltantes</a></li>
 </ol>
 </li>
-<li><a href="#2.4-bullet">Visualizacion de los datos</a></li>
+<li><a href="#2.4-bullet">Visualización de los datos</a></li>
 <li><a href="#2.5-bullet">Feature Engineering (Ingeniería de Características)</a></li>
 </ol>
 </li>
@@ -1142,7 +1144,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Importaciones-">Importaciones <a class="anchor" id="2.1-bullet" /><a class="anchor-link" href="#Importaciones-">&#182;</a></h3><p>Numpy y Pandas son utiles para manipular los datos y Seaborn es util para visualizar los datos.</p>
+<h3 id="Importaciones-">Importaciones <a class="anchor" id="2.1-bullet" /><a class="anchor-link" href="#Importaciones-">&#182;</a></h3><p>Numpy y Pandas son útiles para manipular los datos y Seaborn es útil para visualizar los datos.</p>
 
 </div>
 </div>
@@ -1350,7 +1352,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Para obtener las estadisticas, se puede realizar facilmente con la opcion de <code>pd.dataframe.describe()</code>.</p>
+<p>Para obtener las estadísticas, se puede realizar fácilmente con la opción de <code>pd.dataframe.describe()</code>.</p>
 
 </div>
 </div>
@@ -1501,7 +1503,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Podemos mostrar los nombres de las columnas tambien utilizando <code>pd.dataframe.keys()</code>.</p>
+<p>Podemos mostrar los nombres de las columnas también utilizando <code>pd.dataframe.keys()</code>.</p>
 
 </div>
 </div>
@@ -1553,7 +1555,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Chequear-valores-faltantes-">Chequear valores faltantes <a class="anchor" id="2.3.1-bullet" /><a class="anchor-link" href="#Chequear-valores-faltantes-">&#182;</a></h4><p>Para chequear los falores faltantes utilizamos isnull de pandas (<code>pd.isnull</code>)</p>
+<h4 id="Chequear-valores-faltantes-">Chequear valores faltantes <a class="anchor" id="2.3.1-bullet" /><a class="anchor-link" href="#Chequear-valores-faltantes-">&#182;</a></h4><p>Para chequear los valores faltantes utilizamos isnull de pandas (<code>pd.isnull</code>)</p>
 
 </div>
 </div>
@@ -1611,8 +1613,8 @@ dtype: int64</pre>
 En este contexto:</p>
 <ul>
 <li>Edad es muy importante y no lo podemos eliminar.</li>
-<li>Cabina si la podemos eliminar, ya que no aporta informacion relevante sobre el problema.</li>
-<li>Tampoco lo aporta ticket, asi que lo eliminamos tambien.</li>
+<li>Cabina si la podemos eliminar, ya que no aporta información relevante sobre el problema.</li>
+<li>Tampoco lo aporta ticket, así que lo eliminamos también.</li>
 </ul>
 
 </div>
@@ -1668,7 +1670,7 @@ dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Imputar-faltantes-">Imputar faltantes <a class="anchor" id="2.3.3-bullet" /><a class="anchor-link" href="#Imputar-faltantes-">&#182;</a></h4><p>Como la edad es muy importante para eliminar, tenemos que decidir por que valor sustituir. Para eso graficamos para saber la distribucion que siguen los datos sin dichos atributos faltantes. Lo podemos hacer con el comando <code>pd.dataframe.dropna(inplace = True)</code>. Antes realizamos una copia del conjunto, ya que al utilizar <code>inplace = True</code> le estamos diciendo a pandas que aplique el cambio al conjunto actual y no a una copia del mismo.</p>
+<h4 id="Imputar-faltantes-">Imputar faltantes <a class="anchor" id="2.3.3-bullet" /><a class="anchor-link" href="#Imputar-faltantes-">&#182;</a></h4><p>Como la edad es muy importante para eliminar, tenemos que decidir por qué valor sustituir. Para eso graficamos para saber la distribución que siguen los datos sin dichos atributos faltantes. Lo podemos hacer con el comando <code>pd.dataframe.dropna(inplace = True)</code>. Antes realizamos una copia del conjunto, ya que al utilizar <code>inplace = True</code> le estamos diciendo a pandas que aplique el cambio al conjunto actual y no a una copia del mismo.</p>
 <p>Para graficar utilizamos seaborn con el comando <code>sns.displot(dataframe["Atributo"])</code>.</p>
 
 </div>
@@ -1731,7 +1733,7 @@ dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Como podemos ver, los datos tienen una distribucion cuasi-normal, por lo tanto, podemos sustituir los faltantes por la media. Para sustituir los faltantes, podemos utilizar el comando <code>pd.dataframe["Atributo"].fillna(valor_a_sustituir)</code>.</p>
+<p>Como podemos ver, los datos tienen una distribución cuasi-normal, por lo tanto, podemos sustituir los faltantes por la media. Para sustituir los faltantes, podemos utilizar el comando <code>pd.dataframe["Atributo"].fillna(valor_a_sustituir)</code>.</p>
 
 </div>
 </div>
@@ -1757,8 +1759,8 @@ dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Visualizacion-de-los-datos-">Visualizacion de los datos <a class="anchor" id="2.4-bullet" /><a class="anchor-link" href="#Visualizacion-de-los-datos-">&#182;</a></h3><p>Para visualizar relaciones, utilizamos graficas especificas para cada caso. Por ejemplo, podemos graficar la edad
-en funcion de la variable objetivo para ver si existe alguna relacion.</p>
+<h3 id="Visualizaci&#243;n-de-los-datos-">Visualizaci&#243;n de los datos <a class="anchor" id="2.4-bullet" /><a class="anchor-link" href="#Visualizaci&#243;n-de-los-datos-">&#182;</a></h3><p>Para visualizar relaciones, utilizamos graficas específicas para cada caso. Por ejemplo, podemos graficar la edad
+en función de la variable objetivo para ver si existe alguna relación.</p>
 
 </div>
 </div>
@@ -1831,7 +1833,7 @@ Hombres:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Podemos ver que el sexo es un atributo importante para la predicción.</p>
-<p>Ahora chequearemos si la clase tambien es importante.</p>
+<p>Ahora chequearemos si la clase también es importante.</p>
 
 </div>
 </div>
@@ -1844,7 +1846,7 @@ Hombres:
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grafica en barras.</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Survived&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">training</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Ratio de sobrevivencia&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribucion de sobrevivencia basado en clase&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribución de sobrevivencia basado en clase&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">total_survived_one</span> <span class="o">=</span> <span class="n">training</span><span class="p">[</span><span class="n">training</span><span class="o">.</span><span class="n">Pclass</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="s2">&quot;Survived&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -1853,11 +1855,11 @@ Hombres:
 <span class="n">total_survived_class</span> <span class="o">=</span> <span class="n">total_survived_one</span> <span class="o">+</span> <span class="n">total_survived_two</span> <span class="o">+</span> <span class="n">total_survived_three</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cantidad de personas que sobrevivieron: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_survived_class</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proporcion de sobrevivencia de clase 1:&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proporción de sobrevivencia de clase 1:&quot;</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">total_survived_one</span><span class="o">/</span><span class="n">total_survived_class</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proporcion de sobrevivencia de clase 2:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proporción de sobrevivencia de clase 2:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">total_survived_two</span><span class="o">/</span><span class="n">total_survived_class</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proporcion de sobrevivencia de clase 3:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proporción de sobrevivencia de clase 3:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">total_survived_three</span><span class="o">/</span><span class="n">total_survived_class</span><span class="p">)</span>
 </pre></div>
 
@@ -1891,11 +1893,11 @@ Hombres:
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Cantidad de personas que sobrevivieron: 342
-Proporcion de sobrevivencia de clase 1:
+Proporción de sobrevivencia de clase 1:
 0.39766081871345027
-Proporcion de sobrevivencia de clase 2:
+Proporción de sobrevivencia de clase 2:
 0.2543859649122807
-Proporcion de sobrevivencia de clase 3:
+Proporción de sobrevivencia de clase 3:
 0.347953216374269
 </pre>
 </div>
@@ -1920,7 +1922,7 @@ Proporcion de sobrevivencia de clase 3:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Survived&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">training</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Rtio de sobrevivencia&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Ratio de sobrevivencia&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Ratios de sobrevivencia basados en sexo y clase&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -1979,7 +1981,7 @@ Proporcion de sobrevivencia de clase 3:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Sex&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Survived&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Pclass&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">training</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Rtio de sobrevivencia&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Ratio de sobrevivencia&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Ratios de sobrevivencia basados en sexo y clase&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -2156,7 +2158,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Podemos ver que los pasajeros jovenes tenian mas posibilidades de salvarse.</p>
+<p>Podemos ver que los pasajeros jóvenes tenían más posibilidades de salvarse.</p>
 
 </div>
 </div>
@@ -2165,7 +2167,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Podemos ver todos los graficos juntos con el siguiente comando: <code>sns.pairplot</code></p>
+<p>Podemos ver todos los gráficos juntos con el siguiente comando: <code>sns.pairplot</code></p>
 
 </div>
 </div>
@@ -2222,7 +2224,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Feature-Engineering-(Ingenier&#237;a-de-Caracter&#237;sticas)--">Feature Engineering (Ingenier&#237;a de Caracter&#237;sticas)  <a class="anchor" id="2.5-bullet" /><a class="anchor-link" href="#Feature-Engineering-(Ingenier&#237;a-de-Caracter&#237;sticas)--">&#182;</a></h3><p>Como sexo y embarcación son atributos categoricos, los tenemos que pasar a numeros. Para esto utilizamos <strong>"one-hot-encoding"</strong>.</p>
+<h3 id="Feature-Engineering-(Ingenier&#237;a-de-Caracter&#237;sticas)--">Feature Engineering (Ingenier&#237;a de Caracter&#237;sticas)  <a class="anchor" id="2.5-bullet" /><a class="anchor-link" href="#Feature-Engineering-(Ingenier&#237;a-de-Caracter&#237;sticas)--">&#182;</a></h3><p>Como sexo y embarcación son atributos categóricos, los tenemos que pasar a números. Para esto utilizamos <strong>"one-hot-encoding"</strong>.</p>
 <p>Podemos muestrear ejemplos con el comando <code>pd.dataframe.sample(N)</code>, donde <code>N</code> es el número de ejemplos a muestrear.</p>
 
 </div>
@@ -2362,7 +2364,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Primeramente pasamos los atributos categóricos a atribútos numéricos ya que muchos modelos no aceptan atributos categóricos (nominales).</p>
+<p>Primeramente pasamos los atributos categóricos a atributos numéricos ya que muchos modelos no aceptan atributos categóricos (nominales).</p>
 <p>Para esto, simplemente le asignamos un valor a cada valor del atributo categórico. Podemos utilizar el comando <code>pd.dataframe.loc[]</code> que permite acceder a un grupo de filas o columnas (según especifiquemos) y simplemente le asignamos el valor que queremos.</p>
 
 </div>
@@ -2519,7 +2521,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Tambien podemos combinar el atributo <strong><em>SibSp</em></strong> y <strong><em>Parch</em></strong>, para saber cuan grande es la familia.</p>
+<p>También podemos combinar el atributo <strong><em>SibSp</em></strong> y <strong><em>Parch</em></strong>, para saber cuán grande es la familia.</p>
 
 </div>
 </div>
@@ -2543,7 +2545,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Otro atributo interesante, es saber si se estaba solo o no. Para esto utilizamos <code>pd.dataframe.apply</code>, que aplica un valor a los atributos. Tambien aprovechamos la caracteristica de python con la utilizacion de funciones lambdas.</p>
+<p>Otro atributo interesante, es saber si se estaba solo o no. Para esto utilizamos <code>pd.dataframe.apply</code>, que aplica un valor a los atributos. También aprovechamos la característica de Python con la utilización de funciones lambdas.</p>
 
 </div>
 </div>
@@ -2567,7 +2569,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Una caracteristica que en principio no parece importante es el nombre, pero de este podemos extraer información.  Utilizando los indicadores de la presona podemos deducir su estatus en la sociedad. Por ejemplo: Señor, Señora, Señorita, etc.</p>
+<p>Una característica que en principio no parece importante es el nombre, pero de este podemos extraer información.  Utilizando los indicadores de la persona podemos deducir su estatus en la sociedad. Por ejemplo: Señor, Señora, Señorita, etc.</p>
 
 </div>
 </div>
@@ -2577,7 +2579,7 @@ salvarte que si fueras de alguna otra clase.</p>
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Agrego una columna titulo, el cual contiene el titulo de la persona.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Agrego una columna titulo, el cual contiene el título de la persona.</span>
 <span class="c1"># Utilizo &quot;Regex&quot; para obtenerlos.</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">training</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]:</span>
     <span class="n">training</span><span class="p">[</span><span class="s2">&quot;Title&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">training</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s2">&quot;([A-Za-z]+)\.&quot;</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2588,7 +2590,7 @@ salvarte que si fueras de alguna otra clase.</p>
 <span class="c1"># Muestro todos los titulos (si los agrego a un conjunto se eliminan los duplicados).</span>
 <span class="n">titles</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">training</span><span class="p">[</span><span class="s2">&quot;Title&quot;</span><span class="p">])</span>
 
-<span class="c1"># Imprimo los titulos.</span>
+<span class="c1"># Imprimo los títulos.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;||&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">titles</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;|| &quot;</span><span class="p">)</span>
@@ -2620,7 +2622,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Obtengo la frecuencia de aparicion de los titulos.</p>
+<p>Obtengo la frecuencia de aparición de los títulos.</p>
 
 </div>
 </div>
@@ -2630,7 +2632,7 @@ salvarte que si fueras de alguna otra clase.</p>
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Primeramente armo una lista con los titulos.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Primeramente armo una lista con los títulos.</span>
 <span class="n">title_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">training</span><span class="p">[</span><span class="s2">&quot;Title&quot;</span><span class="p">])</span>
 <span class="n">frequency_titles</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -2638,7 +2640,7 @@ salvarte que si fueras de alguna otra clase.</p>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">titles</span><span class="p">:</span>
     <span class="n">frequency_titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">title_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 
-<span class="c1"># Creo una lista con los titulos del conjunto (uno por vez).</span>
+<span class="c1"># Creo una lista con los títulos del conjunto (uno por vez).</span>
 <span class="n">titles</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">titles</span><span class="p">)</span>
 
 <span class="c1"># Armo un dataframe para mostrar el titulo y la frecuencia.</span>
@@ -2695,7 +2697,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Agrego la columna al los datos, ya parseadas a números. En sí, no agrego todos los titulos, ya que me interesa el estatus, por lo que los que no me interesan les cambio a <em>"Other"</em>.</p>
+<p>Agrego la columna a los datos, ya pareadas a números. En sí, no agrego todos los títulos, ya que me interesa el estatus, por lo que los que no me interesan les cambio a <em>"Other"</em>.</p>
 
 </div>
 </div>
@@ -2705,11 +2707,11 @@ salvarte que si fueras de alguna otra clase.</p>
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creo los repmplazos de los titulos que no me interesan.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creo los remplazos de los títulos que no me interesan.</span>
 <span class="n">title_replacements</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Mlle&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;Major&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;Col&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;Sir&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;Don&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;Mme&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span>
           <span class="s2">&quot;Jonkheer&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;Lady&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;Capt&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;Countess&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;Ms&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;Dona&quot;</span><span class="p">:</span> <span class="s2">&quot;Other&quot;</span><span class="p">}</span>
 
-<span class="c1"># Remplazo los titulos en ambos conjuntos.</span>
+<span class="c1"># Remplazo los títulos en ambos conjuntos.</span>
 <span class="n">training</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s2">&quot;Title&quot;</span><span class="p">:</span> <span class="n">title_replacements</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">testing</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s2">&quot;Title&quot;</span><span class="p">:</span> <span class="n">title_replacements</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -2878,7 +2880,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>En el contexto del Titanic, el título era importante, y está relacionado con la clase que pertenencen los pasajeros.</p>
+<p>En el contexto del Titanic, el título era importante, y está relacionado con la clase que pertenecen los pasajeros.</p>
 
 </div>
 </div>
@@ -3000,7 +3002,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ahora debemos definir los atributos que utilizaremos para entrenar. O sea, que atributos son importantes para el contexto del problema. Por ejemplo, sabemos que el nombre no es importante para el contexto del problema (en si, no era importante, pero nos sirvió para obtener un mejor atributo ("Title") a partir del nombre). También definimos la variable objetivo.</p>
+<p>Ahora debemos definir los atributos que utilizaremos para entrenar. O sea, que atributos son importantes para el contexto del problema. Por ejemplo, sabemos que el nombre no es importante para el contexto del problema (en sí, no era importante, pero nos sirvió para obtener un mejor atributo ("Title") a partir del nombre). También definimos la variable objetivo.</p>
 
 </div>
 </div>
@@ -3077,7 +3079,7 @@ salvarte que si fueras de alguna otra clase.</p>
 <span class="n">svc_clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span> 
 <span class="c1"># Entrenamos el modelo.</span>
 <span class="n">svc_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_training</span><span class="p">,</span> <span class="n">y_training</span><span class="p">)</span>
-<span class="c1"># Realizamos las prediciones.</span>
+<span class="c1"># Realizamos las predicciones.</span>
 <span class="n">pred_svc</span> <span class="o">=</span> <span class="n">svc_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid</span><span class="p">)</span>
 <span class="c1"># Calculamos la precisión.</span>
 <span class="n">acc_svc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">pred_svc</span><span class="p">)</span>
@@ -3526,10 +3528,10 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Mejorar-los-parametros-del-mejor-modelo-">Mejorar los parametros del mejor modelo <a class="anchor" id="3.4-bullet" /><a class="anchor-link" href="#Mejorar-los-parametros-del-mejor-modelo-">&#182;</a></h3><p>En los modelos paramétricos (los modelos anteriores) se realizan varias suposiciones en la función a predecir. Por ejemplo, en los modelos lineales se asume que existe una función lineal que logra separar correctamente las instancias, o sea, que los datos siguen una distribución lineal.</p>
+<h3 id="Mejorar-los-par&#225;metros-del-mejor-modelo-">Mejorar los par&#225;metros del mejor modelo <a class="anchor" id="3.4-bullet" /><a class="anchor-link" href="#Mejorar-los-par&#225;metros-del-mejor-modelo-">&#182;</a></h3><p>En los modelos paramétricos (los modelos anteriores) se realizan varias suposiciones en la función a predecir. Por ejemplo, en los modelos lineales se asume que existe una función lineal que logra separar correctamente las instancias, o sea, que los datos siguen una distribución lineal.</p>
 <p>En este tipo de modelos, no se trata de aprender la función en sí (o sea, la relación de los datos) sino más bien se trata de aprender cuales son los mejores coeficientes para dichos modelos.</p>
-<p>En este sentido, podemos optimizar dichos parámetros para un mejor rendimiento del modelo. Como RandomForestClassifier es el que mejor predicción nos proporciona, lo elejimos a éste para optimizar sus parámetros.</p>
-<p><em>Nota: También se puede optimizar los parámetros de cada modelo y luego compararlos, sería algo más logico, pero el costo computacional crece mucho</em></p>
+<p>En este sentido, podemos optimizar dichos parámetros para un mejor rendimiento del modelo. Como RandomForestClassifier es el que mejor predicción nos proporciona, lo elegimos a éste para optimizar sus parámetros.</p>
+<p><em>Nota: También se puede optimizar los parámetros de cada modelo y luego compararlos, sería algo más lógico, pero el costo computacional crece mucho</em></p>
 <p>Optimizamos el modelo:</p>
 
 </div>
@@ -3606,7 +3608,7 @@ salvarte que si fueras de alguna otra clase.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Luego de optimizar los parametros, entrenamos el modelo con dichos parametros:</p>
+<p>Luego de optimizar los parámetros, entrenamos el modelo con dichos parámetros:</p>
 
 </div>
 </div>
@@ -3659,7 +3661,7 @@ salvarte que si fueras de alguna otra clase.</p>
 <h2 id="Evaluaci&#243;n-">Evaluaci&#243;n <a class="anchor" id="4-bullet" /><a class="anchor-link" href="#Evaluaci&#243;n-">&#182;</a></h2><hr>
 <p>Una vez finalizado el proceso, podemos ver que el mejor modelo a utilizar es "Random Forest".</p>
 <p>Un 10% de error es bastante aceptable para el modelo y para dicho contexto.</p>
-<p>El proceso ahora pasa a la etapa de produción, o sea, subir el modelo a la nube y utilizar una api para realizar las consultas.</p>
+<p>El proceso ahora pasa a la etapa de producción, o sea, subir el modelo a la nube y utilizar una api para realizar las consultas.</p>
 
 </div>
 </div>
@@ -3743,6 +3745,11 @@ salvarte que si fueras de alguna otra clase.</p>
 }
 </script>
 
+  
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" async="async"></script>
+  <script type="text/javascript" src="https://brunomaso1.github.io/ml-porfolio/theme/js/base.js" async="async"></script>
   
 </body>
 </html>
