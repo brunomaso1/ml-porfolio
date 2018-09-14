@@ -10,7 +10,7 @@ SITEURL = ''
 SITESUBTITLE = 'Portafolio de Machine Learning'
 SITEDESCRIPTION = 'Portafolio que muestra articulos de ML, desarrollados tanto en Python como RapidMiner'
 SITELOGO = 'https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120'
-FAVICON = '/images/favicon.ico'
+FAVICON = '/img/favicon.ico'
 BROWSER_COLOR = '#333333'
 
 ROBOTS = 'index, follow'
