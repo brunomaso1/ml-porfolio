@@ -203,6 +203,11 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" async="async"></script>
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/base.js" async="async"></script>
+  <script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+		setTableID();
+	}, false);
+  </script>
   
 </body>
 </html>

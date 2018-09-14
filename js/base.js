@@ -10,4 +10,4 @@ function setTableID() {
 				leftColumns: 1,
 			}*/
 		} );
-	} onload = setTableID;
+	};
