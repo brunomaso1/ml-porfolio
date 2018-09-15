@@ -104,7 +104,8 @@
 
       {% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}
 
-      {% if pages or LINKS %}
+      {% comment %}
+	  {% if pages or LINKS %}
       <nav>
         <ul class="list">
           {% if not PAGES_SORT_ATTRIBUTE -%}
@@ -120,6 +121,7 @@
         </ul>
       </nav>
       {% endif %}
+	  {% endcomment %}
 
       <ul class="social">
         {% for name, link in SOCIAL %}
