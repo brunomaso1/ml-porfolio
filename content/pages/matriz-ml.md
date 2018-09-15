@@ -147,3 +147,12 @@ Summary: Una matriz que contiene todos los algoritmos utilizados en el blog.
 
 ## Ejemplos completos <a class="anchor" id="2-bullet"></a>
 ---
+
+<script>
+	function setTableID() {
+		document.getElementsByTagName("table")[0].setAttribute("id","tableid");
+	};
+	document.addEventListener('DOMContentLoaded', function() {
+		setTableID();
+	}, false);
+</script>

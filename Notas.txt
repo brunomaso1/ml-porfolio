@@ -8,11 +8,4 @@ Para iniciar el servidor:
 python -m pelican.server
 
 Hay que clonar el repositorio que contiene los temas de pelican antes.
-git clone --recursive https://github.com/getpelican/pelican-themes
 git clone --recursive https://github.com/getpelican/pelican-plugins
-
-Para que pelican genere el contenido para jupyter:
-copiar ipynb en pelican-plugins
-
-Para aplicar js customs, copiar el js al static del tema:
-copiar el js a pelican-themes/TEMA/static

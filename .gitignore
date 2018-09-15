@@ -105,5 +105,5 @@ venv.bak/
 
 # Pelican
 output/
-pelican-themes/
 pelican-plugins/
+!pelican-plugins/ipynb

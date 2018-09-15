@@ -12,6 +12,7 @@ SITEDESCRIPTION = 'Portafolio que muestra articulos de ML, desarrollados tanto e
 SITELOGO = 'https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120'
 FAVICON = '/img/favicon.ico'
 BROWSER_COLOR = '#333333'
+#PYGMENTS_STYLE = 'fruity' # Para poner un tema de este estilo, hay que sustituir los area_input que genera el plugin ipynb. Este plugin genera un fondo blanco, hay que sustituirlo por negro con javascript.
 
 ROBOTS = 'index, follow'
 
@@ -21,8 +22,8 @@ TIMEZONE = 'America/Argentina/Buenos_Aires'
 
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+FEED_ALL_ATOM = SITEURL + 'feeds/all.atom.xml'
+CATEGORY_FEED_ATOM = SITEURL + 'feeds/%s.atom.xml'
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
@@ -46,9 +47,9 @@ JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 SOCIAL = (('linkedin', 'https://www.linkedin.com/in/brunomaso1'),
           ('github', 'https://github.com/brunomaso1'))
 
-MENUITEMS = (('Index', '/blog_index.html'),
-             ('Categories', '/categories.html'),
-             ('Tags', '/tags.html'),)
+MENUITEMS = (('Index', SITEURL + '/blog_index.html'),
+             ('Categories', SITEURL + '/categories.html'),
+             ('Tags', SITEURL + '/tags.html'),)
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
