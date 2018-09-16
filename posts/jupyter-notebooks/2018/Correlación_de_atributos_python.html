@@ -10,19 +10,19 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/stylesheet/style.min.css">
+	<link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/stylesheet/style.min.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/pygments/github.min.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
   
 
+    <link href="https://brunomaso1.github.io/ml-porfolio/static/custom.css" rel="stylesheet">
 
-    <link href="https://brunomaso1.github.io/ml-porfolio/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Portafolio de Machine Learning Atom">
 
 
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://brunomaso1.github.io/ml-porfolio/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://brunomaso1.github.io/ml-porfolio/img/favicon.ico" type="image/x-icon">
 
 
     <!-- Chrome, Firefox OS and Opera -->
@@ -37,7 +37,7 @@
 
 <meta name="author" content="me" />
 <meta name="description" content="Marco teórico explicando las correlaciones entre los atributos." />
-<meta name="keywords" content="python, ml, ipython, atributos, correlación, pearson">
+<meta name="keywords" content="Python, Correlación de Atributos, Pearson, Spearman, Kendall, Pandas">
 
 <meta property="og:site_name" content="Portafolio de Machine Learning"/>
 <meta property="og:title" content="CORRELACIÓN DE ATRIBUTOS - PYTHON"/>
@@ -48,13 +48,13 @@
 <meta property="article:published_time" content="2018-09-04 12:00:00-03:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="https://brunomaso1.github.io/ml-porfolio/author/me.html">
-<meta property="article:section" content="posts"/>
-<meta property="article:tag" content="python"/>
-<meta property="article:tag" content="ml"/>
-<meta property="article:tag" content="ipython"/>
-<meta property="article:tag" content="atributos"/>
-<meta property="article:tag" content="correlación"/>
-<meta property="article:tag" content="pearson"/>
+<meta property="article:section" content="Posts"/>
+<meta property="article:tag" content="Python"/>
+<meta property="article:tag" content="Correlación de Atributos"/>
+<meta property="article:tag" content="Pearson"/>
+<meta property="article:tag" content="Spearman"/>
+<meta property="article:tag" content="Kendall"/>
+<meta property="article:tag" content="Pandas"/>
 <meta property="og:image" content="https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120">
 
   <title>Portafolio de Machine Learning &ndash; CORRELACIÓN DE ATRIBUTOS - PYTHON</title>
@@ -69,15 +69,6 @@
       <h1><a href="https://brunomaso1.github.io/ml-porfolio">Bruno Masoller</a></h1>
 
 <p>Portafolio de Machine Learning</p>
-      <nav>
-        <ul class="list">
-          <li><a href="https://brunomaso1.github.io/ml-porfolio/#bienvenido-a-mi-portafolio">BIENVENIDO A MI PORTAFOLIO</a></li>
-          <li><a href="https://brunomaso1.github.io/ml-porfolio/pages/matriz-ml.html#matriz-ml">MATRIZ DE TEMAS DEL PORTAFOLIO</a></li>
-          <li><a href="https://brunomaso1.github.io/ml-porfolio/pages/crisp-dm.html#crisp-dm">PROCESO CRISP-DM</a></li>
-
-        </ul>
-      </nav>
-
       <ul class="social">
         <li><a class="sc-linkedin" href="https://www.linkedin.com/in/brunomaso1" target="_blank"><i class="fa fa-linkedin"></i></a></li>
         <li><a class="sc-github" href="https://github.com/brunomaso1" target="_blank"><i class="fa fa-github"></i></a></li>
@@ -91,11 +82,12 @@
     <nav>
       <a href="https://brunomaso1.github.io/ml-porfolio">Home</a>
 
-      <a href="/blog_index.html">Index</a>
-      <a href="/categories.html">Categories</a>
-      <a href="/tags.html">Tags</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/pages/crisp-dm.html">CRISP-DM</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/pages/matriz-ml.html">Matriz</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/blog_index.html">Index</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/categories.html">Categories</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tags.html">Tags</a>
 
-      <a href="https://brunomaso1.github.io/ml-porfolio/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
@@ -103,10 +95,6 @@
   <header>
       
     <h1 id="posts/jupyter-notebooks/2018/Correlación_de_atributos_python">CORRELACIÓN DE ATRIBUTOS - PYTHON</h1>
-    <p>
-      Posted on mar 04 septiembre 2018 in <a href="https://brunomaso1.github.io/ml-porfolio/category/posts.html">posts</a>
-
-    </p>
   </header>
 
 
@@ -1087,24 +1075,30 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tabla-de-contenido:">Tabla de contenido:<a class="anchor-link" href="#Tabla-de-contenido:">&#182;</a></h2><ol>
-<li><a href="#1-bullet">Introducción</a><ol>
-<li><a href="#1.1-bullet">Que es la correlación de atributos</a></li>
-<li><a href="#1.2-bullet">Covarianza</a></li>
-<li><a href="#1.3-bullet">Tipos de correlación</a><ol>
-<li><a href="#1.3.1-bullet">Coeficiente de correlación de Pearson</a></li>
-<li><a href="#1.3.2-bullet">Correlación de Spearman</a></li>
-<li><a href="#1.3.3-bullet">Correlación de Kendall</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><a href="#2-bullet">Desarrollo</a><ol>
-<li><a href="#1.2-bullet">Calculando la correlación en Pandas</a></li>
-</ol>
-</li>
-</ol>
-
+<p><br /></p>
+<div id="toc_container">
+<p class="toc_title">Tabla de contenido</p>
+<ul class="toc_list">
+    <li><a href="#1-bullet">1. Introducción</a>
+        <ul>
+            <li><a href="#1.1-bullet">1.1. Que es la correlación de atributos</a></li>
+            <li><a href="#1.2-bullet">1.2. Covarianza</a></li>
+            <li><a href="#1.3-bullet">1.3. Tipos de correlación</a>
+                <ul>
+                    <li><a href="#1.3.1-bullet">1.3.1. Coeficiente de correlación de Pearson</a></li>
+                    <li><a href="#1.3.2-bullet">1.3.2. Correlación de Spearman</a></li>
+                    <li><a href="#1.3.3-bullet">1.3.3. Correlación de Kendall</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#2-bullet">2. Desarrollo</a>
+        <ul>
+            <li><a href="#2.1-bullet">2.1. Calculando la correlación en Pandas</a></li>
+        </ul>
+    </li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1176,12 +1170,14 @@ Por varios motivos:</p>
 <p>$$\rho_{X,Y}=\dfrac{cov(X,Y)}{\sigma_X \sigma_Y}$$</p>
 <p>Al dividir la covarianza de dos variables entre el producto de sus derivaciones estándar, asegura que la correlación siempre esté en el intervalo $[-1, 1]$</p>
 <p>Cuanto más cerca de 1 esté $\rho$, más relacionadas positivamente se encuentran las variables (cuanto más se incrementa una más se incrementa la otra). Por otro lado, cuanto más cerca de -1 esté, indica una relación inversamente proporcional (cuanto más se incremente una, más se decrementa la otra). Si $X$ e $Y$ son independientes, $\rho$ tiende a 0.</p>
-<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Correlacion_de_atributos_1.PNG" alt="drawing" width="40%" height="40%"/></div><p>Podemos notar también que la tangente de la recta de regresión lineal tiene una relación con el coeficiente de Pearson, dicha relación sigue que:</p>
+<p><div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Correlacion_de_atributos_1.PNG" alt="drawing" width="100%" height="100%"/></div><br/></p>
+<p>Podemos notar también que la tangente de la recta de regresión lineal tiene una relación con el coeficiente de Pearson, dicha relación sigue que:</p>
 <p>$$\rho=m \dfrac{S_x}{S_y}$$</p>
 <p>Donde $m$ es la tangente de la recta de regresión.</p>
 <p>En otras palabras, la correlación refleja la asociación y la cantidad de variabilidad entre las dos variables.</p>
 <p>Cabe destacar que la correlación no es igual a la tangente (es una medida estandarizada de la variabilidad de los datos). Por ejemplo, es posible tener un valor muy bajo para la tangente y sin embargo tener una correlación muy alta.</p>
-<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Correlacion_de_atributos_2.PNG" alt="drawing" width="40%" height="40%"/></div><p>No hace falta agregar, que la correlación es altamente susceptiva a los valores anómalos.</p>
+<p><div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Correlacion_de_atributos_2.PNG" alt="drawing" width="100%" height="100%"/></div><br/></p>
+<p>No hace falta agregar, que la correlación es altamente susceptiva a los valores anómalos.</p>
 <p>Otra forma de interpretar la correlación de Pearson, es utilizar el coeficiente de determinación $R^2$. Mientras $\rho$ no tienen unidad, el cuadrado de $\rho$ es interpretado como la proporción que varía la variable $Y$ explicada por la $X$. Ej:</p>
 <p>$$\rho = -0.5 \rightarrow (-0.5)^2 * 100 = 42\%$$</p>
 <p>O sea, 42% de variación de $Y$ puede ser explicada por $X$.</p>
@@ -1212,7 +1208,8 @@ Por varios motivos:</p>
 <p>Para muestras mayores de 20 observaciones, se puede utilizar la siguiente aproximación (distribución t-Student):</p>
 <p>$$t = \frac{\rho}{\sqrt{\frac{(1 - \rho^2)}{(n - 2)}}}$$</p>
 <p>En los siguientes ejemplos podemos ver como se comparan Spearman con Pearson:</p>
-<div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Correlacion_de_atributos_3.PNG" alt="drawing" width="40%" height="40%"/></div><p>El hecho de que estos métodos no den que los datos estén relacionados, no significa que no lo estén. El primero (Pearson) solamente indica una relación lineal, mientras el segundo indica si hay una relación creciente o decreciente (no necesariamente lineal).</p>
+<p><div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Correlacion_de_atributos_3.PNG" alt="drawing" width="100%" height="100%"/></div><br/></p>
+<p>El hecho de que estos métodos no den que los datos estén relacionados, no significa que no lo estén. El primero (Pearson) solamente indica una relación lineal, mientras el segundo indica si hay una relación creciente o decreciente (no necesariamente lineal).</p>
 
 </div>
 </div>
@@ -2399,12 +2396,12 @@ dtype: int64</pre>
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/python.html">python</a>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/ml.html">ml</a>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/ipython.html">ipython</a>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/atributos.html">atributos</a>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/correlacion.html">correlación</a>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/pearson.html">pearson</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/python.html">Python</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/correlacion-de-atributos.html">Correlación de Atributos</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/pearson.html">Pearson</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/spearman.html">Spearman</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/kendall.html">Kendall</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/pandas.html">Pandas</a>
     </p>
   </div>
 
@@ -2448,9 +2445,13 @@ dtype: int64</pre>
 
   
   
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" async="async"></script>
-  <script type="text/javascript" src="https://brunomaso1.github.io/ml-porfolio/theme/js/base.js" async="async"></script>
+ 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+	<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" async="async"></script>
+	<script type="text/javascript" src="https://brunomaso1.github.io/ml-porfolio/theme/js/base.js" async="async"></script>
   
 </body>
 </html>

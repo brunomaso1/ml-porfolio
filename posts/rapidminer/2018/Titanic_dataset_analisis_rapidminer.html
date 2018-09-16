@@ -10,19 +10,19 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/stylesheet/style.min.css">
+	<link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/stylesheet/style.min.css"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="https://brunomaso1.github.io/ml-porfolio/theme/pygments/github.min.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
   
 
+    <link href="https://brunomaso1.github.io/ml-porfolio/static/custom.css" rel="stylesheet">
 
-    <link href="https://brunomaso1.github.io/ml-porfolio/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Portafolio de Machine Learning Atom">
 
 
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://brunomaso1.github.io/ml-porfolio/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://brunomaso1.github.io/ml-porfolio/img/favicon.ico" type="image/x-icon">
 
 
     <!-- Chrome, Firefox OS and Opera -->
@@ -35,27 +35,25 @@
     <!-- Microsoft EDGE -->
     <meta name="msapplication-TileColor" content="#333333">
 
-<meta name="author" content="Bruno Masoller" />
-<meta name="description" content="Analisis de los datos del titanic para luego ser procesados por un modelo de ML." />
-<meta name="keywords" content="crisp-dm, process, models, algorithms">
+<meta name="author" content="me" />
+<meta name="description" content="Análisis de los datos del Titanic para luego ser procesados por un modelo de ML." />
+<meta name="keywords" content="Rapidminer, Titanic">
 
 <meta property="og:site_name" content="Portafolio de Machine Learning"/>
-<meta property="og:title" content="ANÁLISIS DEL DATASET &#34;TITANIC&#34; - RAPIDMINER"/>
-<meta property="og:description" content="Analisis de los datos del titanic para luego ser procesados por un modelo de ML."/>
+<meta property="og:title" content="ANÁLISIS DEL DATASET TITANIC - RAPIDMINER"/>
+<meta property="og:description" content="Análisis de los datos del Titanic para luego ser procesados por un modelo de ML."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="https://brunomaso1.github.io/ml-porfolio/posts/rapidminer/2018/Titanic_dataset_analisis_rapidminer.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2018-08-30 12:00:00-03:00"/>
 <meta property="article:modified_time" content="2018-08-30 12:00:00-03:00"/>
-<meta property="article:author" content="https://brunomaso1.github.io/ml-porfolio/author/bruno-masoller.html">
-<meta property="article:section" content="Rapidminer"/>
-<meta property="article:tag" content="crisp-dm"/>
-<meta property="article:tag" content="process"/>
-<meta property="article:tag" content="models"/>
-<meta property="article:tag" content="algorithms"/>
+<meta property="article:author" content="https://brunomaso1.github.io/ml-porfolio/author/me.html">
+<meta property="article:section" content="Posts, Rapidminer"/>
+<meta property="article:tag" content="Rapidminer"/>
+<meta property="article:tag" content="Titanic"/>
 <meta property="og:image" content="https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120">
 
-  <title>Portafolio de Machine Learning &ndash; ANÁLISIS DEL DATASET &#34;TITANIC&#34; - RAPIDMINER</title>
+  <title>Portafolio de Machine Learning &ndash; ANÁLISIS DEL DATASET TITANIC - RAPIDMINER</title>
 
 </head>
 <body>
@@ -67,15 +65,6 @@
       <h1><a href="https://brunomaso1.github.io/ml-porfolio">Bruno Masoller</a></h1>
 
 <p>Portafolio de Machine Learning</p>
-      <nav>
-        <ul class="list">
-          <li><a href="https://brunomaso1.github.io/ml-porfolio/#bienvenido-a-mi-portafolio">BIENVENIDO A MI PORTAFOLIO</a></li>
-          <li><a href="https://brunomaso1.github.io/ml-porfolio/pages/matriz-ml.html#matriz-ml">MATRIZ DE TEMAS DEL PORTAFOLIO</a></li>
-          <li><a href="https://brunomaso1.github.io/ml-porfolio/pages/crisp-dm.html#crisp-dm">PROCESO CRISP-DM</a></li>
-
-        </ul>
-      </nav>
-
       <ul class="social">
         <li><a class="sc-linkedin" href="https://www.linkedin.com/in/brunomaso1" target="_blank"><i class="fa fa-linkedin"></i></a></li>
         <li><a class="sc-github" href="https://github.com/brunomaso1" target="_blank"><i class="fa fa-github"></i></a></li>
@@ -89,59 +78,63 @@
     <nav>
       <a href="https://brunomaso1.github.io/ml-porfolio">Home</a>
 
-      <a href="/blog_index.html">Index</a>
-      <a href="/categories.html">Categories</a>
-      <a href="/tags.html">Tags</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/pages/crisp-dm.html">CRISP-DM</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/pages/matriz-ml.html">Matriz</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/blog_index.html">Index</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/categories.html">Categories</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tags.html">Tags</a>
 
-      <a href="https://brunomaso1.github.io/ml-porfolio/feeds/all.atom.xml">Atom</a>
 
     </nav>
 
 <article class="single">
   <header>
       
-    <h1 id="posts/rapidminer/2018/Titanic_dataset_analisis_rapidminer">ANÁLISIS DEL DATASET "TITANIC" - RAPIDMINER</h1>
-    <p>
-      Posted on jue 30 agosto 2018 in <a href="https://brunomaso1.github.io/ml-porfolio/category/rapidminer.html">Rapidminer</a>
-
-    </p>
+    <h1 id="posts/rapidminer/2018/Titanic_dataset_analisis_rapidminer">ANÁLISIS DEL DATASET TITANIC - RAPIDMINER</h1>
   </header>
 
 
   <div>
-    <h2>Tabla de contenido:</h2>
-<ol>
-<li><a href="#1-bullet">Entendimiento del negocio</a></li>
-<li><a href="#2-bullet">Preparación de los datos</a><ol>
-<li><a href="#2.1-bullet">Importaciones</a></li>
-<li><a href="#2.2-bullet">Cargar los datos</a></li>
-<li><a href="#2.3-bullet">Tratamiento de los datos</a><ol>
-<li><a href="#2.3.1-bullet">Chequear valores faltantes</a></li>
-<li><a href="#2.3.2-bullet">Eliminar faltantes</a></li>
-<li><a href="#2.3.3-bullet">Imputar faltantes</a></li>
-</ol>
-</li>
-<li><a href="#2.4-bullet">Visualizacion de los datos</a></li>
-<li><a href="#2.5-bullet">Feature Engineering (Ingeniería de Características)</a></li>
-</ol>
-</li>
-<li><a href="#3-bullet">Modelado</a><ol>
-<li><a href="#3.1-bullet">Preparación del modelado</a></li>
-<li><a href="#3.2-bullet">Entrenamiento de los modelos</a><ol>
-<li><a href="#3.2.1-bullet">SVC</a></li>
-<li><a href="#3.2.2-bullet">Linear SVC</a></li>
-<li><a href="#3.2.3-bullet">Random Forest</a></li>
-<li><a href="#3.2.4-bullet">Logistic Regression</a></li>
-<li><a href="#3.2.5-bullet">KNeighbors</a></li>
-<li><a href="#3.2.6-bullet">GaussianNB</a></li>
-<li><a href="#3.2.7-bullet">DecisionTree</a></li>
-</ol>
-</li>
-<li><a href="(#3.3-bullet)">Comparación de modelos</a></li>
-</ol>
-</li>
-<li><a href="#4-bullet">Evaluación</a></li>
-</ol>
+    <p><br />
+<div id="toc_container">
+<p class="toc_title">Tabla de contenido</p>
+<ul class="toc_list">
+    <li><a href="#1-bullet">1. Entendimiento del negocio</a></li>
+    <li><a href="#2-bullet">2. Preparación de los datos</a>
+        <ul>
+            <li><a href="#2.1-bullet">2.1. Importaciones</a></li>
+            <li><a href="#2.2-bullet">2.2. Cargar los datos</a></li>
+            <li><a href="#2.3-bullet">2.3. Tratamiento de los datos</a>
+                <ul>
+                    <li><a href="#2.3.1-bullet">2.3.1. Chequear valores faltantes</a></li>
+                    <li><a href="#2.3.2-bullet">2.3.2. Eliminar faltantes</a></li>
+                    <li><a href="#2.3.3-bullet">2.3.3. Imputar faltantes</a></li>
+                </ul>
+            </li>
+            <li><a href="#2.4-bullet">2.4. Visualización de los datos</a></li>
+            <li><a href="#2.5-bullet">2.5. Feature Engineering (Ingeniería de Características)</a></li>
+        </ul>
+    </li>
+    <li><a href="#3-bullet">3. Modelado</a>
+        <ul>
+            <li><a href="#3.1-bullet">3.1. Preparación del modelado</a></li>
+            <li><a href="#3.2-bullet">3.2. Entrenamiento de los modelos</a>
+                <ul>
+                    <li><a href="#3.2.1-bullet">3.2.1. SVC</a></li>
+                    <li><a href="#3.2.2-bullet">3.2.2. Linear SVC</a></li>
+                    <li><a href="#3.2.3-bullet">3.2.3. Random Forest</a></li>
+                    <li><a href="#3.2.4-bullet">3.2.4. Logistic Regression</a></li>
+                    <li><a href="#3.2.5-bullet">3.2.5. KNeighbors</a></li>
+                    <li><a href="#3.2.6-bullet">3.2.6. GaussianNB</a></li>
+                    <li><a href="#3.2.7-bullet">3.2.7. DecisionTree</a></li>
+                </ul>
+            </li>
+            <li><a href="#3.3-bullet">3.3. Comparación de modelos</a></li>
+        </ul>
+    </li>
+    <li><a href="#4-bullet">4. Evaluación</a></li>
+</ul>
+</div></p>
 <h2>Entendimiento del negocio <a class="anchor" id="1-bullet"></a></h2>
 <hr>
 <p><a href="https://brunomaso1.github.io/ml-porfolio/posts/jupyter-notebooks/2018/Correlación_de_atributos_python.html#1-bullet">Entendimiento del negocio: ANÁLISIS DEL DATASET "TITANIC" - PYTHON</a></p>
@@ -160,18 +153,22 @@ Abrimos ambos conjuntos, el de test y el de training.</p>
 <p>Cada vez que ejecutemos, Rapidminer va a ir a buscar los datos a la dirección del archivo.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_1.PNG" alt="drawing" width="12%" height="12%"/></div>
 
+<p><br/></p>
 <p>Una vez que corremos el proceso (F11), podemos ver que los datos se han cargado correctamente.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_2.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <p>Para obtener estadísticas, simplemente cambiamos a la pestaña "Statistics".
 En esta pestaña podemos ver todos los datos estadísticos de los atributos.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_3.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h3>Tratamiento de los datos <a class="anchor" id="2.3-bullet"></a></h3>
 <h4>Chequear valores faltantes <a class="anchor" id="2.3.1-bullet"></a></h4>
 <p>Para chequear los valores faltantes en Rapidminer, en la pestaña de estadísticas, nos podemos fijar en el campo "Average".</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_4.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h4>Eliminar faltantes <a class="anchor" id="2.3.2-bullet"></a></h4>
 <p>En este caso podemos ver que hay muchos atributos faltantes en edad y cabina. En este contexto:</p>
 <ul>
@@ -182,20 +179,25 @@ En esta pestaña podemos ver todos los datos estadísticos de los atributos.</p>
 <p>Para eliminar las columnas, podemos utilizar el bloque <code>Select Attributes</code>, en el parámetro <em>attribute filter type</em> seleccionamos "subset", seleccionamos <em>"Cabin"</em> y <em>"Ticket"</em> en el combo-box y chequeamos el parámetro <em>invert selection</em>. Esto eliminará solamente las columnas "Cabin" y "Ticket" de nuestro conjunto.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_5.PNG" alt="drawing" width="25%" height="25%"/></div>
 
+<p><br/></p>
 <p>Una vez que ejecutamos, podemos ver que ambos atributos han sido sacados.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_6.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h4>Imputar faltantes <a class="anchor" id="2.3.3-bullet"></a></h4>
 <p>Como la edad es muy importante para eliminar, tenemos que decidir por que valor sustituir. Para eso podemos ver la grafica para saber la distribución que siguen los datos sin dichos atributos faltantes.
 Primeramente utilizamos el bloque <code>Filter Examples</code>, seleccionamos el parámetro <em>condition class</em> a "no_missing_attributes" y ejecutamos.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_7.PNG" alt="drawing" width="30%" height="30%"/></div>
 
+<p><br/></p>
 <p>Podemos ver que se han filtrado los atritubos faltantes.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_8.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <p>Como podemos ver, los datos tienen una distribución cuasi-normal, por lo tanto, podemos sustituir los faltantes por la media. Para sustituir los faltantes, podemos utilizar el bloque <code>Replace Missing Values</code>. Seleccionamos el parámetro <em>attribute filter type</em> en "single", ingresamos el valor "Age" y dejamos el valor por defecto en "average" para el parámetro <em>default</em>.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_9.PNG" alt="drawing" width="30%" height="30%"/><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_10.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <p>Como podemos ver, ahora no hay atributos faltantes.
 También realizamos lo mismo con el atributo "Embarked" y "Fare" (el conjunto de testing tiene algunas instancias de "Fare" vacías).</p>
 <h3>Visualizacion de los datos <a class="anchor" id="2.4-bullet"></a></h3>
@@ -211,6 +213,7 @@ Luego que filtramos y corremos el proceso, vamos a la pestaña "Charts" y selecc
 </ul>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_11.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <p>Resumen de datos:</p>
 <ul>
 <li>El total de personas que sobrevivieron es: 342<ul>
@@ -224,6 +227,7 @@ Ahora chequearemos si la clase también es importante.
 Para esto, realizamos el mismo procedimiento.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_12.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <p>Resumen de datos:</p>
 <ul>
 <li>El total de personas que sobrevivieron es: 342<ul>
@@ -243,24 +247,30 @@ Para esto, realizamos el mismo procedimiento.</p>
 </ul>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_13.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <p>También lo podemos hacer de forma inversa, o sea, la clase en función del sexo.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_14.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <p>En los ejemplos podemos ver que tanto el sexo como la clase son importantes. Si eras de clase 1, tenias mas probabilidad de salvarte que si fueras de alguna otra clase.
 Podemos realizar el mismo análisis sobre el atributo "Age".
 En este caso también queremos analizar los que no sobrevivieron, para esto conectamos la salida del resto del bloque <code>Filter Examples</code>, lo cual nos devuelve los que no sobrevivieron ("Survived=0").</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_15.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <p>Una vez corremos el proceso, podemos fijarnos en ambos gráficos según la salida.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_16.PNG" alt="drawing" width="80%" height="80%"/><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_17.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <p>Podemos utilizar un "stripplot" para ver la distribución de los datos. Por ejemplo, para ver la distribución de los que sobrevivieron con respecto a la edad.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_18.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <p>Podemos ver que los pasajeros jovenes tenian mas posibilidades de salvarse.
 También Rapidminer nos brinda una matriz para ver todos los gráficos juntos.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_19.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h3>Feature Engineering (Ingeniería de Características)  <a class="anchor" id="2.5-bullet"></a></h3>
 <p>Como sexo y embarcación son atributos categóricos, los tenemos que pasar a números, ya que varios algoritmos utilizan los atributos en números. Para esto utilizamos el bloque  <code>Nominal to Numeric</code>.
 Para esto seleccionamos los siguientes parámetros en el bloque:</p>
@@ -272,9 +282,11 @@ Para esto seleccionamos los siguientes parámetros en el bloque:</p>
 </ul>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_20.PNG" alt="drawing" width="50%" height="50%"/></div>
 
+<p><br/></p>
 <p>Con estos parámetros, el bloque transformará todos los atributos a enteros, asignandole un valor a cada clase. Por ejemplo male=1 y female=0.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_21.PNG" alt="drawing" width="50%" height="50%"/><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_22.PNG" alt="drawing" width="50%" height="50%"/></div>
 
+<p><br/></p>
 <p>También podemos combinar el atributo SibSp y Parch, para saber cuan grande es la familia. Para esto utilizamos el bloque <code>Generate Attributes</code>. Concetamos la salida del bloque <code>Nominal to Numeric</code> al bloque <code>Generate Attributes</code> y seteamos los parámetros de éste bloque con los siguientes valores:</p>
 <ul>
 <li><em>function descriptions</em>:<ul>
@@ -286,6 +298,7 @@ Para esto seleccionamos los siguientes parámetros en el bloque:</p>
 <p>Esta unión de los atributos (con el objetivo de encontrar un atributo que clasifique mejor las instancias o reducir la complejidad) la podemos hacer ya que tenemos un entendimiento claro del negocio. Sin embargo, no siempre la podemos hacer si no entendemos bien el negocio. Podríamos estar introduciendo un error en el modelo.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_23.PNG" alt="drawing" width="50%" height="50%"/><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_24.PNG" alt="drawing" width="50%" height="50%"/></div>
 
+<p><br/></p>
 <p>Otro atributo interesante, es saber si se estaba solo o no. Podemos aplicar el mismo bloque con este objetivo con los siguientes parámetros:</p>
 <ul>
 <li><em>function descriptions</em>:<ul>
@@ -296,10 +309,12 @@ Para esto seleccionamos los siguientes parámetros en el bloque:</p>
 </ul>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_25.PNG" alt="drawing" width="50%" height="50%"/></div>
 
+<p><br/></p>
 <p>Una característica que en principio no parece importante es el nombre, pero de éste podemos extraer información. Utilizando los indicadores de la persona podemos deducir su estatus en la sociedad. Por ejemplo: Señor, Señora, Señorita, etc.
 Utilizamos el bloque <code>Generate Extract</code> (este bloque es hecho por la comunidad, pero Rapidminer una vez que se da cuenta que no se encuentra, nos pregunta si lo deseamos bajar), que utiliza una expresión regular para, de un atributo, generar otro.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_26.PNG" alt="drawing" width="60%" height="60%"/></div>
 
+<p><br/></p>
 <p>Para generar el atributo, seleccionamos los siguientes parámetros:</p>
 <ul>
 <li><em>source attribute</em> <span class="math">\(\rightarrow\)</span> "Name".</li>
@@ -313,6 +328,7 @@ Utilizamos el bloque <code>Generate Extract</code> (este bloque es hecho por la 
 <p>De este modo obtenemos el siguiente resultado.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_27.PNG" alt="drawing" width="50%" height="50%"/></div>
 
+<p><br/></p>
 <h2>Modelado <a class="anchor" id="3-bullet"></a></h2>
 <hr>
 <p>En esta sección probamos varios modelos de machine learning.
@@ -338,6 +354,7 @@ Rapidminer nos permite, mediante el bloque <code>Split Validation</code>, crear 
 El proceso quedaría de la siguiente forma:</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_28.PNG" alt="drawing" width="80%" height="80%"/><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_29.PNG" alt="drawing" width="60%" height="60%"/></div>
 
+<p><br/></p>
 <h3>Entrenamiento de los modelos <a class="anchor" id="3.2-bullet"></a></h3>
 <p>En esta sección se entrenan los modelos especificados anteriormente para ver cual es el que realiza la mejor predicción.
 El proceso es el siguiente:</p>
@@ -349,34 +366,42 @@ El proceso es el siguiente:</p>
 </ol>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_30.PNG" alt="drawing" width="70%" height="70%"/></div>
 
+<p><br/></p>
 <h4>SVC <a class="anchor" id="3.2.1-bullet"></a></h4>
 <p>Perfomance: <strong>71.73%</strong></p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_31.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h4>Linear SVC <a class="anchor" id="3.2.2-bullet"></a></h4>
 <p>Perfomance: <strong>78.73%</strong></p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_32.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h4>Random Forest <a class="anchor" id="3.2.3-bullet"></a></h4>
 <p>Perfomance: <strong>84.70%</strong></p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_33.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h4>Logistic Regression <a class="anchor" id="3.2.4-bullet"></a></h4>
 <p>Perfomance: <strong>80.97%</strong></p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_34.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h4>KNeighbors <a class="anchor" id="3.2.5-bullet"></a></h4>
 <p>Perfomance: <strong>61.94%</strong></p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_35.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h4>GaussianNB <a class="anchor" id="3.2.6-bullet"></a></h4>
 <p>Perfomance: <strong>82.84%</strong></p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_36.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h4>DecisionTree <a class="anchor" id="3.2.7-bullet"></a></h4>
 <p>Perfomance: <strong>79.85%</strong></p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_37.PNG" alt="drawing" width="80%" height="80%"/></div>
 
+<p><br/></p>
 <h3>Comparación de modelos <a class="anchor" id="3.3-bullet"></a></h3>
 <p>Podemos ver que el modelo de mejor performance es Random Forest:</p>
 <table>
@@ -426,10 +451,13 @@ La optimización en Rapidminer se puede realizar mediante el bloque <code>Optimi
 Una vez que incluimos el bloque, ponemos el modelo dentro del bloque, ejecutamos el optimizador y podemos ver que la performance ha mejorado.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_38.PNG" alt="drawing" width="60%" height="60%"/><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_39.PNG" alt="drawing" width="40%" height="40%"/><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Titanic_dataset_analisis_rapidminer_40.PNG" alt="drawing" width="70%" height="70%"/></div>
 
+<p><br/></p>
 <h2>Evaluación <a class="anchor" id="4-bullet"></a></h2>
 <hr>
-<p>Podemos obtener el proceso entero en el siguiente link:
-- <a href="https://brunomaso1.github.io/ml-porfolio/posts/rm-processes/analisis_del_dataset_titanic-rapidminer.rmp">Rapidminer-Process</a></p>
+<p>Podemos obtener el proceso entero en el siguiente link:</p>
+<ul>
+<li><a href="https://brunomaso1.github.io/ml-porfolio/posts/rm-processes/analisis_del_dataset_titanic-rapidminer.rmp">Rapidminer-Process</a></li>
+</ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -488,10 +516,8 @@ Una vez que incluimos el bloque, ponemos el modelo dentro del bloque, ejecutamos
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/crisp-dm.html">crisp-dm</a>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/process.html">process</a>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/models.html">models</a>
-      <a href="https://brunomaso1.github.io/ml-porfolio/tag/algorithms.html">algorithms</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/rapidminer.html">Rapidminer</a>
+      <a href="https://brunomaso1.github.io/ml-porfolio/tag/titanic.html">Titanic</a>
     </p>
   </div>
 
@@ -535,9 +561,13 @@ Una vez que incluimos el bloque, ponemos el modelo dentro del bloque, ejecutamos
 
   
   
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" async="async"></script>
-  <script type="text/javascript" src="https://brunomaso1.github.io/ml-porfolio/theme/js/base.js" async="async"></script>
+ 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+	<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" async="async"></script>
+	<script type="text/javascript" src="https://brunomaso1.github.io/ml-porfolio/theme/js/base.js" async="async"></script>
   
 </body>
 </html>
