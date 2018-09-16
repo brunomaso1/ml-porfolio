@@ -1,7 +1,7 @@
 Title: CORRELACIÓN DE ATRIBUTOS - PYTHON
 Slug: posts/jupyter-notebooks/2018/Correlación_de_atributos_python
 Date: 2018-09-4 12:00
-Category: posts
-Tags: python, ml, ipython, atributos, correlación, pearson
+Category: Posts
+Tags: Python, Correlación de Atributos, Pearson, Spearman, Kendall, Pandas
 Author: me
 Summary: Marco teórico explicando las correlaciones entre los atributos.

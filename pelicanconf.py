@@ -10,7 +10,7 @@ SITEURL = ''
 SITESUBTITLE = 'Portafolio de Machine Learning'
 SITEDESCRIPTION = 'Portafolio que muestra articulos de ML, desarrollados tanto en Python como RapidMiner'
 SITELOGO = 'https://s.gravatar.com/avatar/38da6c883dc55b18f3ac1fb8d25bed67?s=120'
-FAVICON = '/img/favicon.ico'
+FAVICON = SITEURL + '/img/favicon.ico'
 BROWSER_COLOR = '#333333'
 #PYGMENTS_STYLE = 'fruity' # Para poner un tema de este estilo, hay que sustituir los area_input que genera el plugin ipynb. Este plugin genera un fondo blanco, hay que sustituirlo por negro con javascript.
 
@@ -47,8 +47,10 @@ JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 SOCIAL = (('linkedin', 'https://www.linkedin.com/in/brunomaso1'),
           ('github', 'https://github.com/brunomaso1'))
 
-MENUITEMS = (('Index', SITEURL + '/blog_index.html'),
-             ('Categories', SITEURL + '/categories.html'),
+MENUITEMS = (('CRISP-DM', SITEURL + '/pages/crisp-dm.html'),
+			('Matriz', SITEURL + '/pages/matriz-ml.html'),
+			('Index', SITEURL + '/blog_index.html'),
+			('Categories', SITEURL + '/categories.html'),			 
              ('Tags', SITEURL + '/tags.html'),)
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -70,10 +72,10 @@ PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['ipynb.markup', 'i18n_subsites', 'assets', 'render_math']
 I18N_TEMPLATES_LANG = 'en'
 
-STATIC_PATHS = ['img', 'posts/post-img', 'posts/post-datasets',  'posts/rm-processes']
+STATIC_PATHS = ['img', 'posts/post-img', 'posts/post-datasets',  'posts/rm-processes', 'extra']
 
-#EXTRA_PATH_METADATA = {
-#    'extra/custom.css': {'path': 'static/custom.css'},
-#}
+EXTRA_PATH_METADATA = {
+   'extra/custom.css': {'path': 'static/custom.css'},
+}
 
-#CUSTOM_CSS = 'static/custom.css'
+CUSTOM_CSS = 'static/custom.css'

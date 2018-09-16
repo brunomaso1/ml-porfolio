@@ -1,7 +1,7 @@
-Title: ANÁLISIS DEL DATASET "TITANIC" - PYTHON
+Title: ANÁLISIS DEL DATASET TITANIC - PYTHON
 Slug: posts/jupyter-notebooks/2018/Titanic_dataset_analisis_python
 Date: 2018-08-30 12:00
-Category: posts
-Tags: python, ml, ipython
+Category: Posts
+Tags: Python, Pandas, Titanic, Scikitlearn, Seaborn
 Author: me
-Summary: Analisis de los datos del titanic para luego ser procesados por un modelo de ML.
+Summary: Análisis de los datos del Titanic para luego ser procesados por un modelo de ML.

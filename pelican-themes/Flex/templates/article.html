@@ -18,15 +18,6 @@
       {{ translations.translations_for(article) }}
     {% endif %}
     <h1 id="{{ article.slug }}">{{ article.title }}</h1>
-    <p>
-      {{ _('Posted on %(when)s in %(category)s',
-           when=article.locale_date,
-           category='<a href="%s/%s">%s</a>'|format(SITEURL, article.category.url, article.category)|safe) }}
-
-      {% if 'post_stats' in PLUGINS %}
-        &#8226; {{ article.stats['read_mins'] }} min read
-      {% endif %}
-    </p>
   </header>
 
   {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.article_top %}
