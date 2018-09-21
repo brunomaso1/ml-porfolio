@@ -27,11 +27,6 @@ Summary: El proceso CRISP-DM.
 			<li><a href="#4.1-bullet">4.1. Ejemplos</a></li>
 		</ul>
 	</li>
-	<li><a href="#4-bullet">4. Preparación de los datos</a>
-		<ul>
-			<li><a href="#4.1-bullet">4.1. Ejemplos</a></li>
-		</ul>
-	</li>
 	<li><a href="#5-bullet">5. Modelado</a>
 		<ul>
 			<li><a href="#5.1-bullet">5.1. Ejemplos</a></li>
