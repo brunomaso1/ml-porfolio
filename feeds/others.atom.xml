@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Portafolio de Machine Learning - Others</title><link href="https://brunomaso1.github.io/ml-porfolio/" rel="alternate"></link><link href="https://brunomaso1.github.io/ml-porfolio/feeds/others.atom.xml" rel="self"></link><id>https://brunomaso1.github.io/ml-porfolio/</id><updated>2018-08-30T12:00:00-03:00</updated><entry><title>CHEATSHEET Y REFERENCIAS</title><link href="https://brunomaso1.github.io/ml-porfolio/posts/other/2018/ML_cheatsheet_and_references.html" rel="alternate"></link><published>2018-08-30T12:00:00-03:00</published><updated>2018-08-30T12:00:00-03:00</updated><author><name>Bruno Masoller</name></author><id>tag:brunomaso1.github.io,2018-08-30:/ml-porfolio/posts/other/2018/ML_cheatsheet_and_references.html</id><summary type="html">&lt;p&gt;Trucos y references.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Tabla de contenido:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="#1-bullet"&gt;Markdown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#2-bullet"&gt;LaTeX&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#3-bullet"&gt;Pandas&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Markdown &lt;a class="anchor" id="1-bullet"&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet"&gt;Markdown Cheatsheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;LaTeX &lt;a class="anchor" id="2-bullet"&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics"&gt;LaTeX Reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.codecogs.com/latex/eqneditor.php"&gt;LaTeX Editor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Pandas &lt;a class="anchor" id="3-bullet"&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.dataquest.io/blog/pandas-cheat-sheet/"&gt;Pandas Cheatsheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="references"></category></entry></feed>
