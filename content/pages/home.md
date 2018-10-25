@@ -20,11 +20,10 @@ Como soy de la rama de la Informática, estoy muy tentando a programar los model
 
 ## Como leer el blog
 
-Hay tres formas de leer este blog:
+Hay dos formas de leer este blog:
 
 1. Siguiendo el proceso CRISP-DM: [Proceso CRISP-DM]({filename}/pages/crisp-dm.md)
 2. Buscando un post específico: <a href="blog_index.html">Indice</a>
-3. Utilizando la matriz de problemas y algoritmos: [Matriz de algoritmos y problemas]({filename}/pages/matriz-ml.md)
 
 ## Blog
 
