@@ -106,22 +106,22 @@ Según los [metadatos](https://catalogodatos.gub.uy/dataset/28b09caf-a138-4942-a
 
 Los atributos y su descripción son:
 
-- tipo_prestacion: Tipo de prestación $\rightarrow$ Tipo: <span style="color:orange">**BINOMIAL** ("Acto Médico"; "Inicio de Tratamiento con medicamentos")</span>
-- area: Área de la prestación $\rightarrow$ Tipo: <span style="color:orange">**POLINOMIAL** ("MAC CARDIOLOGÍA"; ACTOS NEFROLOGÍA"; ...)</span>
-- prestacion_cod: Código de la prestación $\rightarrow$ Tipo: <span style="color:orange">**POLINOMIAL** ("101"; "1201"; ...)</span>
-- prestacion_desc: Descripción de la prestación $\rightarrow$ Tipo: <span style="color:orange">**POLINOMIAL** ("Protesis de rodilla - Implante"; "Cirugía cardíaca adultos"; ...)</span>
-- fecha_solicitud: Fecha de solicitud (Date).
-- estado_solicitud: Estado de la solicitud (String).
-- fecha_autorizacion: Fecha de autorización (Date).
-- Paciente: Número de paciente (Integer).
-- Edad_años: Edad en años (Integer).
-- Sexo: Sexo (String).
-- Departamento_residencia: Departamento de residencia del paciente (String).
-- prestador_salud: Prestador de salud (String).
-- prestador_departamento: Departamento del prestador de salud (String).
-- prestador_tipo: Tipo de prestador (String).
-- medico_solicitante: Médico solicitante (String).
-- imae: IMAE (String).
+- ```tipo_prestacion```: Tipo de prestación $\rightarrow$ *Tipo:* <span style="color:orange">**BINOMIAL** ("Acto Médico"; "Inicio de Tratamiento con medicamentos")</span>
+- ```area```: Área de la prestación $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("MAC CARDIOLOGÍA"; ACTOS NEFROLOGÍA"; ...)</span>
+- ```prestacion_cod```: Código de la prestación $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("101"; "1201"; ...)</span>
+- ```prestacion_desc```: Descripción de la prestación $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("Protesis de rodilla - Implante"; "Cirugía cardíaca adultos"; ...)</span>
+- ```fecha_solicitud```: Fecha de solicitud (Date) $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("08-11-2016"; "05-08-2016"; ...)</span>
+- ```estado_solicitud```: Estado de la solicitud (String) $\rightarrow$ *Tipo:* <span style="color:orange">**BINOMIAL** ("AUTORIZADO"; "NO AUTORIZADO")</span>
+- ```fecha_autorizacion```: Fecha de autorización (Date) $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("08-11-2016"; "05-08-2016"; ...)</span>
+- ```Paciente```: Número de paciente (Integer) $\rightarrow$ *Tipo:* <span style="color:orange">**ENTERO**</span>
+- ```Edad_años```: Edad en años (Integer) $\rightarrow$ *Tipo:* <span style="color:orange">**ENTERO**</span>
+- ```Sexo```: Sexo (String) $\rightarrow$ *Tipo:* <span style="color:orange">**BINOMIAL** ("M"; "F")</span>
+- ```Departamento_residencia```: Departamento de residencia del paciente (String) $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("MONTEVIDEO"; "FLORES"; ...)</span>
+- ```prestador_salud```: Prestador de salud (String) $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("CASMU"; "COSEM"; ...)</span>
+- ```prestador_departamento```: Departamento del prestador de salud (String) $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("MONTEVIDEO"; "FLORES"; ...)</span>
+- ```prestador_tipo```: Tipo de prestador (String) $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("OTRO"; "IMAC"; ...)</span> 
+- ```medico_solicitante```: Médico solicitante (String) $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("TOMAS DIESTE FRIEDHEIN"; "BRUNO MASOLLER"; ...)</span>
+- ```imae```: IMAE (String) $\rightarrow$ *Tipo:* <span style="color:orange">**POLINOMIAL** ("COMEF"; "CAMOC"; ...)</span>
 
 ### 2.2. Análisis de los atributos <a class="anchor" id="2.2-bullet"></a>
 
@@ -131,24 +131,22 @@ En esta sección se hace un análisis previo de los atributos.
 
 La importancia de los atributos con respecto al contexto es muy importante, ya que atributos que no tienen importancia dado el contexto, pueden afectar la predicción final.
 
-- tipo_prestacion: Tipo de prestación (String) $\Rightarrow$ El tipo de prestación es un dato importante ya que indica si es un acto médico o un medicamento. <span style="color:green">IMPORTANTE</span>
-- area: Área de la prestación (String) $\Rightarrow$
-- prestacion_cod: Código de la prestación (Integer) $\Rightarrow$
-- prestacion_desc: Descripción de la prestación (String) $\Rightarrow$
-- fecha_solicitud: Fecha de solicitud (Date) $\Rightarrow$
-- estado_solicitud: Estado de la solicitud (String) $\Rightarrow$
-- fecha_autorizacion: Fecha de autorización (Date) $\Rightarrow$
-- Paciente: Número de paciente (Integer) $\Rightarrow$
-- Edad_años: Edad en años (Integer) $\Rightarrow$
-- Sexo: Sexo (String) $\Rightarrow$
-- Departamento_residencia: Departamento de residencia del paciente (String) $\Rightarrow$
-- prestador_salud: Prestador de salud (String) $\Rightarrow$
-- prestador_departamento: Departamento del prestador de salud (String) $\Rightarrow$
-- prestador_tipo: Tipo de prestador (String) $\Rightarrow$
-- medico_solicitante: Médico solicitante (String) $\Rightarrow$
-- imae: IMAE (String) $\Rightarrow$
-
-
+- ```tipo_prestacion```: Tipo de prestación (String) $\Rightarrow$ El tipo de prestación es un dato importante ya que indica si es un acto médico o un medicamento. <span style="color:green">IMPORTANTE</span>
+- ```area```: Área de la prestación (String) $\Rightarrow$ El área de prestación es importante, ya que indica el tipo de tratamiento que se ha realizado. <span style="color:green">IMPORTANTE</span>
+- ```prestacion_cod```: Código de la prestación (Integer) $\Rightarrow$ El código de prestación es el tipo de tratamiento. <span style="color:green">IMPORTANTE</span>
+- ```prestacion_desc```: Descripción de la prestación (String) $\Rightarrow$ Es la descripción de la presentación. Es el mismo atributo que prestacion_cod. <span style="color:red">NO IMPORTANTE</span>
+- ```fecha_solicitud```: Fecha de solicitud (Date) $\Rightarrow$ Es la descripción de la presentación. Es el mismo atributo que prestacion_cod <span style="color:red">NO IMPORTANTE</span>
+- ```estado_solicitud```: Estado de la solicitud (String) $\Rightarrow$
+- ```fecha_autorizacion```: Fecha de autorización (Date) $\Rightarrow$
+- ```Paciente```: Número de paciente (Integer) $\Rightarrow$
+- ```Edad_años```: Edad en años (Integer) $\Rightarrow$
+- ```Sexo```: Sexo (String) $\Rightarrow$
+- ```Departamento_residencia```: Departamento de residencia del paciente (String) $\Rightarrow$
+- ```prestador_salud```: Prestador de salud (String) $\Rightarrow$
+- ```prestador_departamento```: Departamento del prestador de salud (String) $\Rightarrow$
+- ```prestador_tipo```: Tipo de prestador (String) $\Rightarrow$
+- ```medico_solicitante```: Médico solicitante (String) $\Rightarrow$
+- ```imae```: IMAE (String) $\Rightarrow$
 
 ## 3. Preparación de los datos <a class="anchor" id="3-bullet"></a>
 
