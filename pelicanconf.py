@@ -48,7 +48,6 @@ SOCIAL = (('linkedin', 'https://www.linkedin.com/in/brunomaso1'),
           ('github', 'https://github.com/brunomaso1'))
 
 MENUITEMS = (('CRISP-DM', SITEURL + '/pages/crisp-dm.html'),
-			('Matriz', SITEURL + '/pages/matriz-ml.html'),
 			('Index', SITEURL + '/blog_index.html'),
 			('Categories', SITEURL + '/categories.html'),			 
              ('Tags', SITEURL + '/tags.html'),)

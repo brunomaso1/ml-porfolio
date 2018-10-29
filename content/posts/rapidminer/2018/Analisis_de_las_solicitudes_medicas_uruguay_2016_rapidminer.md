@@ -37,11 +37,12 @@ Summary: Análisis de las solicitudes medicas de Uruguay del año 2016.
             <li><a href="#3.4-bullet">3.4. Tratamiento de los datos</a>
                 <ul>
                     <li><a href="#3.4.1-bullet">3.4.1. Sanitizar los datos</a></li>
-                    <li><a href="#3.4.2-bullet">3.4.2. Tratamiento de outliers</a></li>
-                    <li><a href="#3.4.3-bullet">3.4.3. Tratamiento de datos faltantes</a></li>
-                    <li><a href="#3.4.4-bullet">3.4.4. Feature extraction</a></li>
-                    <li><a href="#3.4.5-bullet">3.4.5. Dimension reduction</a></li>
-                    <li><a href="#3.4.6-bullet">3.4.6. Transformaciones de los datos</a></li>
+					<li><a href="#3.4.2-bullet">3.4.2. Tratamiento de datos faltantes</a></li>
+                    <li><a href="#3.4.3-bullet">3.4.3. Tratamiento de outliers</a></li>
+                    <li><a href="#3.4.4-bullet">3.4.4. Correlación de atributos</a></li>
+                    <li><a href="#3.4.5-bullet">3.4.5. Feature extraction</a></li>
+                    <li><a href="#3.4.6-bullet">3.4.6. Dimension reduction</a></li>
+                    <li><a href="#3.4.7-bullet">3.4.7. Transformaciones de los datos</a></li>
                 </ul>
             </li>
         </ul>
@@ -138,7 +139,7 @@ La importancia de los atributos con respecto al contexto es muy importante, ya q
 - ```fecha_solicitud``` $\Rightarrow$ Es la fecha de la solicitud, como no estamos tomando en cuenta el tiempo, para este problema no es importante este atributo. <span style="color:red">NO IMPORTANTE</span>
 - ```estado_solicitud``` $\Rightarrow$ Es la variable objetivo a predecir en este problema. <span style="color:violet">**IMPORTANTE**</span>
 - ```fecha_autorizacion``` $\Rightarrow$ Es la fecha de la autorización, como no estamos tomando en cuenta el tiempo, para este problema no es importante este atributo. <span style="color:red">NO IMPORTANTE</span>
-- ```Paciente``` $\Rightarrow$ En este caso, el numero de paciente lo tratamos como un identificador, por lo que para el entrenamiento no es importante. <span style="color:red">NO IMPORTANTE</span>
+- ```Paciente``` $\Rightarrow$ En este caso, el numero de paciente lo tratamos como un identificador, por lo que para el entrenamiento no es importante. <span style="color:blue">IDENTIFICADOR</span>
 - ```Edad_años``` $\Rightarrow$ La edad es importante para este problema. <span style="color:green">IMPORTANTE</span>
 - ```Sexo``` $\Rightarrow$ ¿Será importante el sexo para decir si autorizar una solicitud? ¿Habrá discriminación de género? XD. <span style="color:green">IMPORTANTE</span>
 - ```Departamento_residencia``` $\Rightarrow$ ¿Será importante el departamento de residencia para decir si autorizar una solicitud?. <span style="color:green">IMPORTANTE</span>
@@ -200,80 +201,49 @@ Los problemas de este tipo se suelen utilizar modelos que resuelven problemas de
 
 ### 3.1. Importación de librerías <a class="anchor" id="3.1-bullet"></a>
 
-<div style="text-align:center"><img src="https://1xltkxylmzx3z8gd647akcdvov-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/rapidminer-logo-retina.png" alt="drawing" width="80%" height="80%"/></div><br/>
+<div style="text-align:center"><img src="https://1xltkxylmzx3z8gd647akcdvov-wpengine.netdna-ssl.com/wp-content/uploads/2016/06/rapidminer-logo-retina.png" alt="drawing" width="60%" height="60%"/></div><br/>
 
 En este caso, no se importan librerías ya que se usa [Rapidminer](https://rapidminer.com/).
 
 ### 3.2. Importación de los datos <a class="anchor" id="3.2-bullet"></a>
 
-Importamos el conjunto dentro de rapidminer (mediante la opcion "Import Data"):
+Importamos el conjunto dentro de rapidminer (mediante la opción "Import Data"):
 
 <div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_1.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
 Una vez que importamos los datos en rapidminer, seleccionamos el identificador de persona como ID y el atributo *estado_solicitud* como label utilizando el operador ```Set Role```:
 
-<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_2.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_2.PNG" alt="drawing" width="50%" height="50%"/></div><br/>
 
 Podemos ver, luego que ejecutamos que rapidminer nos identifica el ID y label:
 
 <div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_3.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
+En este punto también filtramos los atributos que analizamos anteriormente y detectamos (con el conocimiento del negocio actual) que no soy relevantes para el problema en cuestión. Para esto utilizamos el operador ```Select Attributes```. 
+Estos atributos son:
+
+- *fecha_solicitud*
+- *fecha_autorizacion*
+- *prestacion_desc*
+
+Para realizar esto en rapidminer, seleccionamos los atributos en las propiedades del operador y luego seleccionamos la propiedad de "invert selection" para que nos deje solo el resto de los atributos:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_4.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
 ### 3.3. Visualización de los datos <a class="anchor" id="3.3-bullet"></a>
 
-Para visualizar los datos podemos utilizar varias de las funciones de Pandas, como lo son:
+Podemos visualizar los datos una vez que ejecutamos el proceso:
 
-- ```pd.dataframe.head()```
-- ```pd.dataframe.sample(5)```
-- ```pd.dataframe.keys()```
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_6.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
+Como resultado podemos ver que se tienen 24138 datos con atributos del tipo:
 
-```python
-# Ver los primeros 5 datos.
-data.head()
-```
+- Enteros $\rightarrow$ 2 (3 si contamos el identificador).
+- Nominales $\rightarrow$  11 (12 si contamos la variable dependiente).
 
+Para visualizar los datos utilizamos la pestaña "Statistics" de rapidminer que nos brinda resúmenes de los datos:
 
-```python
-# Ver una muestra aleatoria de 5.
-data.sample(5)
-```
-
-
-```python
-# Ver los atributos.
-data.keys()
-```
-
-Podemos ver información sobre el conjunto utilizando ```pd.dataframe.info()```
-
-
-```python
-# Todos los datos.
-data.info()
-```
-
-
-```python
-# Conjunto de testing.
-testing.info()
-```
-
-Esta función nos muestra los tipos de datos (enteros, reales, nominales, etc.) y también la cantidad de elementos que tiene el conjunto, así como también cuantos elementos tiene cada atributo.
-
-Como resultado podemos ver que se tienen:
-
-- Enteros $\rightarrow$ 35
-- Reales $\rightarrow$ 3
-- Nominales $\rightarrow$ 43
-
-Podemos visualizar las estadísticas de los datos con la funcionalidad ```pd.dataframe.describe()``` de Pandas.
-
-
-```python
-# Ver estadísticas simples de los datos.
-data.describe()
-```
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_5.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
 ### 3.4. Tratamiento de los datos <a class="anchor" id="3.4-bullet"></a>
 
@@ -282,79 +252,137 @@ En este punto se realizan las transformaciones de los datos que se adecuan a los
 #### 3.4.1. Sanitizar los datos <a class="anchor" id="3.4.1-bullet"></a>
 
 La sanitización de los datos se utiliza ya que pueden haber instancias que estén mal, en relación al tipo de dato. Este análisis es más a nivel de negocio que de dato, ya que el negocio implica reglas que los datos deben cumplir.
+Primeramente, podemos observar que el atributo *Sexo* tiene una clase "U". Esta clase no debería existir, ya que estamos hablando solamente de mujeres ("F") y hombres ("M"). No estamos teniendo en cuenta los que no se han definido todavía ("U"). Por lo tanto, declaramos esta clase como un valor faltante, para luego ser tratada. 
+Lo mismo pasa con el atributo *prestador_departamento*, la clase "SIN DATO" la tomamos como un dato faltante.
 
-#### 3.4.2. Tratamiento de outliers <a class="anchor" id="3.4.2-bullet"></a>
+Para declarar estos datos como faltantes, utilizamos el operador ```Declare Missing Value```:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_7.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+En este caso, podemos ver que el atributo *prestacion_cod* debemos re-declararlo como nominal, ya que es nuestra definición del negocio. Para esto utilizamos el operador ```Numerical to Polynominal```, y seleccionamos el atributo en cuestión:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_8.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Nota (atributos duplicados): En este caso no hay atributos duplicados, ya que cada paciente es distinto, por lo que pueden haber solicitudes iguales pero pacientes distintos.
+
+#### 3.4.2. Tratamiento datos faltantes <a class="anchor" id="3.4.2-bullet"></a>
+
+Los datos faltantes son inadmisibles para muchos modelos. El tratamiento de los datos faltantes implica imputar un valor, eliminar dichos datos o eliminar el atributo.
+
+El atributo *medico_solicitante* tiene muchos faltantes, pero estos faltantes nos importan, ya que son los casos en donde no hubo un medico involucrado en realizar la solicitud. Es por esto, que imputamos estos atributos faltantes con una nueva clase "SIN MEDICO" para así tener una comprensión de que pasa con las solicitudes que no tienen un médico como solicitante. Esta operación la realizamos con el operador ```Replace Missing Values```:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_9.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Esta acción nos ha generado una nueva clase que como podemos observar es la mayor, lo que implica que la mayor cantidad de solicitudes se envían sin un médico solicitante. Luego podremos ver si es importante o no el médico solicitante:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_10.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Para el resto de los datos, como son pocos, simplemente filtramos los atributos que no tienen datos faltantes mediante el operador ```Filter examples```:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_11.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Luego de filtrado los atributos faltantes, nos quedan **24135** datos (luego de los tratamientos, habían unicamente 3 faltantes).
+
+#### 3.4.3. Tratamiento de outliers <a class="anchor" id="3.4.3-bullet"></a>
 
 Hay muchos modelos en los cuales los outliers reducen la performance o inducen un sesgo indeseado. Por eso, se debe detectar y tratar los outliers para evitar este tipo de problemas.
 
-#### 3.4.3. Tratamiento datos faltantes <a class="anchor" id="3.4.3-bullet"></a>
+En este caso, ya hemos filtrado outliers que se sospecha que han sido mal ingresados por el sistema, sin embargo, un paso futuro sería aplicar algún algoritmo de detección de outliers para datos categóricos (como por ejemplo HBOS).
 
-Los datos faltantes son inadmitibles para muchos modelos. El tratamiento de los datos faltantes implica imputar un valor, eliminar dichos datos o eliminar el atributo.
+#### 3.4.4. Correlación de atributos <a class="anchor" id="3.4.4-bullet"></a>
 
-#### 3.4.4. Feature extraction <a class="anchor" id="3.4.4-bullet"></a>
+Hay muchos (como los modelos lineales) que la correlación de los atributos influye fuertemente en los modelos. Es por esto, que muchas veces se debe chequear la correlación de los atributos para así eliminar los que están altamente correlacionados. Previamente, convertimos los valores a numéricos utilizando un en codeado simple (asigna a cada clase un número entero). Para esto utilizamos el operador ```Nominal to Numerical```:
 
-Muchas veces se puede "diseñar" un atributo que es combinación de otros atributos (lineal o no lineal) para así obtener más información. Tal vez, este atrubto generado es un mejor predictor y se mejora la solución.
 
-#### 3.4.5. Dimension reduction <a class="anchor" id="3.4.5-bullet"></a>
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_12.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-Si las dimensiones son muy grantes, podemos aplicar técnicas que reduzcan la dimensionalidad de los atributos.
+El resultado nos quedaría:
 
-#### 3.4.6. Transofrmaciones de los datos <a class="anchor" id="3.4.6-bullet"></a>
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_13.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-En este punto se realizan las transofrmaciones necesarias de los datos. Las transformaciones incluyen desde transformaciones para reducir el sesgo o ajustar distribuciones de los datos hasta transformar los datos a valores numericos o a valores categóricos. También en este punto se incluye la estandarización y normalización si se debe hacer.
+Para calcular la matriz de correlación utilizamos el operador ```Correlation Matrix```:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_14.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Una vez que ejecutamos, obtenemos la siguiente matriz de correlación:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_15.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Si seleccionamos las correlaciones mayores al 0.5, tenemos las siguientes:
+
+- prestacion_cod vs area $\rightarrow$ 0.94934017096856
+- prestacion_cod vs imae $\rightarrow$ 0.8779232011993128
+- area vs imae $\rightarrow$ 0.8523444883137807
+- medico_solicitante vs prestacion_cod $\rightarrow$ 0.8311839275581686
+- tipo_prestacion vs area $\rightarrow$ 0.8169807912406536
+- tipo_prestacion vs imae $\rightarrow$ 0.7981221562193258
+- prestacion_cod vs tipo_prestacion $\rightarrow$ 0.7807664805402255
+- medico_solicitante vs imae $\rightarrow$ 0.7602177011564148
+
+En este punto podemos ver que hay varias relaciones, que desde el negocio tienen lógica, por ejemplo, el atributo *prestacion_cod* está altamente relacionado con el atributo *área*, ya que cada prestación (acto médico o medicamento) pertenece únicamente a un área:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_16.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+En este sentido, podemos eliminar el atributo *area* (prestacion_cod nos brinda información más detallada sobre el problema). Vamos a dividir el conjunto en los datos filtrados por la correlación y los datos no filtrados.
+
+Podemos realizar la misma suposición con respecto a los otros atributos (de un modo u otro, *area*, *imae*, *tipo_prestacion* y *medico_solicitante* son generalizaciones de *prestacion_cod*).
+
+Por lo tanto, un conjunto tiene todos los atributos luego de la preparación de los datos y el otro tiene los siguientes atributos filtrados:
+
+- *area*
+- *imae*
+- *medico_solicitante*
+- *tipo_prestacion*
+
+#### 3.4.5. Feature extraction <a class="anchor" id="3.4.5-bullet"></a>
+
+Muchas veces se puede "diseñar" un atributo que es combinación de otros atributos (lineal o no lineal) para así obtener más información. Tal vez, este atributo generado es un mejor predictor y se mejora la solución.
+
+En este caso no se ve a simple vista algún nuevo atributo que se pueda generar y que pueda mejorar la predicción.
+
+#### 3.4.6. Dimension reduction <a class="anchor" id="3.4.6-bullet"></a>
+
+Si las dimensiones son muy grandes, podemos aplicar técnicas que reduzcan la dimensionalidad de los atributos.
+
+Sin embargo este no es el caso, ya que luego de los análsiis tenemos dos conjuntos para probar, uno con 11 atributos y otro con 7.
+
+#### 3.4.7. Transformaciones de los datos <a class="anchor" id="3.4.7-bullet"></a>
+
+En este punto se realizan las transformaciones necesarias de los datos. Las transformaciones incluyen desde transformaciones para reducir el sesgo o ajustar distribuciones de los datos hasta transformar los datos a valores numéricos o a valores categóricos. También en este punto se incluye la estandarización y normalización si se debe hacer.
+
+Podríamos realizar las transformaciones necesarias, como una logarítmica para el atributo *prestador_departamento* (hay mucha diferencia entre Montevideo y los otros departamentos), pero rapidminer, en la mayoría de sus modelos utiliza, o podemos indicarle que utilice, dichas transformaciones.
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_17.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
 ## 4. Modelado <a class="anchor" id="4-bullet"></a>
 ---
 
-En esta sección probamos varios modelos de machine learning. Utilizamos la librería **sklearn**.
+En esta sección probamos varios modelos de machine learning. Utilizamos modelos predefinidos en rapdiminer.
 
 Utilizaremos los siguientes modelos:
-- ```sklearn.linear_model.LinearRegression``` $\Rightarrow$ http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
-- ```sklearn.linear_model.LassoCV``` $\Rightarrow$ http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LassoCV.html
 
-
-```python
-# Modelos a utilizar:
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import LassoCV
-```
+- ```Logistic Regression``` $\Rightarrow$  [https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/logistic_regression/logistic_regression.html](https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/logistic_regression/logistic_regression.html)
+- ```Linear Discriminant Analysis``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/discriminant_analysis/linear_discriminant_analysis.html](https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/discriminant_analysis/linear_discriminant_analysis.html)
+- ```Decision Tree``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/trees/parallel_decision_tree.html](https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/trees/parallel_decision_tree.html)
+- ```Naive Bayes``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/bayesian/naive_bayes.html](https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/bayesian/naive_bayes.html)
+- ```k-NN``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/lazy/k_nn.html](https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/lazy/k_nn.html)
+- ```SVM``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/support_vector_machines/support_vector_machine.html](https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/support_vector_machines/support_vector_machine.html)
+- ```Neural Net``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/neural_nets/neural_net.html](https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/neural_nets/neural_net.html)
+- ```Random Forest``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/trees/parallel_random_forest.html](https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/trees/parallel_random_forest.html)
+- ```Gradient Boosting Trees``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/trees/gradient_boosted_trees.html](https://docs.rapidminer.com/latest/studio/operators/modeling/predictive/trees/gradient_boosted_trees.html)
 
 Y para chequear la performance de nuestros modelos utilizamos:
-* ```sklearn.metrics.make_scorer``` $\Rightarrow$ http://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html
-* ```sklearn.metrics.accuracy_score``` $\Rightarrow$ http://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html
-* ```sklearn.model_selection.cross_val_score``` $\Rightarrow$ http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html
+
+- ```Apply Model``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/scoring/apply_model.html](https://docs.rapidminer.com/latest/studio/operators/scoring/apply_model.html)
+- ```Cross Validation``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/validation/cross_validation.html](https://docs.rapidminer.com/latest/studio/operators/validation/cross_validation.html)
+- ```Performance``` $\Rightarrow$ [https://docs.rapidminer.com/latest/studio/operators/validation/performance/performance.html](https://docs.rapidminer.com/latest/studio/operators/validation/performance/performance.html)
 
 
-```python
-from sklearn.metrics import make_scorer, accuracy_score
-from sklearn.model_selection import cross_val_score
-```
-
-Utilizaremos ```sklearn.model_selection.GridSearchCV``` (http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) para la optimización del modelo basado en fuerza bruta o ```sklearn-deap.evolutionary_search.EvolutionaryAlgorithmSearchCV``` (https://github.com/rsteca/sklearn-deap) para la optimización del modelo basado en algoritmos evolutivos.
-
-
-```python
-from sklearn.model_selection import GridSearchCV
-from evolutionary_search import EvolutionaryAlgorithmSearchCV
-```
-
-Utilizaremos ```sklearn.feature_selection.SelectFromModel``` (http://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectFromModel.html#sklearn.feature_selection.SelectFromModel) para la optimización de los parámetros.
-
-
-```python
-from sklearn.feature_selection import SelectFromModel
-```
+Utilizaremos ```Optimize Parameters (Evolutionary)``` [https://docs.rapidminer.com/latest/studio/operators/modeling/optimization/parameters/optimize_parameters_evolutionary.html](https://docs.rapidminer.com/latest/studio/operators/modeling/optimization/parameters/optimize_parameters_evolutionary.html) para la optimización del modelo basado en algoritmos evolutivos.
 
 ### 4.1. Preparación del modelado <a class="anchor" id="4.1-bullet"></a>
 
-Los conjuntos a utilizar en el modelado son:
-
-
-```python
-print('X_test:', len(X_test))
-print('X_train:', len(X_train))
-print('y_train:', len(y_train))
-```
+Los conjuntos a utilizar en el modelado son dos, uno con los atributos correlacionados y otro sin los atributos correlacionados.
 
 ### 4.2. Entrenamiento de los modelos <a class="anchor" id="4.2-bullet"></a>
 
