@@ -53,7 +53,14 @@ Summary: Análisis de las solicitudes medicas de Uruguay del año 2016.
             <li><a href="#4.2-bullet">4.2. Entrenamiento de los modelos</a>
                 <ul>
                     <li><a href="#4.2.1-bullet">4.2.1. Linear Regression</a></li>
-                    <li><a href="#4.2.1-bullet">4.2.2. Linear Regression, L1 Regularization</a></li>
+                    <li><a href="#4.2.2-bullet">4.2.2. Linear Discriminant Analysis</a></li>
+					<li><a href="#4.2.3-bullet">4.2.3. Decision Tree</a></li>
+					<li><a href="#4.2.4-bullet">4.2.4. Naive Bayes</a></li>
+					<li><a href="#4.2.5-bullet">4.2.5. k-NN</a></li>
+					<li><a href="#4.2.6-bullet">4.2.6. SVM</a></li>
+					<li><a href="#4.2.7-bullet">4.2.7. Neural Net</a></li>
+					<li><a href="#4.2.8-bullet">4.2.8. Random Forest</a></li>
+					<li><a href="#4.2.9-bullet">4.2.9. Gradient Boosting Trees</a></li>
                 </ul>
             </li>
             <li><a href="#4.3-bullet">4.3. Comparación de modelos</a></li>
@@ -168,6 +175,7 @@ Los problemas de este tipo se suelen utilizar modelos que resuelven problemas de
 			2. Distribución gaussiana de los atributos.
 			3. Remover los outliers.
 			4. Misma varianza (estandarizar los datos).
+			5. Atributos numéricos.
 			
 - **Algoritmos no lineales**:
 	- *[CART](https://en.wikipedia.org/wiki/Decision_tree_learning)*
@@ -189,7 +197,7 @@ Los problemas de este tipo se suelen utilizar modelos que resuelven problemas de
 			1. Atributos numéricos.
 	- *[Redes neuronales](https://en.wikipedia.org/wiki/Neural_network)*
 		- Restricciones:
-			1. Sin restricciones, aunque se sugieren algunas.
+			1. Atributos numéricos.
 
 - **Ensambles**:
 	- *[Random Forest](https://es.wikipedia.org/wiki/Random_forest)*
@@ -388,40 +396,145 @@ Los conjuntos a utilizar en el modelado son dos, uno con los atributos correlaci
 
 En esta sección se entrenan los modelos especificados anteriormente para ver cuál es el que realiza la mejor predicción.
 
-#### 4.2.1. Linear Regression <a class="anchor" id="4.2.1-bullet"></a> 
+#### 4.2.1. Logistic Regression <a class="anchor" id="4.2.1-bullet"></a> 
 
+Entrenamiento utilizando regresión logística:
 
-```python
-# Cargamos el modelo.
-linreg_clf = LinearRegression()
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_18.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-# Entrenamos el modelo.
-linreg_clf.fit(X_train, y_train)
+Dentro del proceso de validación cruzada, colocamos el modelo y los operadores para chequear el performance:
 
-# Validación cruzada.
-acc_linreg = cross_val_score(linreg_clf, X_train, y_train, cv=10).mean()
-print(acc_linreg)
-```
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_19.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-#### 4.2.2. Linear Regression, L1 Regularisation <a class="anchor" id="4.2.2-bullet"></a> 
+Los parámetros utilizados son los estándar de rapidminer.
+Una vez entrenamos el modelo, obtenemos los siguientes resultados:
 
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_20.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-```python
-# Cargamos el modelo.
-linl1_clf = LassoCV()
+En resumen tenemos una precisión de un **93%**.
 
-# Entrenamos el modelo.
-linl1_clf.fit(X_train, y_train)
+#### 4.2.2. Linear Discriminant Analysis <a class="anchor" id="4.2.2-bullet"></a> 
 
-# Validación cruzada.
-acc_linl1 = cross_val_score(linl1_clf, X_train, y_train, cv=10).mean()
-print(acc_linl1)
-```
+En este caso, debemos convertir los valores a números utilizando "dummy encoding", ya que es un requerimiento del algoritmo (no maneja valores nominales y rapidminer tampoco los convierte automáticamente). Para esto utilizamos el operador ```Nominal to Numerical``` con la propiedad *dummy coding*
+
+Dentro del proceso de validación cruzada, convertimos los datos a números, colocamos el modelo y los operadores para chequear el performance:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_21.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Los parámetros utilizados son los estándar de rapidminer.
+Una vez entrenamos el modelo, obtenemos los siguientes resultados:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_22.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+En resumen tenemos una precisión de un **89.77%**.
+
+En este caso podemos ver que el modelo tiene los siguientes parámetros:
+
+*Linear Discriminant Model*
+__Apriori probabilities:__
+- AUTORIZADO $\Rightarrow$ 0.8977
+- NO AUTORIZADO $\Rightarrow$ 0.1023
+
+El modelo nos da que todos los valores deben ser clasificados como AUTORIZADO, ya que la prioridad Apriori es muy superior que la NO AUTORIZADO. Esto se debe a que la prioridad Apriori es muy alta en comparación con la de NO AUTORIZADO y las probabilidades condicionales no son lo suficientemente grandes para que algún ejemplo se clasifique como NO AUTORIZADO.
+
+#### 4.2.3. Decision Tree <a class="anchor" id="4.2.3-bullet"></a> 
+
+Dentro del proceso de validación cruzada, colocamos el modelo y los operadores para chequear el performance:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_23.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Los parámetros utilizados son los estándar de rapidminer.
+Una vez entrenamos el modelo, obtenemos los siguientes resultados:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_24.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+En resumen tenemos una precisión de un **89.98%**.
+
+#### 4.2.4. Naive Bayes <a class="anchor" id="4.2.4-bullet"></a> 
+
+Dentro del proceso de validación cruzada, colocamos el modelo y los operadores para chequear el performance:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_25.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Los parámetros utilizados son los estándar de rapidminer.
+Una vez entrenamos el modelo, obtenemos los siguientes resultados:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_26.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+En resumen tenemos una precisión de un **91.72%**.
+
+#### 4.2.5. k-NN <a class="anchor" id="4.2.5-bullet"></a> 
+
+Dentro del proceso de validación cruzada, colocamos el modelo y los operadores para chequear el performance:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_27.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Los parámetros utilizados son los estándar de rapidminer.
+Una vez entrenamos el modelo, obtenemos los siguientes resultados:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_28.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+En resumen tenemos una precisión de un **88.08%**.
+
+#### 4.2.6. SVM <a class="anchor" id="4.2.6-bullet"></a> 
+
+Dentro del proceso de validación cruzada, convertimos los valores a numéricos, colocamos el modelo y los operadores para chequear el performance:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_29.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Los parámetros utilizados son los estándar de rapidminer.
+Una vez entrenamos el modelo, obtenemos los siguientes resultados:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_---.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+En resumen tenemos una precisión de un **-----%**.
+
+#### 4.2.7. Neural Net <a class="anchor" id="4.2.7-bullet"></a> 
+
+Dentro del proceso de validación cruzada, convertimos los valores a numéricos, colocamos el modelo y los operadores para chequear el performance:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_30.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Los parámetros utilizados son los estándar de rapidminer.
+Una vez entrenamos el modelo, obtenemos los siguientes resultados:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_---.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+En resumen tenemos una precisión de un **-----%**.
+
+#### 4.2.8. Random Forest <a class="anchor" id="4.2.8-bullet"></a> 
+
+Dentro del proceso de validación cruzada, colocamos el modelo y los operadores para chequear el performance:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_31.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Los parámetros utilizados son los estándar de rapidminer.
+Una vez entrenamos el modelo, obtenemos los siguientes resultados:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_---.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+En resumen tenemos una precisión de un **-----%**.
+
+#### 4.2.9. Gradient Boosting Trees <a class="anchor" id="4.2.9-bullet"></a> 
+
+Dentro del proceso de validación cruzada, colocamos el modelo y los operadores para chequear el performance:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_32.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Los parámetros utilizados son los estándar de rapidminer.
+Una vez entrenamos el modelo, obtenemos los siguientes resultados:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_---.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+En resumen tenemos una precisión de un **-----%**.
 
 ### 4.3. Comparación de modelos <a class="anchor" id="4.3-bullet"></a>
 
-Una vez que tenemos las precisiones de los modelos, podemos comparar las performance de los modelos.
+Una vez que tenemos las precisiones de los modelos, podemos comparar las performance de los modelos:
 
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_33.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Para el caso de los modelos con los atributos correlaciones filtrados:
 
 | Modelo              | Performance |
 |---------------------|-------------|
@@ -433,9 +546,23 @@ Una vez que tenemos las precisiones de los modelos, podemos comparar las perform
 | SVC                 | 71.73       |
 | k-NN                | 61.94       |
 
+Para el caso de los modelos con los atributos correlaciones no filtrados:
+
+| Modelo              | Performance |
+|---------------------|-------------|
+| Random Forest       | 84.70       |
+| Naive Bayes         | 82.84       |
+| Logistic Regression | 80.97       |
+| Decision Tree       | 79.85       |
+| Linear SVC          | 78.73       |
+| SVC                 | 71.73       |
+| k-NN                | 61.94       |
+
+Podemos ver que el algoritmo que nos birnda la mejor precision es la Regresión Logistica, y que filtrando los atributos correlacionados nos brinda una mejor predicción.
+
 ### 4.4. Feature selection <a class="anchor" id="4.4-bullet"></a>
 
-Una vez que tenemos el modelo que nos de la mejor predición, realizamos la selección de atributos utilizando algoritmos evolutivos para observar si se mejora en la predicción o no. En si, esto se debería realizar para cada algoritmo, y luego compararlos, pero consume mucho tiempo este tipo de procesos.
+Una vez que tenemos el modelo que nos de la mejor perdición, realizamos la selección de atributos utilizando algoritmos evolutivos para observar si se mejora en la predicción o no. En si, esto se debería realizar para cada algoritmo, y luego compararlos, pero consume mucho tiempo este tipo de procesos.
 
 ### 4.5. Optimización <a class="anchor" id="4.5-bullet"></a>
 
