@@ -41,8 +41,7 @@ Summary: Análisis de las solicitudes medicas de Uruguay del año 2016.
                     <li><a href="#3.4.3-bullet">3.4.3. Tratamiento de outliers</a></li>
                     <li><a href="#3.4.4-bullet">3.4.4. Correlación de atributos</a></li>
                     <li><a href="#3.4.5-bullet">3.4.5. Feature extraction</a></li>
-                    <li><a href="#3.4.6-bullet">3.4.6. Dimension reduction</a></li>
-                    <li><a href="#3.4.7-bullet">3.4.7. Transformaciones de los datos</a></li>
+                    <li><a href="#3.4.6-bullet">3.4.6. Transformaciones de los datos</a></li>
                 </ul>
             </li>
         </ul>
@@ -64,7 +63,7 @@ Summary: Análisis de las solicitudes medicas de Uruguay del año 2016.
                 </ul>
             </li>
             <li><a href="#4.3-bullet">4.3. Comparación de modelos</a></li>
-            <li><a href="#4.4-bullet">4.4. Feature selection</a></li>
+            <li><a href="#4.4-bullet">4.4. Feature selection o Dimension Reduction</a></li>
             <li><a href="#4.5-bullet">4.5. Optimización</a></li>
         </ul>
     </li>
@@ -354,7 +353,7 @@ Si las dimensiones son muy grandes, podemos aplicar técnicas que reduzcan la di
 
 Sin embargo este no es el caso, ya que luego de los análsiis tenemos dos conjuntos para probar, uno con 11 atributos y otro con 7.
 
-#### 3.4.7. Transformaciones de los datos <a class="anchor" id="3.4.7-bullet"></a>
+#### 3.4.6. Transformaciones de los datos <a class="anchor" id="3.4.6-bullet"></a>
 
 En este punto se realizan las transformaciones necesarias de los datos. Las transformaciones incluyen desde transformaciones para reducir el sesgo o ajustar distribuciones de los datos hasta transformar los datos a valores numéricos o a valores categóricos. También en este punto se incluye la estandarización y normalización si se debe hacer.
 
@@ -411,7 +410,7 @@ Una vez entrenamos el modelo, obtenemos los siguientes resultados:
 
 <div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_20.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-En resumen tenemos una precisión de un **93%**.
+En resumen tenemos una precisión de un **93.42%**.
 
 #### 4.2.2. Linear Discriminant Analysis <a class="anchor" id="4.2.2-bullet"></a> 
 
@@ -448,7 +447,7 @@ Una vez entrenamos el modelo, obtenemos los siguientes resultados:
 
 <div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_24.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-En resumen tenemos una precisión de un **89.98%**.
+En resumen tenemos una precisión de un **92.30%**.
 
 #### 4.2.4. Naive Bayes <a class="anchor" id="4.2.4-bullet"></a> 
 
@@ -485,9 +484,9 @@ Dentro del proceso de validación cruzada, convertimos los valores a numéricos,
 Los parámetros utilizados son los estándar de rapidminer.
 Una vez entrenamos el modelo, obtenemos los siguientes resultados:
 
-<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_---.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_36.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-En resumen tenemos una precisión de un **-----%**.
+En resumen tenemos una precisión de un **93.45%**.
 
 #### 4.2.7. Neural Net <a class="anchor" id="4.2.7-bullet"></a> 
 
@@ -498,9 +497,9 @@ Dentro del proceso de validación cruzada, convertimos los valores a numéricos,
 Los parámetros utilizados son los estándar de rapidminer.
 Una vez entrenamos el modelo, obtenemos los siguientes resultados:
 
-<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_---.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_37.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-En resumen tenemos una precisión de un **-----%**.
+En resumen tenemos una precisión de un **93.38%**.
 
 #### 4.2.8. Random Forest <a class="anchor" id="4.2.8-bullet"></a> 
 
@@ -511,9 +510,9 @@ Dentro del proceso de validación cruzada, colocamos el modelo y los operadores 
 Los parámetros utilizados son los estándar de rapidminer.
 Una vez entrenamos el modelo, obtenemos los siguientes resultados:
 
-<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_---.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_38.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-En resumen tenemos una precisión de un **-----%**.
+En resumen tenemos una precisión de un **89.77%**.
 
 #### 4.2.9. Gradient Boosting Trees <a class="anchor" id="4.2.9-bullet"></a> 
 
@@ -524,9 +523,9 @@ Dentro del proceso de validación cruzada, colocamos el modelo y los operadores 
 Los parámetros utilizados son los estándar de rapidminer.
 Una vez entrenamos el modelo, obtenemos los siguientes resultados:
 
-<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_---.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_39.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
-En resumen tenemos una precisión de un **-----%**.
+En resumen tenemos una precisión de un **92.27%**.
 
 ### 4.3. Comparación de modelos <a class="anchor" id="4.3-bullet"></a>
 
@@ -536,44 +535,165 @@ Una vez que tenemos las precisiones de los modelos, podemos comparar las perform
 
 Para el caso de los modelos con los atributos correlaciones filtrados:
 
-| Modelo              | Performance |
-|---------------------|-------------|
-| Random Forest       | 84.70       |
-| Naive Bayes         | 82.84       |
-| Logistic Regression | 80.97       |
-| Decision Tree       | 79.85       |
-| Linear SVC          | 78.73       |
-| SVC                 | 71.73       |
-| k-NN                | 61.94       |
+| Modelo                 | Performance |
+|------------------------|-------------|
+| SVM                    | 93.45       |
+| Logistic Regression    | 93.42       |
+| Neural Net             | 93.38       |
+| Decision Tree          | 92.30       |
+| Gradient Boosting Tree | 92.27       |
+| Naive Bayes            | 91.72       |
+| LDA                    | 89.77       |
+| Random Forest          | 89.77       |
+| k-NN                   | 88.08       |
+<br/>
 
 Para el caso de los modelos con los atributos correlaciones no filtrados:
 
-| Modelo              | Performance |
-|---------------------|-------------|
-| Random Forest       | 84.70       |
-| Naive Bayes         | 82.84       |
-| Logistic Regression | 80.97       |
-| Decision Tree       | 79.85       |
-| Linear SVC          | 78.73       |
-| SVC                 | 71.73       |
-| k-NN                | 61.94       |
+| Modelo                 | Performance |
+|------------------------|-------------|
+| SVM                    | 92.45       |
+| Logistic Regression    | 92.42       |
+| Neural Net             | 91.38       |
+| Decision Tree          | 91.30       |
+| Gradient Boosting Tree | 90.27       |
+| LDA                    | 89.77       |
+| Naive Bayes            | 89.72       |
+| Random Forest          | 85.77       |
+| k-NN                   | 81.08       |
+<br/>
 
-Podemos ver que el algoritmo que nos birnda la mejor precision es la Regresión Logistica, y que filtrando los atributos correlacionados nos brinda una mejor predicción.
+Podemos ver que el algoritmo que nos brinda la mejor precisión es SVM (Support Vector Machine), y que filtrando los atributos correlacionados nos brinda una mejor predicción.
 
-### 4.4. Feature selection <a class="anchor" id="4.4-bullet"></a>
+### 4.4. Feature selection o Dimension Reduction <a class="anchor" id="4.4-bullet"></a>
 
 Una vez que tenemos el modelo que nos de la mejor perdición, realizamos la selección de atributos utilizando algoritmos evolutivos para observar si se mejora en la predicción o no. En si, esto se debería realizar para cada algoritmo, y luego compararlos, pero consume mucho tiempo este tipo de procesos.
+
+En este caso hay muy pocos atributos, por lo que no es necesaria esta etapa. Sin embargo, probaremos aplicar un algoritmo de reducción de dimensionalidad, aunque no es necesario.
+
+- PCA:
+El Análisis de Componentes Principales es una técnica estadística para describir el conjunto de datos en términos de nuevas variables no correlacionados (componentes principales). Los componentes se ordenan por la cantidad de varianza original que describen, por lo que ésta técnica es útil para reducir la dimensionalidad del conjunto.
+
+En rapdiminer el operador utilizado para realizar un Análisis de Componentes Principales es ```Principal Component Analysis``` [https://docs.rapidminer.com/latest/studio/operators/cleansing/dimensionality_reduction/principal_component_analysis.html](https://docs.rapidminer.com/latest/studio/operators/cleansing/dimensionality_reduction/principal_component_analysis.html). 
+PCA tiene dos requerimientos importantes:
+
+- Atributos numéricos.
+- Estandarización.
+- También hay que tener en consideración que el ruido extremo puede afectar al algoritmo.
+
+Lo correcto para utilizar PCA es realizar todas las transformaciones dentro del proceso de validación cruzada:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_40.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Si utilizamos un límite de varianza del 95% (esto es perder un 5% de la información), vemos que PCA nos reduce la dimensión en 1. Esto no es mucho, ya que tenemos pocos atributos y no tiene mucho sentido aplicar PCA, pero la reducción de 1 atributo no ha hecho bajar la performance de nuestro modelo, pero si ha bajado la complejidad de los datos lo que ha permitido entrenar más rápido el modelo:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_41.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_42.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_43.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Otro dato importante, es que mirando la mantriz de varianza acumulada, podemos ver que la gráfica es casi lineal, lo que implica saltos lineales en la varianza, por lo tanto es un indicio de que hemos seleccionado bien los atributos (todos aportan información al problema):
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_44.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
 
 ### 4.5. Optimización <a class="anchor" id="4.5-bullet"></a>
 
 En esta sección se optimiza el modelo para utilizarlo en la puesta a producción.
 
+Para optimizar nuestro modelo (elegimos como modelo la Regression Logística, ya que tiene una performance similar a SVM y tiene la ventaja de ser rápido y descriptivo) utilizamos una optimización basada en algoritmos elvolutivos.
+Para esto rapidminer nos brinda el operador ```Optimize Parameters (Evolutionary)```:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_45.PNG" alt="drawing" width="20%" height="20%"/></div><br/>
+
+Dentro de dicho operador colocamos nuestro modelo de validación cruzada:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_46.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Luego, en las propiedades del operador de optimización, seleccionamos los parámetros a optimizar. Para el caso de la regresión logística, optimizaremos los siguientes parámetros:
+
+- Lambda (controla la regularización).
+- Alhpa (controla las penalidades entre la regularización L1 y L2).
+- Stopping tolerance (criterio de parada si no hay mejoras en el modelo).
+
+Una vez ejecutado el modelo, obtenemos el siguiente resultado:
+
+**ParameterSet:**
+```
+Parameter set:
+Performance: 
+PerformanceVector [
+	-----accuracy: 93.44% +/- 0.18% (micro average: 93.44%)
+	
+	ConfusionMatrix:
+		True:			AUTORIZADO	NO AUTORIZADO
+		AUTORIZADO:		21657		1576
+		NO AUTORIZADO:	8			894
+		-----precision: 99.12% +/- 0.66% (micro average: 99.11%) (positive class: NO AUTORIZADO)
+
+	ConfusionMatrix:
+		True:			AUTORIZADO	NO AUTORIZADO
+		AUTORIZADO:		21657		1576
+		NO AUTORIZADO:	8			894
+		-----recall: 36.19% +/- 1.78% (micro average: 36.19%) (positive class: NO AUTORIZADO)
+
+	ConfusionMatrix:
+		True:			AUTORIZADO	NO AUTORIZADO
+		AUTORIZADO:		21657		1576
+		NO AUTORIZADO:	8			894
+		-----AUC (optimistic): 0.847 +/- 0.011 (micro average: 0.847) (positive class: NO AUTORIZADO)
+		-----AUC: 0.847 +/- 0.011 (micro average: 0.847) (positive class: NO AUTORIZADO)
+		-----AUC (pessimistic): 0.847 +/- 0.011 (micro average: 0.847) (positive class: NO AUTORIZADO)
+	]
+	
+Logistic Regression Algorithm (3).lambda	= 1.6837864075475724E308
+
+Logistic Regression Algorithm (3).stopping_tolerance	= 1.74105289675993E308
+
+Logistic Regression Algorithm (3).alpha	= 0.5530535233935917
+```
+
+Como podemos ver, ha mejorado muy poco la performance del modelo, pero ha mejorado. 
+
 ## 5. Evaluación <a class="anchor" id="5-bullet"></a>
 ---
+
+La evaluación del modelo lo podemos hacer gracias a la potencia de los árboles de decisión y la regresión logística. Éstos permiten explicar porque se toma la decisión adecuada para cada caso.
+
+- Árbol de decisión:
+Para el análisis de las decisiones ejecutamos creamos una validación cruzada con un Arbol de decisión como modelo. La diferencia es que en los parámetros del modelos, seteamos que la máxima profundidad del árbol sea 5, ya que esto hace que sea más entendible:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_34.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+El árbol entrenado, de forma radial, es el siguiente:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_35.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+Está expresado de forma radial, pero el concepto es el mismo. Fue expresado de esta forma por el motivo de que el atributo que mejor divide a los ejemplos es *prestacion_cod*, y éste atributo tiene muchas categorías, ya que cada prestación es un tipo de enfermedad.
+Algunas reglas que podemos obtener del análisis son:
+
+- Para la prestación 801 no se ha autorizado ninguna petición, sin importar el departamento, médico, etc. La prestación 801 corresponde a un trasplante de pulmón. Se supone que la solicitud se realiza ya cuando hay un pulmón "disponible".
+- Por otro lado, la prestación 5012, que implica el inicio de un tratamiento de tricoleucemina siempre se ha aprobado.
+- Otra prestación que no se ha autorizado nunca es la 2201, que implica al acto medico de RHA (Reproducción Humana Asistida).
+- Sin embargo, la prestación 302 tiene un índice de casi 100% de aprobación. Esta prestación corresponde a actos cardíacos, más específicamente a "PCI-ATCP c/cateterismo izq".
+- Otro dato importante, es que las prestaciones 1601, 1501, 1602, 1701 y 1503 todas tienen un 100% de aprobación, aunque se producen muy pocos casos en nuestro país. Hubieron exactamente 296 de estas solicitudes. Estas prestaciones incluyen actos médicos a quemados entre otros.
+- El atributo *prestacion_cod* permite separar la mayoría de los ejemplos, por lo que vemos que lo importante es la prestación a brindar. Sin embargo, hay algunos casos, como por ejemplo la prestación 5003, que corresponde a tratamientos por Hepatitis C, tiene un porcentaje de autorización del 100% para mujeres, aunque no así para hombres (aunque la proporción es muy pequeña como para sacar alguna conclusión consistente, solo 20 registros se clasificaron así).
+
+## 6. Puesta en producción <a class="anchor" id="6-bullet"></a>
+---
+
+El pipeline completo se puede ver en la siguiente imagen:
+
+<div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_47.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+**Mejoras futuras $\Rightarrow$** Se pueden plantear muchas mejoras futuras, pero algunas recomendadas son las siguientes:
+
+- Realizar el mismo análisis de la evaluación pero incluir los atributos correlacionados, capaz obtenemos alguna diferencia en la evaluación del modelo.
+- Intentar obtener más datos de los pacientes.
+- En el mismo repositorio se encuentran datos económicos de las prestaciones, una mejora importantes sería incorporar estos datos para saber si la variable económica es un hito importante. Si por ejemplo, la prestación 801 es una de las más caras, podemos obtener un porque tiene un 100% de no autorización.
+- Obtener las solicitudes del año 2017 para poder realizar una validación del modelo.
+- Utilizar rapidminer server para subir el modelo a la nube y realizar consultas para lograr predicciones.
 
 Podemos obtener el proceso entero en el siguiente link:
 
 - [Rapidminer-Process]({filename}/posts/rm-processes/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer.rmp)
-
-## 6. Puesta en producción <a class="anchor" id="6-bullet"></a>
----
