@@ -42,6 +42,7 @@ Summary: Análisis de las solicitudes medicas de Uruguay del año 2016.
                     <li><a href="#3.4.4-bullet">3.4.4. Correlación de atributos</a></li>
                     <li><a href="#3.4.5-bullet">3.4.5. Feature extraction</a></li>
                     <li><a href="#3.4.6-bullet">3.4.6. Transformaciones de los datos</a></li>
+					<li><a href="#3.4.7-bullet">3.4.7. Dimension reduction</a></li>
                 </ul>
             </li>
         </ul>
@@ -63,7 +64,7 @@ Summary: Análisis de las solicitudes medicas de Uruguay del año 2016.
                 </ul>
             </li>
             <li><a href="#4.3-bullet">4.3. Comparación de modelos</a></li>
-            <li><a href="#4.4-bullet">4.4. Feature selection o Dimension Reduction</a></li>
+            <li><a href="#4.4-bullet">4.4. Feature selection</a></li>
             <li><a href="#4.5-bullet">4.5. Optimización</a></li>
         </ul>
     </li>
@@ -347,12 +348,6 @@ Muchas veces se puede "diseñar" un atributo que es combinación de otros atribu
 
 En este caso no se ve a simple vista algún nuevo atributo que se pueda generar y que pueda mejorar la predicción.
 
-#### 3.4.6. Dimension reduction <a class="anchor" id="3.4.6-bullet"></a>
-
-Si las dimensiones son muy grandes, podemos aplicar técnicas que reduzcan la dimensionalidad de los atributos.
-
-Sin embargo este no es el caso, ya que luego de los análsiis tenemos dos conjuntos para probar, uno con 11 atributos y otro con 7.
-
 #### 3.4.6. Transformaciones de los datos <a class="anchor" id="3.4.6-bullet"></a>
 
 En este punto se realizan las transformaciones necesarias de los datos. Las transformaciones incluyen desde transformaciones para reducir el sesgo o ajustar distribuciones de los datos hasta transformar los datos a valores numéricos o a valores categóricos. También en este punto se incluye la estandarización y normalización si se debe hacer.
@@ -360,6 +355,12 @@ En este punto se realizan las transformaciones necesarias de los datos. Las tran
 Podríamos realizar las transformaciones necesarias, como una logarítmica para el atributo *prestador_departamento* (hay mucha diferencia entre Montevideo y los otros departamentos), pero rapidminer, en la mayoría de sus modelos utiliza, o podemos indicarle que utilice, dichas transformaciones.
 
 <div style="text-align:center"><img src="{filename}/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_17.PNG" alt="drawing" width="80%" height="80%"/></div><br/>
+
+#### 3.4.7. Dimension reduction <a class="anchor" id="3.4.7-bullet"></a>
+
+Si las dimensiones son muy grandes, podemos aplicar técnicas que reduzcan la dimensionalidad de los atributos.
+
+Sin embargo este no es el caso, ya que luego de los análisis tenemos dos conjuntos para probar, uno con 11 atributos y otro con 7.
 
 ## 4. Modelado <a class="anchor" id="4-bullet"></a>
 ---
@@ -565,7 +566,7 @@ Para el caso de los modelos con los atributos correlaciones no filtrados:
 
 Podemos ver que el algoritmo que nos brinda la mejor precisión es SVM (Support Vector Machine), y que filtrando los atributos correlacionados nos brinda una mejor predicción.
 
-### 4.4. Feature selection o Dimension Reduction <a class="anchor" id="4.4-bullet"></a>
+### 4.4. Feature selection<a class="anchor" id="4.4-bullet"></a>
 
 Una vez que tenemos el modelo que nos de la mejor perdición, realizamos la selección de atributos utilizando algoritmos evolutivos para observar si se mejora en la predicción o no. En si, esto se debería realizar para cada algoritmo, y luego compararlos, pero consume mucho tiempo este tipo de procesos.
 
