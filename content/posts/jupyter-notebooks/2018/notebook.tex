@@ -1,0 +1,1126 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Voy\_preso\_o\_no\_analisis\_dataset\_penal2016\_python}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \hypertarget{toc_container}{}
+Tabla de contenido
+
+\begin{verbatim}
+<li><a href="#1-bullet">1. Entendimiento del negocio</a>
+    <ul>
+        <li><a href="#1.1-bullet">1.1. Contexto</a></li>
+        <li><a href="#1.2-bullet">1.2. DataSet</a></li>
+        <li><a href="#1.3-bullet">1.3. Objetivo</a></li>
+    </ul>
+</li>
+<li><a href="#2-bullet">2. Entendimiento de los datos</a>
+    <ul>
+        <li><a href="#2.1-bullet">2.1. Atributos</a></li>
+        <li><a href="#2.2-bullet">2.2. Análisis de los atributos</a>
+            <ul>
+                <li><a href="#2.2.1-bullet">2.2.1. Importancia</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li><a href="#3-bullet">3. Preparación de los datos</a>
+    <ul>
+        <li><a href="#3.1-bullet">3.1. Importación de librerías</a></li>
+        <li><a href="#3.2-bullet">3.2. Importación de los datos</a></li>
+        <li><a href="#3.3-bullet">3.3. Visualización de los datos</a>
+            <ul>
+                <li><a href="#3.3.1-bullet">3.3.1. Pandas-profiling</a></li>
+            </ul>
+        </li>
+        <li><a href="#3.4-bullet">3.4. Tratamiento de los datos</a>
+            <ul>
+                <li><a href="#3.4.1-bullet">3.4.1. Sanitizar los datos</a></li>
+                <li><a href="#3.4.3-bullet">3.4.2. Tratamiento de datos faltantes</a></li>
+                <li><a href="#3.4.2-bullet">3.4.3. Tratamiento de outliers</a></li>
+                <li><a href="#3.4.4-bullet">3.4.4. Correlación de atributos</a></li>
+                <li><a href="#3.4.5-bullet">3.4.5. Feature extraction</a></li>
+                <li><a href="#3.4.6-bullet">3.4.6. Transformaciones de los datos</a></li>
+                <li><a href="#3.4.7-bullet">3.4.7. Dimension reduction</a></li>                    
+            </ul>
+        </li>
+    </ul>
+</li>
+<li><a href="#4-bullet">4. Modelado</a>
+    <ul>
+        <li><a href="#4.1-bullet">4.1. Preparación del modelado</a></li>
+        <li><a href="#4.2-bullet">4.2. Entrenamiento de los modelos</a>
+            <ul>
+                <li><a href="#4.2.1-bullet">4.2.1. Linear Regression</a></li>
+                <li><a href="#4.2.1-bullet">4.2.2. Linear Regression, L1 Regularization</a></li>
+            </ul>
+        </li>
+        <li><a href="#4.3-bullet">4.3. Comparación de modelos</a></li>
+        <li><a href="#4.4-bullet">4.4. Feature selection</a></li>
+        <li><a href="#4.5-bullet">4.5. Optimización</a></li>
+    </ul>
+</li>
+<li><a href="#5-bullet">5. Evaluación</a></li>
+<li><a href="#6-bullet">6. Puesta en producción</a></li>
+\end{verbatim}
+
+    \subsection{\#\# 1. Entendimiento del negocio
+}\label{entendimiento-del-negocio}
+
+https://catalogodatos.gub.uy/dataset/penal-montevideo-2016
+
+Uruguay está en un clima político complicado. Con las elecciones del
+2019 en la puerta, surge un tema que la opocición enfoca mucho sus armas
+para plantearle lucha al gobierno de turno. El tema de la
+\textbf{SEGURIDAD}.
+
+Este año se batió un nuevo record en Uruguay. Uno que no brinda orgullo:
+\href{https://www.elpais.com.uy/informacion/policiales/record-homicidios-muertes-cuatro-meses.html}{Record
+de homicidios en cuatro meses}. El tema es que no solamente batimos el
+record en homicidios, sino que también han aumentado las
+\href{https://www.elobservador.com.uy/nota/homicidios-aumentaron-66-4-y-rapinas-un-55-8-en-el-primer-semestre-de-2018-20188218280}{rapiñas}.
+Es más, el gobierno ya reconoce el
+\href{https://www.elobservador.com.uy/nota/se-revelo-la-cifra-que-tanto-preocupa-a-bonomi-4-800-rapinas-mas-en-lo-que-va-de-2018-20186291360}{problema}
+y muchos sabemos que esto no es porque se realizan más denuncias gracias
+a la tecnología disponible.
+
+¿Pero cual es el problema de fondo? ¿Es un tema económico o cultural?
+
+    \subsubsection{1.1. Contexto }\label{contexto}
+
+El problema (o enfoque de algunos uruguayos) es que las leyes no son
+realmente fuertes con respecto a los crímenes. Cuando digo leyes, me
+refiero a las condenas por dichos crímenes. ¿Pero realmente es así?
+
+Uruguay tiene un
+\href{https://www.elpais.com.uy/informacion/uruguay-record-historico-presos.html}{record
+histórico en presos}. O sea, los crímenes están siendo identificados y
+los criminales están llendo presos. El tema no está ahí.
+
+¿Estará el tema en lo leve que son las leyes? Esto es lo que se analiza
+en este post a partir de los datos de los penales del año 2016.
+
+\textless{}br/
+
+    \subsubsection{1.2. DataSet }\label{dataset}
+
+El conjunto se puede obtener del siguiente link:
+\href{https://catalogodatos.gub.uy/dataset/72a5f9be-591d-415d-9428-970336f5e50d/resource/7ae84c9c-d04e-4e16-ba94-5e90da5cdf5e/download/basepenal2016.csv}{Datos}
+
+El dataset contiene información sobre procesos concluidos (por persona)
+en los Juzgados Letrados en lo Penal de Montevideo en el año 2016.
+
+Este dataset pertenece al gobierno uruguayo y en conjunto con AGESIC
+(Agencia de Gobierno electrónico y Sociedad de la Información y del
+Conocimiento) lo han publicado en su página de datos abiertos.
+
+    \subsubsection{1.3. Objetivo }\label{objetivo}
+
+En este post tendremos varios objetivos:
+
+\begin{itemize}
+\tightlist
+\item
+  Analizar el conjunto para ver las relaciones entre las variables y
+  poder obtener alguna conclusión del comportamiento de las mismas.
+\item
+  Realizar un modelo de predicción que permita, dado un nuevo crimen,
+  predecir si se irá preso o no.
+\end{itemize}
+
+    \subsection{\#\# 2. Entendimiento de los datos
+}\label{entendimiento-de-los-datos}
+
+Antes de comenzar con el análisis y modelado de la solución del
+problema, debemos entender que explican los atributos. En este punto se
+comprenden los atributos y se analiza su importancia para el problema y
+la solución.
+
+    \subsubsection{2.1. Atributos }\label{atributos}
+
+Según los
+\href{https://catalogodatos.gub.uy/dataset/72a5f9be-591d-415d-9428-970336f5e50d/resource/25af959a-6a27-41c1-a762-6fbba24866a4/download/metadatapenal2016.json}{metadatos}
+del dataset, el conjunto cuenta con 29 atributos, incluyendo la variable
+objetivo.
+
+Los atributos y su descripción son:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{id}: Identificación única del expediente. No se repite
+  (Integer) \(\rightarrow\) \emph{Tipo:} {\textbf{NUMERIC} ("-1: Sin
+  datos")}
+\item
+  \texttt{turno}: Es la identificación del Turno del Juzgado Letrado de
+  Penal (Integer) \(\rightarrow\) \emph{Tipo:} {\textbf{NUMERIC} ("-1:
+  Sin datos")}
+\item
+  \texttt{fecha}: Fecha de iniciado. Corresponde a la fecha del auto de
+  procesamiento (Date) \(\rightarrow\) \emph{Tipo:} {\textbf{POLINOMIAL}
+  ("01/01/1900: Sin dato"; "08/11/2016"; "05/08/2016"; ...)}
+\item
+  \texttt{tipo\_proc}: Tipo de procesamiento (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin datos"; "1: Con prisión";
+  "2: Sin prisión"; "3: No corresponde")}
+\item
+  \texttt{fsd}: Fecha de subida al despacho. Es la fecha en la que el
+  expediente sube al despacho del juez para dictar la sentencia
+  definitiva o interlocutoria que finaliza el proceso (Date)
+  \(\rightarrow\) \emph{Tipo:} {\textbf{POLINOMIAL} ("01/01/1900: Sin
+  dato"; "08/11/2016"; "05/08/2016"; ...)}
+\item
+  \texttt{fecha\_sent}: Fecha de la Sentencia. Es la fecha en la que el
+  juez dictó la sentencia definitiva o interlocutoria que finalizó el
+  proceso (Date) \(\rightarrow\) \emph{Tipo:} {\textbf{POLINOMIAL}
+  ("01/01/1900: Sin dato"; "08/11/2016"; "05/08/2016"; ...)}
+\item
+  \texttt{num\_sent}: Número de la Sentencia. Es el número de la
+  Sentencia Definitiva o Interlocutoria que da por concluído el proceso
+  (Integer) \(\rightarrow\) \emph{Tipo:} {\textbf{NUMERIC} ("-1: Sin
+  datos")}
+\item
+  \texttt{modo}: Modo de conclusión (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin datos"; "1: Sentencia
+  Definitiva"; "2: Sentencia Interlocutoria - Amnistía", "3: Sentencia
+  Interlocutoria - Clausura definitiva"; "4: Sentencia Interlocutoria -
+  Gracia"; "5: Sentencia Interlocutoria - Prescripción de la pena"; "6:
+  Sentencia Interlocutoria - Prescripción del delito"; "7: Sentencia
+  Interlocutoria - Revocación del auto de procesamiento"; "8: Sentencia
+  Interlocutoria - Sobreseimiento"; "9: Sentencia Interlocutoria -
+  Fallecimiento antes de la condena"; "10: Sentencia Interlocutoria -
+  Art. 59, Ley 14412"; "11: Sentencia Interlocutoria - Remisión")}
+\item
+  \texttt{sexo}: Sexo del encausado (String) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{BINOMIAL} ("-1: Sin dato"; "M"; "F")}
+\item
+  \texttt{edad}: Edad del encausado (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{NUMERIC} ("-1: Sin datos")}
+\item
+  \texttt{ant}: Antecedentes judiciales (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin datos"; "1: Primario"; "2:
+  Reincidente"; "3: No corresponde")}
+\item
+  \texttt{sit\_esp}: Situación especial (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin datos"; "1: Cúmulo o
+  unificación de sentencias"; "2: Ley de prensa u otros procesos por
+  audiencia"; "3: Extradición (se refiere al expediente que tramita la
+  extradición de un sujeto y no al exhorto o solicitud administrativa de
+  extradición)"; "4: Autor ininputable mayor de edad", "5: Acción de
+  amparo"; "6: No corresponde (cuando no corresponde a ninguno de los
+  casos que fueron codificados anteriormente)")}
+\item
+  \texttt{tipo\_del}: Tipo de delito (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin dato"; "1: Hurto"; "2:
+  Rapiña"; "3: Delitos previstos en la Ley de estupefacientes", "4:
+  Receptación"; "5: Lesiones personales"; "6: Homicidio", "7: Homicidio
+  culpable"; "8: Lesiones graves"; "9: Estafa"; "10: Violencia privada";
+  "11: Apropiación indebida"; "12: Atentado violento al pudor"; "13:
+  Desacato"; "14: Atentado"; "15: Ley de cheques"; "16: Falsificación o
+  alteración de certificados"; "17: Violencia domóstica"; "18: Uso de
+  documento falso público o privado"; "19: Otros"; "20: No
+  corresponde")}
+\item
+  \texttt{tipo\_del2}: Tipo de delito (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin dato"; "1: Hurto"; "2:
+  Rapiña"; "3: Delitos previstos en la Ley de estupefacientes", "4:
+  Receptación"; "5: Lesiones personales"; "6: Homicidio", "7: Homicidio
+  culpable"; "8: Lesiones graves"; "9: Estafa"; "10: Violencia privada";
+  "11: Apropiación indebida"; "12: Atentado violento al pudor"; "13:
+  Desacato"; "14: Atentado"; "15: Ley de cheques"; "16: Falsificación o
+  alteración de certificados"; "17: Violencia domóstica"; "18: Uso de
+  documento falso público o privado"; "19: Otros"; "20: No
+  corresponde")}
+\item
+  \texttt{tipo\_del3}: Tipo de delito (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin dato"; "1: Hurto"; "2:
+  Rapiña"; "3: Delitos previstos en la Ley de estupefacientes", "4:
+  Receptación"; "5: Lesiones personales"; "6: Homicidio", "7: Homicidio
+  culpable"; "8: Lesiones graves"; "9: Estafa"; "10: Violencia privada";
+  "11: Apropiación indebida"; "12: Atentado violento al pudor"; "13:
+  Desacato"; "14: Atentado"; "15: Ley de cheques"; "16: Falsificación o
+  alteración de certificados"; "17: Violencia domóstica"; "18: Uso de
+  documento falso público o privado"; "19: Otros"; "20: No
+  corresponde")}
+\item
+  \texttt{otros\_del}: Otro tipo de delito cometido (String)
+  \(\rightarrow\) \emph{Tipo:} {\textbf{POLINOMIAL} ("Sin dato";
+  "Texto")}
+\item
+  \texttt{otros2}: Otro tipo de delito cometido (String) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("Sin dato"; "Texto")}
+\item
+  \texttt{otros\_del3}: Otro tipo de delito cometido (String)
+  \(\rightarrow\) \emph{Tipo:} {\textbf{POLINOMIAL} ("Sin dato";
+  "Texto")}
+\item
+  \texttt{Tent}: Tentativa (Integer) \(\rightarrow\) \emph{Tipo:}
+  {\textbf{BINOMINAL} ("-1: Sin dato"; "0: No"; "1: Si")}
+\item
+  \texttt{Tent\_2}: Tentativa (Integer) \(\rightarrow\) \emph{Tipo:}
+  {\textbf{BINOMINAL} ("-1: Sin dato"; "0: No"; "1: Si")}
+\item
+  \texttt{Tent\_3}: Tentativa (Integer) \(\rightarrow\) \emph{Tipo:}
+  {\textbf{BINOMINAL} ("-1: Sin dato"; "0: No"; "1: Si")}
+\item
+  \texttt{agrav}: Circunstancias agravantes (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin dato"; "1: Agravado"; "2:
+  Especialmente agravado"; "3: Muy especialmente agravado")}
+\item
+  \texttt{agrav2}: Circunstancias agravantes (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin dato"; "1: Agravado"; "2:
+  Especialmente agravado"; "3: Muy especialmente agravado")}
+\item
+  \texttt{agrav3}: Circunstancias agravantes (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin dato"; "1: Agravado"; "2:
+  Especialmente agravado"; "3: Muy especialmente agravado")}
+\item
+  \texttt{multa}: Multa (Integer) \(\rightarrow\) \emph{Tipo:}
+  {\textbf{NUMERIC} ("Sin dato"; "Monto")}
+\item
+  \texttt{monto\_a}: Sentencia en años (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin dato"; "Cantidad de
+  años")}
+\item
+  \texttt{monto\_m}: Sentencia en meses (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin dato"; "Cantidad de
+  meses")}
+\item
+  \texttt{monto\_d}: Sentencia en dias (Integer) \(\rightarrow\)
+  \emph{Tipo:} {\textbf{POLINOMIAL} ("-1: Sin dato"; "Cantidad de
+  dias")}
+\item
+  \texttt{inf\_adicional}: Información adicional (String)
+  \(\rightarrow\) \emph{Tipo:} {\textbf{POLINOMIAL} ("Sin dato";
+  "Texto")}
+\end{itemize}
+
+    \subsubsection{2.2. Análisis de los atributos
+}\label{anuxe1lisis-de-los-atributos}
+
+En esta sección se hace un análisis previo de los atributos.
+
+    \paragraph{2.2.1. Importancia }\label{importancia}
+
+La importancia de los atributos con respecto al contexto es muy
+importante, ya que atributos que no tienen importancia dado el contexto,
+pueden afectar la predicción final.
+
+\begin{itemize}
+\tightlist
+\item
+  Importancia de cada atributo o indicar los que no son importantes.
+\end{itemize}
+
+    \subsection{3. Preparación de los datos
+}\label{preparaciuxf3n-de-los-datos}
+
+En esta sección se preparan los datos para ser utilizados por varios
+modelos. Se tiene en cuenta las restricciones de los modelos, por lo que
+se pueden preparar varios conjuntos para distintos modelos.
+
+\begin{itemize}
+\tightlist
+\item
+  Como se enfocan estos problemas usualmente.
+\item
+  Tipos de algoritmos a utilizar.
+\item
+  Restricciones de los datos para dichos algoritmos.
+\end{itemize}
+
+Ej, para la resgresión lineal: Requerimientos de los atributos para la
+regresión lineal:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Asumir una relación lineal entre los datos.
+\item
+  Remover el ruido.
+\item
+  Remover atributos correlacionados.
+\item
+  Distribución gaussiana.
+\item
+  Normalizar entradas.
+\end{enumerate}
+
+    \subsubsection{3.1. Importación de librerías
+}\label{importaciuxf3n-de-libreruxedas}
+
+Las librerías a utilizar son las siguientes:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{numpy} \(\rightarrow\) NumPy es el paquete fundamental para la
+  informática científica con Python (http://www.numpy.org/).
+\item
+  \texttt{pandas} \(\rightarrow\) Pandas provee herramientas para la
+  importación y el fácil análisis de los datos
+  (https://pandas.pydata.org/).
+\item
+  \texttt{matplotlib} \(\rightarrow\) Matplotlib permite graficar los
+  datos (https://matplotlib.org/).
+\item
+  \texttt{seaborn} \(\rightarrow\) Seaborn permite una linda
+  visualización estadística de los datos, en conjunción con matplotlib
+  (https://seaborn.pydata.org/).
+\item
+  \texttt{pandas\_profiling} \(\rightarrow\) Brinda un completo resumen
+  de los datos (https://github.com/pandas-profiling/pandas-profiling).
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np} 
+         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd} 
+         
+         \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k}{as} \PY{n+nn}{sns}
+         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{pyplot} \PY{k}{as} \PY{n}{plt}
+         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+         \PY{n}{sns}\PY{o}{.}\PY{n}{set\PYZus{}style}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{whitegrid}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         
+         \PY{k+kn}{import} \PY{n+nn}{pandas\PYZus{}profiling}
+         
+         \PY{k+kn}{import} \PY{n+nn}{warnings}
+         \PY{n}{warnings}\PY{o}{.}\PY{n}{filterwarnings}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ignore}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}pandas\_profiling\textbackslash{}plot.py:15: UserWarning: 
+This call to matplotlib.use() has no effect because the backend has already
+been chosen; matplotlib.use() must be called *before* pylab, matplotlib.pyplot,
+or matplotlib.backends is imported for the first time.
+
+The backend was *originally* set to 'module://ipykernel.pylab.backend\_inline' by the following code:
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}runpy.py", line 193, in \_run\_module\_as\_main
+    "\_\_main\_\_", mod\_spec)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}runpy.py", line 85, in \_run\_code
+    exec(code, run\_globals)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}ipykernel\_launcher.py", line 16, in <module>
+    app.launch\_new\_instance()
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}traitlets\textbackslash{}config\textbackslash{}application.py", line 658, in launch\_instance
+    app.start()
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}ipykernel\textbackslash{}kernelapp.py", line 486, in start
+    self.io\_loop.start()
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}tornado\textbackslash{}platform\textbackslash{}asyncio.py", line 132, in start
+    self.asyncio\_loop.run\_forever()
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}asyncio\textbackslash{}base\_events.py", line 422, in run\_forever
+    self.\_run\_once()
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}asyncio\textbackslash{}base\_events.py", line 1434, in \_run\_once
+    handle.\_run()
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}asyncio\textbackslash{}events.py", line 145, in \_run
+    self.\_callback(*self.\_args)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}tornado\textbackslash{}platform\textbackslash{}asyncio.py", line 122, in \_handle\_events
+    handler\_func(fileobj, events)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}tornado\textbackslash{}stack\_context.py", line 300, in null\_wrapper
+    return fn(*args, **kwargs)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}zmq\textbackslash{}eventloop\textbackslash{}zmqstream.py", line 450, in \_handle\_events
+    self.\_handle\_recv()
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}zmq\textbackslash{}eventloop\textbackslash{}zmqstream.py", line 480, in \_handle\_recv
+    self.\_run\_callback(callback, msg)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}zmq\textbackslash{}eventloop\textbackslash{}zmqstream.py", line 432, in \_run\_callback
+    callback(*args, **kwargs)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}tornado\textbackslash{}stack\_context.py", line 300, in null\_wrapper
+    return fn(*args, **kwargs)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}ipykernel\textbackslash{}kernelbase.py", line 283, in dispatcher
+    return self.dispatch\_shell(stream, msg)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}ipykernel\textbackslash{}kernelbase.py", line 233, in dispatch\_shell
+    handler(stream, idents, msg)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}ipykernel\textbackslash{}kernelbase.py", line 399, in execute\_request
+    user\_expressions, allow\_stdin)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}ipykernel\textbackslash{}ipkernel.py", line 208, in do\_execute
+    res = shell.run\_cell(code, store\_history=store\_history, silent=silent)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}ipykernel\textbackslash{}zmqshell.py", line 537, in run\_cell
+    return super(ZMQInteractiveShell, self).run\_cell(*args, **kwargs)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}IPython\textbackslash{}core\textbackslash{}interactiveshell.py", line 2662, in run\_cell
+    raw\_cell, store\_history, silent, shell\_futures)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}IPython\textbackslash{}core\textbackslash{}interactiveshell.py", line 2785, in \_run\_cell
+    interactivity=interactivity, compiler=compiler, result=result)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}IPython\textbackslash{}core\textbackslash{}interactiveshell.py", line 2901, in run\_ast\_nodes
+    if self.run\_code(code, result):
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}IPython\textbackslash{}core\textbackslash{}interactiveshell.py", line 2961, in run\_code
+    exec(code\_obj, self.user\_global\_ns, self.user\_ns)
+  File "<ipython-input-20-b994aea22841>", line 6, in <module>
+    get\_ipython().run\_line\_magic('matplotlib', 'inline')
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}IPython\textbackslash{}core\textbackslash{}interactiveshell.py", line 2131, in run\_line\_magic
+    result = fn(*args,**kwargs)
+  File "<decorator-gen-108>", line 2, in matplotlib
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}IPython\textbackslash{}core\textbackslash{}magic.py", line 187, in <lambda>
+    call = lambda f, *a, **k: f(*a, **k)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}IPython\textbackslash{}core\textbackslash{}magics\textbackslash{}pylab.py", line 99, in matplotlib
+    gui, backend = self.shell.enable\_matplotlib(args.gui)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}IPython\textbackslash{}core\textbackslash{}interactiveshell.py", line 3049, in enable\_matplotlib
+    pt.activate\_matplotlib(backend)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}IPython\textbackslash{}core\textbackslash{}pylabtools.py", line 311, in activate\_matplotlib
+    matplotlib.pyplot.switch\_backend(backend)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}matplotlib\textbackslash{}pyplot.py", line 231, in switch\_backend
+    matplotlib.use(newbackend, warn=False, force=True)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}matplotlib\textbackslash{}\_\_init\_\_.py", line 1422, in use
+    reload(sys.modules['matplotlib.backends'])
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}importlib\textbackslash{}\_\_init\_\_.py", line 166, in reload
+    \_bootstrap.\_exec(spec, module)
+  File "c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}matplotlib\textbackslash{}backends\textbackslash{}\_\_init\_\_.py", line 16, in <module>
+    line for line in traceback.format\_stack()
+
+
+  matplotlib.use(BACKEND)
+
+    \end{Verbatim}
+
+    \subsubsection{3.2. Importación de los datos
+}\label{importaciuxf3n-de-los-datos}
+
+Para importar los datos utilizamos Pandas (\texttt{pd.read\_csv()}), con
+los cual los cargamos en la estructura de datos \textbf{Dataframe} de
+Pandas. En este punto también se realiza los joins necesarios para
+obtener un conjunto con el que trabajar.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{c+c1}{\PYZsh{} Datos de entrenamiento.}
+         \PY{n}{training} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{datasettraining.csv}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Datos para testing.}
+         \PY{n}{testing} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{datasettesting.csv}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        FileNotFoundError                         Traceback (most recent call last)
+
+        <ipython-input-21-7f790f5735e2> in <module>()
+          1 \# Datos de entrenamiento.
+    ----> 2 training = pd.read\_csv("datasettraining.csv")
+          3 
+          4 \# Datos para testing.
+          5 testing = pd.read\_csv("datasettesting.csv")
+    
+
+        c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}pandas\textbackslash{}io\textbackslash{}parsers.py in parser\_f(filepath\_or\_buffer, sep, delimiter, header, names, index\_col, usecols, squeeze, prefix, mangle\_dupe\_cols, dtype, engine, converters, true\_values, false\_values, skipinitialspace, skiprows, nrows, na\_values, keep\_default\_na, na\_filter, verbose, skip\_blank\_lines, parse\_dates, infer\_datetime\_format, keep\_date\_col, date\_parser, dayfirst, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, escapechar, comment, encoding, dialect, tupleize\_cols, error\_bad\_lines, warn\_bad\_lines, skipfooter, doublequote, delim\_whitespace, low\_memory, memory\_map, float\_precision)
+        676                     skip\_blank\_lines=skip\_blank\_lines)
+        677 
+    --> 678         return \_read(filepath\_or\_buffer, kwds)
+        679 
+        680     parser\_f.\_\_name\_\_ = name
+    
+
+        c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}pandas\textbackslash{}io\textbackslash{}parsers.py in \_read(filepath\_or\_buffer, kwds)
+        438 
+        439     \# Create the parser.
+    --> 440     parser = TextFileReader(filepath\_or\_buffer, **kwds)
+        441 
+        442     if chunksize or iterator:
+    
+
+        c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}pandas\textbackslash{}io\textbackslash{}parsers.py in \_\_init\_\_(self, f, engine, **kwds)
+        785             self.options['has\_index\_names'] = kwds['has\_index\_names']
+        786 
+    --> 787         self.\_make\_engine(self.engine)
+        788 
+        789     def close(self):
+    
+
+        c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}pandas\textbackslash{}io\textbackslash{}parsers.py in \_make\_engine(self, engine)
+       1012     def \_make\_engine(self, engine='c'):
+       1013         if engine == 'c':
+    -> 1014             self.\_engine = CParserWrapper(self.f, **self.options)
+       1015         else:
+       1016             if engine == 'python':
+    
+
+        c:\textbackslash{}programdata\textbackslash{}anaconda3\textbackslash{}envs\textbackslash{}ml-porfolio\textbackslash{}lib\textbackslash{}site-packages\textbackslash{}pandas\textbackslash{}io\textbackslash{}parsers.py in \_\_init\_\_(self, src, **kwds)
+       1706         kwds['usecols'] = self.usecols
+       1707 
+    -> 1708         self.\_reader = parsers.TextReader(src, **kwds)
+       1709 
+       1710         passed\_names = self.names is None
+    
+
+        pandas\textbackslash{}\_libs\textbackslash{}parsers.pyx in pandas.\_libs.parsers.TextReader.\_\_cinit\_\_()
+    
+
+        pandas\textbackslash{}\_libs\textbackslash{}parsers.pyx in pandas.\_libs.parsers.TextReader.\_setup\_parser\_source()
+    
+
+        FileNotFoundError: File b'datasettraining.csv' does not exist
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Obtenemos el Id de los datos.}
+        \PY{n}{testID} \PY{o}{=} \PY{n}{testing}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Id}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        
+        \PY{c+c1}{\PYZsh{} Creamos un conjunto data que tiene ambos conjuntos, para así realizar las transformaciones a ambos también.}
+        \PY{n}{data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{concat}\PY{p}{(}\PY{p}{[}\PY{n}{training}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{SalePrice}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{testing}\PY{p}{]}\PY{p}{,} \PY{n}{keys}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{train}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{test}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Eliminamos el índice.}
+        \PY{n}{data}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Id}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsubsection{3.3. Visualización de los datos
+}\label{visualizaciuxf3n-de-los-datos}
+
+Para visualizar los datos podemos utilizar varias de las funciones de
+Pandas, como lo son:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{pd.dataframe.head()}
+\item
+  \texttt{pd.dataframe.sample(5)}
+\item
+  \texttt{pd.dataframe.keys()}
+\end{itemize}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Ver los primeros 5 datos.}
+        \PY{n}{data}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Ver una muestra aleatoria de 5.}
+        \PY{n}{data}\PY{o}{.}\PY{n}{sample}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Ver los atributos.}
+        \PY{n}{data}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    Podemos ver información sobre el conjunto utilizando
+\texttt{pd.dataframe.info()}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Todos los datos.}
+        \PY{n}{data}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Conjunto de testing.}
+        \PY{n}{testing}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    Esta función nos muestra los tipos de datos (enteros, reales, nominales,
+etc.) y también la cantidad de elementos que tiene el conjunto, así como
+también cuantos elementos tiene cada atributo.
+
+Como resultado podemos ver que se tienen:
+
+\begin{itemize}
+\tightlist
+\item
+  Enteros \(\rightarrow\) 35
+\item
+  Reales \(\rightarrow\) 3
+\item
+  Nominales \(\rightarrow\) 43
+\end{itemize}
+
+    Podemos visualizar las estadísticas de los datos con la funcionalidad
+\texttt{pd.dataframe.describe()} de Pandas.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Ver estadísticas simples de los datos.}
+        \PY{n}{data}\PY{o}{.}\PY{n}{describe}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \paragraph{3.3.1. Pandas-profiling }\label{pandas-profiling}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Generar resumen y mostrar.}
+        \PY{n}{pandas\PYZus{}profiling}\PY{o}{.}\PY{n}{ProfileReport}\PY{p}{(}\PY{n}{training}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsubsection{3.4. Tratamiento de los datos
+}\label{tratamiento-de-los-datos}
+
+En este punto se realizan las transformaciones de los datos que se
+adecuan a los modelos a utilizar.
+
+    \paragraph{3.4.1. Sanitizar los datos }\label{sanitizar-los-datos}
+
+La sanitización de los datos se utiliza ya que pueden haber instancias
+que estén mal, en relación al tipo de dato. Este análisis es más a nivel
+de negocio que de dato, ya que el negocio implica reglas que los datos
+deben cumplir.
+
+    \paragraph{3.4.2. Tratamiento datos faltantes
+}\label{tratamiento-datos-faltantes}
+
+Los datos faltantes son inadmitibles para muchos modelos. El tratamiento
+de los datos faltantes implica imputar un valor, eliminar dichos datos o
+eliminar el atributo.
+
+    \paragraph{3.4.3. Tratamiento de outliers
+}\label{tratamiento-de-outliers}
+
+Hay muchos modelos en los cuales los outliers reducen la performance o
+inducen un sesgo indeseado. Por eso, se debe detectar y tratar los
+outliers para evitar este tipo de problemas.
+
+    \paragraph{3.4.4. Correlación de atributos
+}\label{correlaciuxf3n-de-atributos}
+
+Hay muchos (como los modelos lineales) que la correlación de los
+atributos influye fuertemente en los modelos. Es por esto, que muchas
+veces se debe chequear la correlación de los atributos para así eliminar
+los que están altamente correlacionados.
+
+    \paragraph{3.4.5. Feature extraction }\label{feature-extraction}
+
+Muchas veces se puede "diseñar" un atributo que es combinación de otros
+atributos (lineal o no lineal) para así obtener más información. Tal
+vez, este atrubto generado es un mejor predictor y se mejora la
+solución.
+
+    \paragraph{3.4.6. Transofrmaciones de los datos
+}\label{transofrmaciones-de-los-datos}
+
+En este punto se realizan las transofrmaciones necesarias de los datos.
+Las transformaciones incluyen desde transformaciones para reducir el
+sesgo o ajustar distribuciones de los datos hasta transformar los datos
+a valores numericos o a valores categóricos. También en este punto se
+incluye la estandarización y normalización si se debe hacer.
+
+    \paragraph{3.4.7. Dimension reduction }\label{dimension-reduction}
+
+Si las dimensiones son muy grantes, podemos aplicar técnicas que
+reduzcan la dimensionalidad de los atributos.
+
+    \subsection{\#\# 4. Modelado }\label{modelado}
+
+En esta sección probamos varios modelos de machine learning. Utilizamos
+la librería \textbf{sklearn}.
+
+Utilizaremos los siguientes modelos: -
+\texttt{sklearn.linear\_model.LinearRegression} \(\Rightarrow\)
+http://scikit-learn.org/stable/modules/generated/sklearn.linear\_model.LinearRegression.html
+- \texttt{sklearn.linear\_model.LassoCV} \(\Rightarrow\)
+http://scikit-learn.org/stable/modules/generated/sklearn.linear\_model.LassoCV.html
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Modelos a utilizar:}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{linear\PYZus{}model} \PY{k}{import} \PY{n}{LinearRegression}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{linear\PYZus{}model} \PY{k}{import} \PY{n}{LassoCV}
+\end{Verbatim}
+
+
+    Y para chequear la performance de nuestros modelos utilizamos: *
+\texttt{sklearn.metrics.make\_scorer} \(\Rightarrow\)
+http://scikit-learn.org/stable/modules/generated/sklearn.metrics.make\_scorer.html
+* \texttt{sklearn.metrics.accuracy\_score} \(\Rightarrow\)
+http://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy\_score.html
+* \texttt{sklearn.model\_selection.cross\_val\_score} \(\Rightarrow\)
+http://scikit-learn.org/stable/modules/generated/sklearn.model\_selection.cross\_val\_score.html
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{metrics} \PY{k}{import} \PY{n}{make\PYZus{}scorer}\PY{p}{,} \PY{n}{accuracy\PYZus{}score}
+        \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{model\PYZus{}selection} \PY{k}{import} \PY{n}{cross\PYZus{}val\PYZus{}score}
+\end{Verbatim}
+
+
+    Utilizaremos \texttt{sklearn.model\_selection.GridSearchCV}
+(http://scikit-learn.org/stable/modules/generated/sklearn.model\_selection.GridSearchCV.html)
+para la optimización del modelo basado en fuerza bruta o
+\texttt{sklearn-deap.evolutionary\_search.EvolutionaryAlgorithmSearchCV}
+(https://github.com/rsteca/sklearn-deap) para la optimización del modelo
+basado en algoritmos evolutivos.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{model\PYZus{}selection} \PY{k}{import} \PY{n}{GridSearchCV}
+        \PY{k+kn}{from} \PY{n+nn}{evolutionary\PYZus{}search} \PY{k}{import} \PY{n}{EvolutionaryAlgorithmSearchCV}
+\end{Verbatim}
+
+
+    Utilizaremos \texttt{sklearn.feature\_selection.SelectFromModel}
+(http://scikit-learn.org/stable/modules/generated/sklearn.feature\_selection.SelectFromModel.html\#sklearn.feature\_selection.SelectFromModel)
+para la optimización de los parámetros.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{feature\PYZus{}selection} \PY{k}{import} \PY{n}{SelectFromModel}
+\end{Verbatim}
+
+
+    \subsubsection{4.1. Preparación del modelado
+}\label{preparaciuxf3n-del-modelado}
+
+Los conjuntos a utilizar en el modelado son:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X\PYZus{}test:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{X\PYZus{}test}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X\PYZus{}train:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y\PYZus{}train:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{y\PYZus{}train}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsubsection{4.2. Entrenamiento de los modelos
+}\label{entrenamiento-de-los-modelos}
+
+En esta sección se entrenan los modelos especificados anteriormente para
+ver cuál es el que realiza la mejor predicción.
+
+    \paragraph{4.2.1. Linear Regression }\label{linear-regression}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Cargamos el modelo.}
+        \PY{n}{linreg\PYZus{}clf} \PY{o}{=} \PY{n}{LinearRegression}\PY{p}{(}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Entrenamos el modelo.}
+        \PY{n}{linreg\PYZus{}clf}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Validación cruzada.}
+        \PY{n}{acc\PYZus{}linreg} \PY{o}{=} \PY{n}{cross\PYZus{}val\PYZus{}score}\PY{p}{(}\PY{n}{linreg\PYZus{}clf}\PY{p}{,} \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{cv}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{acc\PYZus{}linreg}\PY{p}{)}
+\end{Verbatim}
+
+
+    \paragraph{4.2.2. Linear Regression, L1 Regularisation
+}\label{linear-regression-l1-regularisation}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Cargamos el modelo.}
+        \PY{n}{linl1\PYZus{}clf} \PY{o}{=} \PY{n}{LassoCV}\PY{p}{(}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Entrenamos el modelo.}
+        \PY{n}{linl1\PYZus{}clf}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Validación cruzada.}
+        \PY{n}{acc\PYZus{}linl1} \PY{o}{=} \PY{n}{cross\PYZus{}val\PYZus{}score}\PY{p}{(}\PY{n}{linl1\PYZus{}clf}\PY{p}{,} \PY{n}{X\PYZus{}train}\PY{p}{,} \PY{n}{y\PYZus{}train}\PY{p}{,} \PY{n}{cv}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{acc\PYZus{}linl1}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsubsection{4.3. Comparación de modelos
+}\label{comparaciuxf3n-de-modelos}
+
+Una vez que tenemos las precisiones de los modelos, podemos comparar las
+performance de los modelos.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Creamos un dataframe para mostrar los datos.}
+        \PY{n}{model\PYZus{}performance} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{\PYZob{}}
+            \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Model}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Linear Regression}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Linear Regression L1}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,}
+            \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Accuracy}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:} \PY{p}{[}\PY{n}{acc\PYZus{}linreg}\PY{p}{,} \PY{n}{acc\PYZus{}linl1}\PY{p}{]}
+        \PY{p}{\PYZcb{}}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Ordenamos de mayor a menor.}
+        \PY{n}{model\PYZus{}performance}\PY{o}{.}\PY{n}{sort\PYZus{}values}\PY{p}{(}\PY{n}{by}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Accuracy}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ascending}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsubsection{4.4. Feature selection }\label{feature-selection}
+
+Una vez que tenemos el modelo que nos de la mejor predición, realizamos
+la selección de atributos utilizando algoritmos evolutivos para observar
+si se mejora en la predicción o no. En si, esto se debería realizar para
+cada algoritmo, y luego compararlos, pero consume mucho tiempo este tipo
+de procesos.
+
+    \subsubsection{4.5. Optimización }\label{optimizaciuxf3n}
+
+En esta sección se optimiza el modelo para utilizarlo en la puesta a
+producción.
+
+    \subsection{\#\# 5. Evaluación }\label{evaluaciuxf3n}
+
+    \subsection{\#\# 6. Puesta en producción
+}\label{puesta-en-producciuxf3n}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
