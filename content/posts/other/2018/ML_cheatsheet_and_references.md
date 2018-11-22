@@ -14,6 +14,7 @@ Summary: Trucos y references.
 	<li><a href="#1-bullet">1. Markdown</a></li>
 	<li><a href="#2-bullet">2. LaTeX</a></li>
 	<li><a href="#3-bullet">3. Pandas</a></li>
+    <li><a href="#4-bullet">4. Categorical variables</a></li>
 </ul>
 </div>
 
@@ -32,3 +33,8 @@ Summary: Trucos y references.
 ---
 
 - [Pandas Cheatsheet](https://www.dataquest.io/blog/pandas-cheat-sheet/)
+
+## Categorical variables <a class="anchor" id="4-bullet"></a>
+---
+
+- [Enconding](http://pbpython.com/categorical-encoding.html)
