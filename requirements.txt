@@ -12,6 +12,7 @@ docutils==0.14
 entrypoints==0.2.3
 feedgenerator==1.9
 ghp-import==0.5.5
+graphviz==0.10.1
 html5lib==1.0.1
 ipykernel==4.8.2
 ipython==6.5.0
@@ -43,6 +44,7 @@ prometheus-client==0.3.1
 prompt-toolkit==1.0.15
 pycodestyle==2.4.0
 Pygments==2.2.0
+pygments-style-github==0.4
 pyparsing==2.2.0
 python-dateutil==2.7.3
 pytz==2018.5
