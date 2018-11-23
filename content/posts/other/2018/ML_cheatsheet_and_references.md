@@ -15,6 +15,7 @@ Summary: Trucos y references.
 	<li><a href="#2-bullet">2. LaTeX</a></li>
 	<li><a href="#3-bullet">3. Pandas</a></li>
     <li><a href="#4-bullet">4. Categorical variables</a></li>
+	<li><a href="#5-bullet">5. Puesta en producción</a></li>
 </ul>
 </div>
 
@@ -38,3 +39,8 @@ Summary: Trucos y references.
 ---
 
 - [Enconding](http://pbpython.com/categorical-encoding.html)
+
+## Puesta en producción <a class="anchor" id="5-bullet"></a>
+---
+
+- [Puesta en producción](https://datascience.com.co/creating-an-api-using-scikit-learn-aws-lambda-s3-and-amazon-api-gateway-d9d10317e38d)
