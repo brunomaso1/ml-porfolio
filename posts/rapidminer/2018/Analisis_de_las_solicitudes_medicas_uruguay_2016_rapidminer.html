@@ -129,6 +129,7 @@
                     <li><a href="#3.4.4-bullet">3.4.4. Correlación de atributos</a></li>
                     <li><a href="#3.4.5-bullet">3.4.5. Feature extraction</a></li>
                     <li><a href="#3.4.6-bullet">3.4.6. Transformaciones de los datos</a></li>
+                    <li><a href="#3.4.7-bullet">3.4.7. Dimension reduction</a></li>
                 </ul>
             </li>
         </ul>
@@ -150,7 +151,7 @@
                 </ul>
             </li>
             <li><a href="#4.3-bullet">4.3. Comparación de modelos</a></li>
-            <li><a href="#4.4-bullet">4.4. Feature selection o Dimension Reduction</a></li>
+            <li><a href="#4.4-bullet">4.4. Feature selection</a></li>
             <li><a href="#4.5-bullet">4.5. Optimización</a></li>
         </ul>
     </li>
@@ -439,15 +440,15 @@ Lo mismo pasa con el atributo <em>prestador_departamento</em>, la clase "SIN DAT
 <h4>3.4.5. Feature extraction <a class="anchor" id="3.4.5-bullet"></a></h4>
 <p>Muchas veces se puede "diseñar" un atributo que es combinación de otros atributos (lineal o no lineal) para así obtener más información. Tal vez, este atributo generado es un mejor predictor y se mejora la solución.</p>
 <p>En este caso no se ve a simple vista algún nuevo atributo que se pueda generar y que pueda mejorar la predicción.</p>
-<h4>3.4.6. Dimension reduction <a class="anchor" id="3.4.6-bullet"></a></h4>
-<p>Si las dimensiones son muy grandes, podemos aplicar técnicas que reduzcan la dimensionalidad de los atributos.</p>
-<p>Sin embargo este no es el caso, ya que luego de los análsiis tenemos dos conjuntos para probar, uno con 11 atributos y otro con 7.</p>
 <h4>3.4.6. Transformaciones de los datos <a class="anchor" id="3.4.6-bullet"></a></h4>
 <p>En este punto se realizan las transformaciones necesarias de los datos. Las transformaciones incluyen desde transformaciones para reducir el sesgo o ajustar distribuciones de los datos hasta transformar los datos a valores numéricos o a valores categóricos. También en este punto se incluye la estandarización y normalización si se debe hacer.</p>
 <p>Podríamos realizar las transformaciones necesarias, como una logarítmica para el atributo <em>prestador_departamento</em> (hay mucha diferencia entre Montevideo y los otros departamentos), pero rapidminer, en la mayoría de sus modelos utiliza, o podemos indicarle que utilice, dichas transformaciones.</p>
 <div style="text-align:center"><img src="https://brunomaso1.github.io/ml-porfolio/posts/post-img/Analisis_de_las_solicitudes_medicas_uruguay_2016_rapidminer_17.PNG" alt="drawing" width="80%" height="80%"/></div>
 
 <p><br/></p>
+<h4>3.4.7. Dimension reduction <a class="anchor" id="3.4.7-bullet"></a></h4>
+<p>Si las dimensiones son muy grandes, podemos aplicar técnicas que reduzcan la dimensionalidad de los atributos.</p>
+<p>Sin embargo este no es el caso, ya que luego de los análisis tenemos dos conjuntos para probar, uno con 11 atributos y otro con 7.</p>
 <h2>4. Modelado <a class="anchor" id="4-bullet"></a></h2>
 <hr>
 <p>En esta sección probamos varios modelos de machine learning. Utilizamos modelos predefinidos en rapdiminer.</p>
@@ -692,7 +693,7 @@ Una vez entrenamos el modelo, obtenemos los siguientes resultados:</p>
 </tbody>
 </table>
 <p>Podemos ver que el algoritmo que nos brinda la mejor precisión es SVM (Support Vector Machine), y que filtrando los atributos correlacionados nos brinda una mejor predicción.</p>
-<h3>4.4. Feature selection o Dimension Reduction <a class="anchor" id="4.4-bullet"></a></h3>
+<h3>4.4. Feature selection<a class="anchor" id="4.4-bullet"></a></h3>
 <p>Una vez que tenemos el modelo que nos de la mejor perdición, realizamos la selección de atributos utilizando algoritmos evolutivos para observar si se mejora en la predicción o no. En si, esto se debería realizar para cada algoritmo, y luego compararlos, pero consume mucho tiempo este tipo de procesos.</p>
 <p>En este caso hay muy pocos atributos, por lo que no es necesaria esta etapa. Sin embargo, probaremos aplicar un algoritmo de reducción de dimensionalidad, aunque no es necesario.</p>
 <ul>
