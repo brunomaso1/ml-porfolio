@@ -44,3 +44,5 @@ Summary: Trucos y references.
 ---
 
 - [Puesta en producción](https://datascience.com.co/creating-an-api-using-scikit-learn-aws-lambda-s3-and-amazon-api-gateway-d9d10317e38d)
+- [Poster]({filename}/posts/post-img/ML_cheatsheet_and_references_1.png)
+
